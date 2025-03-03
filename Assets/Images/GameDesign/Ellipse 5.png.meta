@@ -1,0 +1,7449 @@
+fileFormatVersion: 2
+guid: 3c3dbf962d8b64c7bb185fc2599f9b27
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6138612802710836934
+    second: Ellipse 5_0
+  - first:
+      213: 170968096693191883
+    second: Ellipse 5_1
+  - first:
+      213: 6715612088294483550
+    second: Ellipse 5_2
+  - first:
+      213: 3806536158870667778
+    second: Ellipse 5_3
+  - first:
+      213: -3220682488720720458
+    second: Ellipse 5_4
+  - first:
+      213: -3425623456405431240
+    second: Ellipse 5_5
+  - first:
+      213: -3433756260864127973
+    second: Ellipse 5_6
+  - first:
+      213: -3712447448058719893
+    second: Ellipse 5_7
+  - first:
+      213: 281608264340000128
+    second: Ellipse 5_8
+  - first:
+      213: -7883063758777261327
+    second: Ellipse 5_9
+  - first:
+      213: 4029995082386977772
+    second: Ellipse 5_10
+  - first:
+      213: -2805631671922819518
+    second: Ellipse 5_11
+  - first:
+      213: 7839886375650372151
+    second: Ellipse 5_12
+  - first:
+      213: 3911302683587265563
+    second: Ellipse 5_13
+  - first:
+      213: -4757537637192505622
+    second: Ellipse 5_14
+  - first:
+      213: -785379522219273766
+    second: Ellipse 5_15
+  - first:
+      213: 9007849543136574016
+    second: Ellipse 5_16
+  - first:
+      213: -2159049347522531064
+    second: Ellipse 5_17
+  - first:
+      213: -7159227556542177893
+    second: Ellipse 5_18
+  - first:
+      213: 2095123971399030626
+    second: Ellipse 5_19
+  - first:
+      213: -8784256563167717115
+    second: Ellipse 5_20
+  - first:
+      213: 2064912472271974173
+    second: Ellipse 5_21
+  - first:
+      213: 4590225375921675189
+    second: Ellipse 5_22
+  - first:
+      213: 4177379903121129364
+    second: Ellipse 5_23
+  - first:
+      213: 4241971187590201706
+    second: Ellipse 5_24
+  - first:
+      213: -3320638227263431623
+    second: Ellipse 5_25
+  - first:
+      213: -2049178876465414756
+    second: Ellipse 5_26
+  - first:
+      213: 4024175890124746246
+    second: Ellipse 5_27
+  - first:
+      213: -1634692870174331078
+    second: Ellipse 5_28
+  - first:
+      213: -5497637638602047329
+    second: Ellipse 5_29
+  - first:
+      213: -800941961670087702
+    second: Ellipse 5_30
+  - first:
+      213: -5645813896653598016
+    second: Ellipse 5_31
+  - first:
+      213: -6872946192704279539
+    second: Ellipse 5_32
+  - first:
+      213: -1451322004302939620
+    second: Ellipse 5_33
+  - first:
+      213: 1280811320110719168
+    second: Ellipse 5_34
+  - first:
+      213: 4123210877986920899
+    second: Ellipse 5_35
+  - first:
+      213: 7081555245927120002
+    second: Ellipse 5_36
+  - first:
+      213: -8626480963613696705
+    second: Ellipse 5_37
+  - first:
+      213: -105200015327168693
+    second: Ellipse 5_38
+  - first:
+      213: -3449597497392931438
+    second: Ellipse 5_39
+  - first:
+      213: 4918946858647971684
+    second: Ellipse 5_40
+  - first:
+      213: 3171153688862018786
+    second: Ellipse 5_41
+  - first:
+      213: 6891948224575704709
+    second: Ellipse 5_42
+  - first:
+      213: -7802325025049047776
+    second: Ellipse 5_43
+  - first:
+      213: -678546385386769644
+    second: Ellipse 5_44
+  - first:
+      213: -45892271192367947
+    second: Ellipse 5_45
+  - first:
+      213: 5762068859180868912
+    second: Ellipse 5_46
+  - first:
+      213: 8146074385470844119
+    second: Ellipse 5_47
+  - first:
+      213: -1567656107311769160
+    second: Ellipse 5_48
+  - first:
+      213: -4498993443480790728
+    second: Ellipse 5_49
+  - first:
+      213: 8861408269628879537
+    second: Ellipse 5_50
+  - first:
+      213: 8543670206872858669
+    second: Ellipse 5_51
+  - first:
+      213: 3268702772884111503
+    second: Ellipse 5_52
+  - first:
+      213: -3969841562645438262
+    second: Ellipse 5_53
+  - first:
+      213: -2829607726193210499
+    second: Ellipse 5_54
+  - first:
+      213: -2494858351489256838
+    second: Ellipse 5_55
+  - first:
+      213: 1963257592510555721
+    second: Ellipse 5_56
+  - first:
+      213: -442560459050336655
+    second: Ellipse 5_57
+  - first:
+      213: -6756244565227574268
+    second: Ellipse 5_58
+  - first:
+      213: -3914693890037714873
+    second: Ellipse 5_59
+  - first:
+      213: 5368367326278866961
+    second: Ellipse 5_60
+  - first:
+      213: -8808125312138270578
+    second: Ellipse 5_61
+  - first:
+      213: 5359326684876626693
+    second: Ellipse 5_62
+  - first:
+      213: -8382504116285917448
+    second: Ellipse 5_63
+  - first:
+      213: -3120383762890307686
+    second: Ellipse 5_64
+  - first:
+      213: -8454581280075833527
+    second: Ellipse 5_65
+  - first:
+      213: 8410212534493035296
+    second: Ellipse 5_66
+  - first:
+      213: 7548990688694186986
+    second: Ellipse 5_67
+  - first:
+      213: 9071039346304710649
+    second: Ellipse 5_68
+  - first:
+      213: 1961966821839286475
+    second: Ellipse 5_69
+  - first:
+      213: 6997833279239846560
+    second: Ellipse 5_70
+  - first:
+      213: 5754618719860429832
+    second: Ellipse 5_71
+  - first:
+      213: -8070243760287521194
+    second: Ellipse 5_72
+  - first:
+      213: 520716292074541078
+    second: Ellipse 5_73
+  - first:
+      213: 8486464874836155479
+    second: Ellipse 5_74
+  - first:
+      213: -5422738266721655108
+    second: Ellipse 5_75
+  - first:
+      213: -1102616490154999591
+    second: Ellipse 5_76
+  - first:
+      213: -1870588930379782261
+    second: Ellipse 5_77
+  - first:
+      213: 704161751017573736
+    second: Ellipse 5_78
+  - first:
+      213: 2703047378749224963
+    second: Ellipse 5_79
+  - first:
+      213: -2428319655775531381
+    second: Ellipse 5_80
+  - first:
+      213: 8941285333462772463
+    second: Ellipse 5_81
+  - first:
+      213: -4963992544642136689
+    second: Ellipse 5_82
+  - first:
+      213: -2319036028096549229
+    second: Ellipse 5_83
+  - first:
+      213: -3564854367998393237
+    second: Ellipse 5_84
+  - first:
+      213: -3743563553832388535
+    second: Ellipse 5_85
+  - first:
+      213: 1100445043738517384
+    second: Ellipse 5_86
+  - first:
+      213: -7922384691470429107
+    second: Ellipse 5_87
+  - first:
+      213: 11542866749562422
+    second: Ellipse 5_88
+  - first:
+      213: -391442793224027554
+    second: Ellipse 5_89
+  - first:
+      213: -4090010906655992457
+    second: Ellipse 5_90
+  - first:
+      213: -6806461898977261265
+    second: Ellipse 5_91
+  - first:
+      213: 7107045564654401801
+    second: Ellipse 5_92
+  - first:
+      213: -74579231058271963
+    second: Ellipse 5_93
+  - first:
+      213: 3670750508429048397
+    second: Ellipse 5_94
+  - first:
+      213: -8812755592962480677
+    second: Ellipse 5_95
+  - first:
+      213: 2784924792537218029
+    second: Ellipse 5_96
+  - first:
+      213: -1471988633687890849
+    second: Ellipse 5_97
+  - first:
+      213: 794120523019334639
+    second: Ellipse 5_98
+  - first:
+      213: -9053919973375682342
+    second: Ellipse 5_99
+  - first:
+      213: 4661608473480413554
+    second: Ellipse 5_100
+  - first:
+      213: -1911960966825504381
+    second: Ellipse 5_101
+  - first:
+      213: 2093291094885843496
+    second: Ellipse 5_102
+  - first:
+      213: -7038309681915753963
+    second: Ellipse 5_103
+  - first:
+      213: -2121838981680182324
+    second: Ellipse 5_104
+  - first:
+      213: 6880377480087167962
+    second: Ellipse 5_105
+  - first:
+      213: 8637993362171513393
+    second: Ellipse 5_106
+  - first:
+      213: -4128329364159919400
+    second: Ellipse 5_107
+  - first:
+      213: -6162362408921097405
+    second: Ellipse 5_108
+  - first:
+      213: -439782039815594770
+    second: Ellipse 5_109
+  - first:
+      213: 3657096044620948963
+    second: Ellipse 5_110
+  - first:
+      213: -6390338527611000414
+    second: Ellipse 5_111
+  - first:
+      213: -7306229526494553707
+    second: Ellipse 5_112
+  - first:
+      213: -7997869049426586279
+    second: Ellipse 5_113
+  - first:
+      213: -5071161609784076669
+    second: Ellipse 5_114
+  - first:
+      213: -375206960719049000
+    second: Ellipse 5_115
+  - first:
+      213: 7959009343937105655
+    second: Ellipse 5_116
+  - first:
+      213: -2366200747780013689
+    second: Ellipse 5_117
+  - first:
+      213: -7560451632229971340
+    second: Ellipse 5_118
+  - first:
+      213: 927937450736310658
+    second: Ellipse 5_119
+  - first:
+      213: 1339119424575107555
+    second: Ellipse 5_120
+  - first:
+      213: -3549796068353017397
+    second: Ellipse 5_121
+  - first:
+      213: -6680656909276235140
+    second: Ellipse 5_122
+  - first:
+      213: 901757634983808183
+    second: Ellipse 5_123
+  - first:
+      213: -1976154539455217996
+    second: Ellipse 5_124
+  - first:
+      213: -3302657489458563831
+    second: Ellipse 5_125
+  - first:
+      213: 8286322965454867026
+    second: Ellipse 5_126
+  - first:
+      213: -2869953531891559216
+    second: Ellipse 5_127
+  - first:
+      213: 3183855265414095931
+    second: Ellipse 5_128
+  - first:
+      213: 5346998576880490658
+    second: Ellipse 5_129
+  - first:
+      213: 6494284339478676426
+    second: Ellipse 5_130
+  - first:
+      213: -1900368167873933667
+    second: Ellipse 5_131
+  - first:
+      213: 1288009366767149916
+    second: Ellipse 5_132
+  - first:
+      213: 8115300392456797970
+    second: Ellipse 5_133
+  - first:
+      213: -8300588712973752818
+    second: Ellipse 5_134
+  - first:
+      213: -757871366187612757
+    second: Ellipse 5_135
+  - first:
+      213: 1116276142481106747
+    second: Ellipse 5_136
+  - first:
+      213: -5722201483679027187
+    second: Ellipse 5_137
+  - first:
+      213: -2346015457962095472
+    second: Ellipse 5_138
+  - first:
+      213: 5966348938388841710
+    second: Ellipse 5_139
+  - first:
+      213: 8099541073168665441
+    second: Ellipse 5_140
+  - first:
+      213: -8673407466309677517
+    second: Ellipse 5_141
+  - first:
+      213: 195287550504428062
+    second: Ellipse 5_142
+  - first:
+      213: 5965401658538183390
+    second: Ellipse 5_143
+  - first:
+      213: 3695659979386830897
+    second: Ellipse 5_144
+  - first:
+      213: -5718610124607952768
+    second: Ellipse 5_145
+  - first:
+      213: -7027157076569013464
+    second: Ellipse 5_146
+  - first:
+      213: -1741923849783408732
+    second: Ellipse 5_147
+  - first:
+      213: 720042356768356867
+    second: Ellipse 5_148
+  - first:
+      213: -7028419871755059506
+    second: Ellipse 5_149
+  - first:
+      213: 43224904017221371
+    second: Ellipse 5_150
+  - first:
+      213: 4121479166492068126
+    second: Ellipse 5_151
+  - first:
+      213: -894814418120657307
+    second: Ellipse 5_152
+  - first:
+      213: 5054467981323677582
+    second: Ellipse 5_153
+  - first:
+      213: -7728056703320698399
+    second: Ellipse 5_154
+  - first:
+      213: -348147803507990503
+    second: Ellipse 5_155
+  - first:
+      213: -4299392941903908087
+    second: Ellipse 5_156
+  - first:
+      213: -4669386559682742869
+    second: Ellipse 5_157
+  - first:
+      213: -5075385546073228034
+    second: Ellipse 5_158
+  - first:
+      213: -8739303428369453967
+    second: Ellipse 5_159
+  - first:
+      213: 4842129122933259458
+    second: Ellipse 5_160
+  - first:
+      213: -8142133542003131030
+    second: Ellipse 5_161
+  - first:
+      213: -2153032693220060296
+    second: Ellipse 5_162
+  - first:
+      213: -8994939937891053915
+    second: Ellipse 5_163
+  - first:
+      213: 1389700782934486632
+    second: Ellipse 5_164
+  - first:
+      213: -3495102768707034478
+    second: Ellipse 5_165
+  - first:
+      213: 568024872097693108
+    second: Ellipse 5_166
+  - first:
+      213: 4351385669240137930
+    second: Ellipse 5_167
+  - first:
+      213: 1440286855738220739
+    second: Ellipse 5_168
+  - first:
+      213: -2186424080101478994
+    second: Ellipse 5_169
+  - first:
+      213: 4583922832267106112
+    second: Ellipse 5_170
+  - first:
+      213: -4056145049454994702
+    second: Ellipse 5_171
+  - first:
+      213: 3709669459364966139
+    second: Ellipse 5_172
+  - first:
+      213: -1129534631146672596
+    second: Ellipse 5_173
+  - first:
+      213: 4551094518429419081
+    second: Ellipse 5_174
+  - first:
+      213: 8660399172662008489
+    second: Ellipse 5_175
+  - first:
+      213: -1150549984134115294
+    second: Ellipse 5_176
+  - first:
+      213: 2900903065019814605
+    second: Ellipse 5_177
+  - first:
+      213: 8744171768679329681
+    second: Ellipse 5_178
+  - first:
+      213: -223248069623235437
+    second: Ellipse 5_179
+  - first:
+      213: -8856881553888897961
+    second: Ellipse 5_180
+  - first:
+      213: 1515498917357618325
+    second: Ellipse 5_181
+  - first:
+      213: -8667590996336582481
+    second: Ellipse 5_182
+  - first:
+      213: -781503855603066724
+    second: Ellipse 5_183
+  - first:
+      213: -2333300595586269255
+    second: Ellipse 5_184
+  - first:
+      213: -2683292226885465177
+    second: Ellipse 5_185
+  - first:
+      213: 3980988575235926085
+    second: Ellipse 5_186
+  - first:
+      213: -1532332352112177357
+    second: Ellipse 5_187
+  - first:
+      213: -1228120984149534427
+    second: Ellipse 5_188
+  - first:
+      213: 1373953937074022293
+    second: Ellipse 5_189
+  - first:
+      213: 1487870462263045621
+    second: Ellipse 5_190
+  - first:
+      213: 5477523514797182600
+    second: Ellipse 5_191
+  - first:
+      213: 9055117092769143322
+    second: Ellipse 5_192
+  - first:
+      213: -6248324273522994550
+    second: Ellipse 5_193
+  - first:
+      213: 8228778353855038366
+    second: Ellipse 5_194
+  - first:
+      213: -7435746815834315383
+    second: Ellipse 5_195
+  - first:
+      213: -3383815628728821170
+    second: Ellipse 5_196
+  - first:
+      213: -5927713056437722885
+    second: Ellipse 5_197
+  - first:
+      213: -6979770215220428443
+    second: Ellipse 5_198
+  - first:
+      213: 8145312589162113516
+    second: Ellipse 5_199
+  - first:
+      213: 4012882226999137727
+    second: Ellipse 5_200
+  - first:
+      213: -2239719729867389551
+    second: Ellipse 5_201
+  - first:
+      213: 7744985148737446767
+    second: Ellipse 5_202
+  - first:
+      213: -2219898610045377638
+    second: Ellipse 5_203
+  - first:
+      213: -7235399674572835347
+    second: Ellipse 5_204
+  - first:
+      213: 4867368635250850545
+    second: Ellipse 5_205
+  - first:
+      213: -2764178512481097791
+    second: Ellipse 5_206
+  - first:
+      213: 3119635143790879196
+    second: Ellipse 5_207
+  - first:
+      213: -1480706446010424205
+    second: Ellipse 5_208
+  - first:
+      213: -4199429482592326866
+    second: Ellipse 5_209
+  - first:
+      213: 6047862728636418333
+    second: Ellipse 5_210
+  - first:
+      213: 9137527272078989263
+    second: Ellipse 5_211
+  - first:
+      213: -2571053131104055826
+    second: Ellipse 5_212
+  - first:
+      213: 606110578014155230
+    second: Ellipse 5_213
+  - first:
+      213: -8118096952181639803
+    second: Ellipse 5_214
+  - first:
+      213: 8886212800592425151
+    second: Ellipse 5_215
+  - first:
+      213: -4737222485898191709
+    second: Ellipse 5_216
+  - first:
+      213: -5844660518814010792
+    second: Ellipse 5_217
+  - first:
+      213: -5363987993814681308
+    second: Ellipse 5_218
+  - first:
+      213: -9190103699373457522
+    second: Ellipse 5_219
+  - first:
+      213: 9039019026798367124
+    second: Ellipse 5_220
+  - first:
+      213: 740327484652335407
+    second: Ellipse 5_221
+  - first:
+      213: -4387277396855304845
+    second: Ellipse 5_222
+  - first:
+      213: 3568815874215424573
+    second: Ellipse 5_223
+  - first:
+      213: 935563449586558279
+    second: Ellipse 5_224
+  - first:
+      213: -7208127640138415608
+    second: Ellipse 5_225
+  - first:
+      213: -2217857236581404536
+    second: Ellipse 5_226
+  - first:
+      213: -3713111240854310652
+    second: Ellipse 5_227
+  - first:
+      213: -6672446316199504473
+    second: Ellipse 5_228
+  - first:
+      213: -4051875324884480872
+    second: Ellipse 5_229
+  - first:
+      213: -7870173559889537089
+    second: Ellipse 5_230
+  - first:
+      213: -2028292415445543849
+    second: Ellipse 5_231
+  - first:
+      213: -8190376763386601582
+    second: Ellipse 5_232
+  - first:
+      213: 2220254241195527029
+    second: Ellipse 5_233
+  - first:
+      213: 5712204358522052275
+    second: Ellipse 5_234
+  - first:
+      213: 1033094613299622150
+    second: Ellipse 5_235
+  - first:
+      213: 6522612497107095734
+    second: Ellipse 5_236
+  - first:
+      213: 7289523913522262519
+    second: Ellipse 5_237
+  - first:
+      213: 9035070590277879949
+    second: Ellipse 5_238
+  - first:
+      213: -1256638251516536695
+    second: Ellipse 5_239
+  - first:
+      213: 6072824779688191377
+    second: Ellipse 5_240
+  - first:
+      213: 542184723148641467
+    second: Ellipse 5_241
+  - first:
+      213: 5851635802595716808
+    second: Ellipse 5_242
+  - first:
+      213: 3905597622049963778
+    second: Ellipse 5_243
+  - first:
+      213: 1632757342916152823
+    second: Ellipse 5_244
+  - first:
+      213: 8035795288163619318
+    second: Ellipse 5_245
+  - first:
+      213: 5429336947012026924
+    second: Ellipse 5_246
+  - first:
+      213: -5326584660416314674
+    second: Ellipse 5_247
+  - first:
+      213: -1270509881630435048
+    second: Ellipse 5_248
+  - first:
+      213: 8155281575573810242
+    second: Ellipse 5_249
+  - first:
+      213: 1855992820355157695
+    second: Ellipse 5_250
+  - first:
+      213: -2588705349699394526
+    second: Ellipse 5_251
+  - first:
+      213: -711521820225823564
+    second: Ellipse 5_252
+  - first:
+      213: 1723386885874010944
+    second: Ellipse 5_253
+  - first:
+      213: -1654256366150622367
+    second: Ellipse 5_254
+  - first:
+      213: 7428864191438155714
+    second: Ellipse 5_255
+  - first:
+      213: -5640933418387674490
+    second: Ellipse 5_256
+  - first:
+      213: 885059479967775467
+    second: Ellipse 5_257
+  - first:
+      213: 3199761498461523047
+    second: Ellipse 5_258
+  - first:
+      213: 2916980792301405884
+    second: Ellipse 5_259
+  - first:
+      213: 3848825986889727307
+    second: Ellipse 5_260
+  - first:
+      213: -9105546892000439715
+    second: Ellipse 5_261
+  - first:
+      213: 318786024345471803
+    second: Ellipse 5_262
+  - first:
+      213: -3692589665104625666
+    second: Ellipse 5_263
+  - first:
+      213: 5660172757117576538
+    second: Ellipse 5_264
+  - first:
+      213: -3300648980693141572
+    second: Ellipse 5_265
+  - first:
+      213: -7653445652600193808
+    second: Ellipse 5_266
+  - first:
+      213: -5558143767403003048
+    second: Ellipse 5_267
+  - first:
+      213: -1947021575066565961
+    second: Ellipse 5_268
+  - first:
+      213: 5199071090213407299
+    second: Ellipse 5_269
+  - first:
+      213: 5380780867250711594
+    second: Ellipse 5_270
+  - first:
+      213: 6022444353297903651
+    second: Ellipse 5_271
+  - first:
+      213: -2469096800049193604
+    second: Ellipse 5_272
+  - first:
+      213: 5450783202564325805
+    second: Ellipse 5_273
+  - first:
+      213: 2646863005851854836
+    second: Ellipse 5_274
+  - first:
+      213: 3893926522083055395
+    second: Ellipse 5_275
+  - first:
+      213: -8510442904126405343
+    second: Ellipse 5_276
+  - first:
+      213: -4763293304795079808
+    second: Ellipse 5_277
+  - first:
+      213: 5209194829452270737
+    second: Ellipse 5_278
+  - first:
+      213: 8795158585809343041
+    second: Ellipse 5_279
+  - first:
+      213: -6825897475601933582
+    second: Ellipse 5_280
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ellipse 5_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 31
+        width: 1227
+        height: 1234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3961c00e244fcaa0800000000000000
+      internalID: -6138612802710836934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1253
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4825ff3966f5200800000000000000
+      internalID: 170968096693191883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_2
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1255
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56ac1c0d95a23d50800000000000000
+      internalID: 6715612088294483550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_3
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 1258
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2028a26f77883d430800000000000000
+      internalID: 3806536158870667778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_4
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1250
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdfa752756dd43d0800000000000000
+      internalID: -3220682488720720458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_5
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1255
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c55babd9db570d0800000000000000
+      internalID: -3425623456405431240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_6
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 1252
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c8be1afd8d850d0800000000000000
+      internalID: -3433756260864127973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_7
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1257
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b61972327bcba7cc0800000000000000
+      internalID: -3712447448058719893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_8
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1252
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08dccc1793978e300800000000000000
+      internalID: 281608264340000128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_9
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f26354174bb99290800000000000000
+      internalID: -7883063758777261327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_10
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1247
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce33f34fc2b6de730800000000000000
+      internalID: 4029995082386977772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1252
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e7478fbd46019d0800000000000000
+      internalID: -2805631671922819518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_12
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1257
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73aa0140f1fdccc60800000000000000
+      internalID: 7839886375650372151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_13
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 1253
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b144048511db74630800000000000000
+      internalID: 3911302683587265563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_14
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 1253
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6e699b9b4d9fdb0800000000000000
+      internalID: -4757537637192505622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_15
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1258
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad111445c75c915f0800000000000000
+      internalID: -785379522219273766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_16
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1258
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04af1d01f6f420d70800000000000000
+      internalID: 9007849543136574016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_17
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1259
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 801716cbe048902e0800000000000000
+      internalID: -2159049347522531064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_18
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1251
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d9d12f77055ac90800000000000000
+      internalID: -7159227556542177893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_19
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1259
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26715abc620631d10800000000000000
+      internalID: 2095123971399030626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_20
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 1256
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5099e70623d081680800000000000000
+      internalID: -8784256563167717115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_21
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 1252
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1f6b0204fa08ac10800000000000000
+      internalID: 2064912472271974173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_22
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 1259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb9bcac8a1c3bf30800000000000000
+      internalID: 4590225375921675189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_23
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 1254
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ff361a3e809f930800000000000000
+      internalID: 4177379903121129364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_24
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1255
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6181c7f1528eda30800000000000000
+      internalID: 4241971187590201706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_25
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1255
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c51643029bae1d0800000000000000
+      internalID: -3320638227263431623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_26
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1255
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d7b0b3baadf83e0800000000000000
+      internalID: -2049178876465414756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_27
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 1252
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ea39ca6aeb8d730800000000000000
+      internalID: 4024175890124746246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_28
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1257
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f256cde776059e0800000000000000
+      internalID: -1634692870174331078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_29
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1252
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90ce4702b774b3b0800000000000000
+      internalID: -5497637638602047329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_30
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 1259
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeb23f8878b72e4f0800000000000000
+      internalID: -800941961670087702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_31
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1247
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c29ffd7c2a06a1b0800000000000000
+      internalID: -5645813896653598016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_32
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 1252
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0cec772ad36e90a0800000000000000
+      internalID: -6872946192704279539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_33
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1257
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ab0d6935edbdbe0800000000000000
+      internalID: -1451322004302939620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_34
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1253
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c0af7f0c1b56c110800000000000000
+      internalID: 1280811320110719168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_35
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1253
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9df64a276983930800000000000000
+      internalID: 4123210877986920899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_36
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1258
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c3acaf9fcb64260800000000000000
+      internalID: 7081555245927120002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_37
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 1258
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3dd226c445984880800000000000000
+      internalID: -8626480963613696705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_38
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1259
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47fe08b4214a8ef0800000000000000
+      internalID: -105200015327168693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_39
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1251
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d51d55a519020d0800000000000000
+      internalID: -3449597497392931438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_40
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 1259
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4676cb23b1c934440800000000000000
+      internalID: 4918946858647971684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_41
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1256
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec4ac08a73320c20800000000000000
+      internalID: 3171153688862018786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_42
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1258
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e0838256e15af50800000000000000
+      internalID: 6891948224575704709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_43
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 1254
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d8fcb6ab298b390800000000000000
+      internalID: -7802325025049047776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_44
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413756758a15596f0800000000000000
+      internalID: -678546385386769644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_45
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1253
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bc94a5f835fc5ff0800000000000000
+      internalID: -45892271192367947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_46
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1252
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 035e0d2491bf6ff40800000000000000
+      internalID: 5762068859180868912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_47
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1248
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dce5eb6e7bac0170800000000000000
+      internalID: 8146074385470844119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_48
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1249
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b9d5b183119e3ae0800000000000000
+      internalID: -1567656107311769160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_49
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1247
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8391482cc4d5091c0800000000000000
+      internalID: -4498993443480790728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_50
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 1250
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b230f81fdb0afa70800000000000000
+      internalID: 8861408269628879537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_51
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1249
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20bebe69c6319670800000000000000
+      internalID: 8543670206872858669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_52
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 1248
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8087168ad3cc5d20800000000000000
+      internalID: 3268702772884111503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_53
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1250
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac0efe3c12a48e8c0800000000000000
+      internalID: -3969841562645438262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_54
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1248
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b8d82d3c63bb8d0800000000000000
+      internalID: -2829607726193210499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_55
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1249
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a72f0923c8b706dd0800000000000000
+      internalID: -2494858351489256838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_56
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1247
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9462e2ce064ee3b10800000000000000
+      internalID: 1963257592510555721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_57
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1250
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ebba67b95bbd9f0800000000000000
+      internalID: -442560459050336655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_58
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 1249
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c62f13d5ffc32a0800000000000000
+      internalID: -6756244565227574268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_59
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1247
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740f8efd5a63ca9c0800000000000000
+      internalID: -3914693890037714873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_60
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1065
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1185aa2f3a5408a40800000000000000
+      internalID: 5368367326278866961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_61
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1055
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e882fd032b043c580800000000000000
+      internalID: -8808125312138270578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_62
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1060
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50bd7579937206a40800000000000000
+      internalID: 5359326684876626693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_63
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1060
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6378c2bec5bab80800000000000000
+      internalID: -8382504116285917448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_64
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1060
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97c60a008b22b4d0800000000000000
+      internalID: -3120383762890307686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_65
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 1067
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f996cbe1b4baa80800000000000000
+      internalID: -8454581280075833527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_66
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1057
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bbefbadb317b470800000000000000
+      internalID: 8410212534493035296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_67
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 1055
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3395cf80763c860800000000000000
+      internalID: 7548990688694186986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_68
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 1058
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7751c993ec2ed70800000000000000
+      internalID: 9071039346304710649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_69
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 1055
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc035d4fd6e4a3b10800000000000000
+      internalID: 1961966821839286475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_70
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1055
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa7f769a4c4d1160800000000000000
+      internalID: 6997833279239846560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_71
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1055
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80418178c338cdf40800000000000000
+      internalID: 5754618719860429832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_72
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 857
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656ef39de0cb00090800000000000000
+      internalID: -8070243760287521194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_73
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 853
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6109cd175b4f93700800000000000000
+      internalID: 520716292074541078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_74
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 835
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c507727daf5c570800000000000000
+      internalID: 8486464874836155479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_75
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 805
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6632ef6409eb4b0800000000000000
+      internalID: -5422738266721655108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_76
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 823
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0c2d4e428b2b0f0800000000000000
+      internalID: -1102616490154999591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_77
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 828
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b876fe357455a06e0800000000000000
+      internalID: -1870588930379782261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_78
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 809
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86dc1d9b16fa5c900800000000000000
+      internalID: 704161751017573736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_79
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 799
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308f5650547238520800000000000000
+      internalID: 2703047378749224963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_80
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 813
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e866c8320ec4ed0800000000000000
+      internalID: -2428319655775531381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_81
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 809
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fea657843a3d51c70800000000000000
+      internalID: 8941285333462772463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_82
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 799
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f850becb41b5c1bb0800000000000000
+      internalID: -4963992544642136689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_83
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 802
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ee8fbe40121dfd0800000000000000
+      internalID: -2319036028096549229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_84
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 799
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b64c477f6d7178ec0800000000000000
+      internalID: -3564854367998393237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_85
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 804
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948b8b338c03c0cc0800000000000000
+      internalID: -3743563553832388535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_86
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 799
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f9fd6dfe0954f00800000000000000
+      internalID: 1100445043738517384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_87
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 799
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4499e209190e0290800000000000000
+      internalID: -7922384691470429107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_88
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 801
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e1c481d22092000800000000000000
+      internalID: 11542866749562422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_89
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 797
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52ceff7ad0519af0800000000000000
+      internalID: -391442793224027554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_90
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 788
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 775db4d00cc5d37c0800000000000000
+      internalID: -4090010906655992457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_91
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 792
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29ca3e07f69a81a0800000000000000
+      internalID: -6806461898977261265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_92
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 781
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 909bdbb494c41a260800000000000000
+      internalID: 7107045564654401801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_93
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 763
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5216621a59a07fef0800000000000000
+      internalID: -74579231058271963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_94
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 778
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a7ff1932021f230800000000000000
+      internalID: 3670750508429048397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_95
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 766
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd5622dea7dc2b580800000000000000
+      internalID: -8812755592962480677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_96
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 763
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: debfb59f75a06a620800000000000000
+      internalID: 2784924792537218029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_97
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 754
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f54ee97f222729be0800000000000000
+      internalID: -1471988633687890849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_98
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 749
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe33a638868450b00800000000000000
+      internalID: 794120523019334639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_99
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 750
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8d02201c30a5280800000000000000
+      internalID: -9053919973375682342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_100
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 755
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27140c7553c51b040800000000000000
+      internalID: 4661608473480413554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_101
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 745
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38114f371a95775e0800000000000000
+      internalID: -1911960966825504381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_102
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 734
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822c82af82ddc0d10800000000000000
+      internalID: 2093291094885843496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_103
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 706
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a083682a6e25e90800000000000000
+      internalID: -7038309681915753963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_104
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 713
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb406a20b6bd82e0800000000000000
+      internalID: -2121838981680182324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_105
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 709
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad361354dd20c7f50800000000000000
+      internalID: 6880377480087167962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_106
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 702
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a4a64623150e770800000000000000
+      internalID: 8637993362171513393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_107
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 692
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da0f6de05a35b6c0800000000000000
+      internalID: -4128329364159919400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_108
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 678
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b9907e904ea7aa0800000000000000
+      internalID: -6162362408921097405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_109
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 672
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eecd13a909495e9f0800000000000000
+      internalID: -439782039815594770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_110
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 676
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e52e19f97d90c230800000000000000
+      internalID: 3657096044620948963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_111
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 678
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9e04377f4f057a0800000000000000
+      internalID: -6390338527611000414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_112
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 666
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59952d9a4fe0b9a90800000000000000
+      internalID: -7306229526494553707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_113
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 657
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95556dc597cd10190800000000000000
+      internalID: -7997869049426586279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_114
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 650
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 386d832526d9f99b0800000000000000
+      internalID: -5071161609784076669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_115
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 650
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de4615d14ffacaf0800000000000000
+      internalID: -375206960719049000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_116
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 645
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fec26564d4147e60800000000000000
+      internalID: 7959009343937105655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_117
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 631
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7810f41e4f0992fd0800000000000000
+      internalID: -2366200747780013689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_118
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 629
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a09672c41e31790800000000000000
+      internalID: -7560451632229971340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_119
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 618
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2895bece132b0ec00800000000000000
+      internalID: 927937450736310658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_120
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 614
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1ff9d8502859210800000000000000
+      internalID: 1339119424575107555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_121
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 608
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc97db098479cbec0800000000000000
+      internalID: -3549796068353017397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_122
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 610
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7ab458cfe98943a0800000000000000
+      internalID: -6680656909276235140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_123
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 606
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bcc4b29acfa38c00800000000000000
+      internalID: 901757634983808183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_124
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 601
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4befe7e9ae94394e0800000000000000
+      internalID: -1976154539455217996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_125
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 599
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 905f906f28a9a22d0800000000000000
+      internalID: -3302657489458563831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_126
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 579
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a491295deeef270800000000000000
+      internalID: 8286322965454867026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_127
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 549
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4d9b9e770eb28d0800000000000000
+      internalID: -2869953531891559216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_128
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 567
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b34a34fbe735f2c20800000000000000
+      internalID: 3183855265414095931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_129
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 572
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a81b7540ea543a40800000000000000
+      internalID: 5346998576880490658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_130
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 553
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac34205d235502a50800000000000000
+      internalID: 6494284339478676426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_131
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 543
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e0a6b483980a5e0800000000000000
+      internalID: -1900368167873933667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_132
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 557
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c532885e1bdefd110800000000000000
+      internalID: 1288009366767149916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_133
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 553
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21fb9f1d5b65f9070800000000000000
+      internalID: 8115300392456797970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_134
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 544
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0625904b826ecc80800000000000000
+      internalID: -8300588712973752818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_135
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 544
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba582f002008b75f0800000000000000
+      internalID: -757871366187612757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_136
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 543
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3764dfbc3fcd7f00800000000000000
+      internalID: 1116276142481106747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_137
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 548
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0039107118a690b0800000000000000
+      internalID: -5722201483679027187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_138
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 543
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c0896ee57417fd0800000000000000
+      internalID: -2346015457962095472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_139
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 543
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee422b69fbabcc250800000000000000
+      internalID: 5966348938388841710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_140
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 545
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b87ed51b9576070800000000000000
+      internalID: 8099541073168665441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_141
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 541
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e0462fcddd1a780800000000000000
+      internalID: -8673407466309677517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_142
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 532
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e126fd41efcc5b200800000000000000
+      internalID: 195287550504428062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_143
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 536
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edac1bfc33d59c250800000000000000
+      internalID: 5965401658538183390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_144
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 525
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130caf9bb2f994330800000000000000
+      internalID: 3695659979386830897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_145
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 507
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0886ac1e36a63a0b0800000000000000
+      internalID: -5718610124607952768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_146
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 522
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8234b3eced58a7e90800000000000000
+      internalID: -7027157076569013464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_147
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 510
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a701ebdc7173d7e0800000000000000
+      internalID: -1741923849783408732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_148
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 507
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ab96265ba1ef900800000000000000
+      internalID: 720042356768356867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_149
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 498
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ece3eb36d59067e90800000000000000
+      internalID: -7028419871755059506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_150
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 493
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf6956932d0999000800000000000000
+      internalID: 43224904017221371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_151
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 494
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19cee3277f623930800000000000000
+      internalID: 4121479166492068126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_152
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 499
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5663504170bf493f0800000000000000
+      internalID: -894814418120657307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_153
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 489
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f226b69d3152640800000000000000
+      internalID: 5054467981323677582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_154
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 478
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e15e729f5d60c490800000000000000
+      internalID: -7728056703320698399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_155
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 450
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 910e292da612b2bf0800000000000000
+      internalID: -348147803507990503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_156
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 457
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 903fef306ec7554c0800000000000000
+      internalID: -4299392941903908087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_157
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 453
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba57027d9a1033fb0800000000000000
+      internalID: -4669386559682742869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_158
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 441
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc37248cbb9099b0800000000000000
+      internalID: -5075385546073228034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_159
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 445
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c6fafa5d1c7b680800000000000000
+      internalID: -8739303428369453967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_160
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 297
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ccb20958c2b23340800000000000000
+      internalID: 4842129122933259458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_161
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 287
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d3c13bea4510f80800000000000000
+      internalID: -8142133542003131030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_162
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 292
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873d0da3c24ee12e0800000000000000
+      internalID: -2153032693220060296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_163
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 293
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae8702a8cd8b2380800000000000000
+      internalID: -8994939937891053915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_164
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 293
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e64e6cf75394310800000000000000
+      internalID: 1389700782934486632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_165
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 299
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 292abb9bc86ee7fc0800000000000000
+      internalID: -3495102768707034478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_166
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 297
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd38f49c9702e700800000000000000
+      internalID: 568024872097693108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_167
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 288
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac8a8c7263a336c30800000000000000
+      internalID: 4351385669240137930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_168
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 288
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0e0faa34decf310800000000000000
+      internalID: 1440286855738220739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_169
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 287
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eade03122e248a1e0800000000000000
+      internalID: -2186424080101478994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_170
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 287
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047551f778d5d9f30800000000000000
+      internalID: 4583922832267106112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_171
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 287
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa96c1619da5b7c0800000000000000
+      internalID: -4056145049454994702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_172
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 51
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe6097f7b46b7330800000000000000
+      internalID: 3709669459364966139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_173
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 47
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2e200dcc361350f0800000000000000
+      internalID: -1129534631146672596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_174
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 54
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946863e0a5cb82f30800000000000000
+      internalID: 4551094518429419081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_175
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 52
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa1b9ba92bef2870800000000000000
+      internalID: 8660399172662008489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_176
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 220da53a2ec6800f0800000000000000
+      internalID: -1150549984134115294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_177
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 53
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc2195ec7f3124820800000000000000
+      internalID: 2900903065019814605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_178
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 58
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f612f15e9895970800000000000000
+      internalID: 8744171768679329681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_179
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 55
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39cb051401dd6ecf0800000000000000
+      internalID: -223248069623235437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_180
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 53
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7541eba0729061580800000000000000
+      internalID: -8856881553888897961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_181
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 51
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59407926c32280510800000000000000
+      internalID: 1515498917357618325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_182
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 47
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa0ebf469e786b780800000000000000
+      internalID: -8667590996336582481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_183
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 48
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c985e28426a8725f0800000000000000
+      internalID: -781503855603066724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_184
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 46
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf7fdd78737e9fd0800000000000000
+      internalID: -2333300595586269255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_185
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 55
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abcce3bfe703cad0800000000000000
+      internalID: -2683292226885465177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_186
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 55
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54863d954005f3730800000000000000
+      internalID: 3980988575235926085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_187
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 55
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33fc38a28df0cbae0800000000000000
+      internalID: -1532332352112177357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_188
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 54
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5295096c876d4fee0800000000000000
+      internalID: -1228120984149534427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_189
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 54
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597eb0583d3411310800000000000000
+      internalID: 1373953937074022293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_190
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 51
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fd2cf66d4af5a410800000000000000
+      internalID: 1487870462263045621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_191
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 45
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ec5549d92140c40800000000000000
+      internalID: 5477523514797182600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_192
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 53
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a9212150d3aad70800000000000000
+      internalID: 9055117092769143322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_193
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 36
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a821633ad2e7949a0800000000000000
+      internalID: -6248324273522994550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_194
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 53
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9304fc905e723270800000000000000
+      internalID: 8228778353855038366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_195
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 58
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9852472daabeec890800000000000000
+      internalID: -7435746815834315383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_196
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 55
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4a14382d954a01d0800000000000000
+      internalID: -3383815628728821170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_197
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 53
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf0a59ca1688cbda0800000000000000
+      internalID: -5927713056437722885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_198
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 51
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5614feb38ffd22f90800000000000000
+      internalID: -6979770215220428443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_199
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 47
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce96685e4a6f90170800000000000000
+      internalID: 8145312589162113516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_200
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 48
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb513c1df1f90b730800000000000000
+      internalID: 4012882226999137727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_201
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 46
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19502d0b5caeae0e0800000000000000
+      internalID: -2239719729867389551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_202
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 55
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f63eb2545f6bb7b60800000000000000
+      internalID: 7744985148737446767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_203
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 55
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93acd6c9f55131e0800000000000000
+      internalID: -2219898610045377638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_204
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 54
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de5fb1da452b69b90800000000000000
+      internalID: -7235399674572835347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_205
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 47
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa310f3cfd5c8340800000000000000
+      internalID: 4867368635250850545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_206
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 58
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7ebc3c94aa3a9d0800000000000000
+      internalID: -2764178512481097791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_207
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 55
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd1ea7e72ab2b4b20800000000000000
+      internalID: 3119635143790879196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_208
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 31
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 374eaec1559737be0800000000000000
+      internalID: -1480706446010424205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_209
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 36
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b28c69221a8b5c0800000000000000
+      internalID: -4199429482592326866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_210
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 48
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19c2b6db135ee350800000000000000
+      internalID: 6047862728636418333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_211
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 35
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc756b924a40fce70800000000000000
+      internalID: 9137527272078989263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_212
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 48
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eed03ed9cc8c15cd0800000000000000
+      internalID: -2571053131104055826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_213
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 43
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed1f3210c56596800800000000000000
+      internalID: 606110578014155230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_214
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 41
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 585380165d9b65f80800000000000000
+      internalID: -8118096952181639803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_215
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 31
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb037d1067b225b70800000000000000
+      internalID: 8886212800592425151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_216
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 34
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ac9b0a7f31024eb0800000000000000
+      internalID: -4737222485898191709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_217
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 43
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8523757793893eea0800000000000000
+      internalID: -5844660518814010792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_218
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 35
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4293739d6594f85b0800000000000000
+      internalID: -5363987993814681308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_219
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 46
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f77dd6061367080800000000000000
+      internalID: -9190103699373457522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_220
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 36
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49150520aeb017d70800000000000000
+      internalID: 9039019026798367124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_221
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 31
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f213924cceb264a00800000000000000
+      internalID: 740327484652335407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_222
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 49
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37dc65dc3724d13c0800000000000000
+      internalID: -4387277396855304845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_223
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 38
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32b263112bf68130800000000000000
+      internalID: 3568815874215424573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_224
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 39
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7452275200acbfc00800000000000000
+      internalID: 935563449586558279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_225
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 44
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80200e10a1697fb90800000000000000
+      internalID: -7208127640138415608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_226
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 37
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 880390318969831e0800000000000000
+      internalID: -2217857236581404536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_227
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 41
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4017e55dff0687cc0800000000000000
+      internalID: -3713111240854310652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_228
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 45
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a590147d65b663a0800000000000000
+      internalID: -6672446316199504473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_229
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 43
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c071a1cd8d4c7c0800000000000000
+      internalID: -4051875324884480872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_230
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 36
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7dc1268d687c290800000000000000
+      internalID: -7870173559889537089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_231
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 47
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754dfb46bce0ad3e0800000000000000
+      internalID: -2028292415445543849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_232
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 42
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f5ab96abfe55e80800000000000000
+      internalID: -8190376763386601582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_233
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 41
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b838d087defce10800000000000000
+      internalID: 2220254241195527029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_234
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 34
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be152a7993d54f40800000000000000
+      internalID: 5712204358522052275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_235
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 46
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601f715c31a465e00800000000000000
+      internalID: 1033094613299622150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_236
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 31
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b097910289f48a50800000000000000
+      internalID: 6522612497107095734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_237
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 48
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f1b537b067992560800000000000000
+      internalID: 7289523913522262519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_238
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 35
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d88871ef4d4036d70800000000000000
+      internalID: 9035070590277879949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_239
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 48
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 988503f0b268f8ee0800000000000000
+      internalID: -1256638251516536695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_240
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 43
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 195218046f1074450800000000000000
+      internalID: 6072824779688191377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_241
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 41
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb41be1122a368700800000000000000
+      internalID: 542184723148641467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_242
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 31
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ceeca852cf253150800000000000000
+      internalID: 5851635802595716808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_243
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 34
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ff5e13858733630800000000000000
+      internalID: 3905597622049963778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_244
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 43
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd8de41728b8a610800000000000000
+      internalID: 1632757342916152823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_245
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 35
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f110c63d31e48f60800000000000000
+      internalID: 8035795288163619318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_246
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 46
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c224e8cff21e85b40800000000000000
+      internalID: 5429336947012026924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_247
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 36
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec247d9097b2416b0800000000000000
+      internalID: -5326584660416314674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_248
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 31
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8195bcd7efd3e5ee0800000000000000
+      internalID: -1270509881630435048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_249
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 49
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c6d5b62616d2170800000000000000
+      internalID: 8155281575573810242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_250
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 38
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbec1faf2afc1c910800000000000000
+      internalID: 1855992820355157695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_251
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 39
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224a3033332131cd0800000000000000
+      internalID: -2588705349699394526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_252
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 46
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc108f9caa2026f0800000000000000
+      internalID: -711521820225823564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_253
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 41
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b4617ed33bae710800000000000000
+      internalID: 1723386885874010944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_254
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 43
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163e9208996ea09e0800000000000000
+      internalID: -1654256366150622367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_255
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 40
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf6a4f4f90a81760800000000000000
+      internalID: 7428864191438155714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_256
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 47
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a6f5361f067b1b0800000000000000
+      internalID: -5640933418387674490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_257
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 31
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea329468ec584c00800000000000000
+      internalID: 885059479967775467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_258
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 33
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c45c93126d76c20800000000000000
+      internalID: 3199761498461523047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_259
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 34
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb643c563923b7820800000000000000
+      internalID: 2916980792301405884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_260
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 31
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4dbad6d7d6c96530800000000000000
+      internalID: 3848825986889727307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_261
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 34
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52d6a0585992a180800000000000000
+      internalID: -9105546892000439715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_262
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 31
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b887c333e8c6400800000000000000
+      internalID: 318786024345471803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_263
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 38
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efff826834941ccc0800000000000000
+      internalID: -3692589665104625666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_264
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 31
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55265b3229fc8e40800000000000000
+      internalID: 5660172757117576538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_265
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 31
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7b7895d3db132d0800000000000000
+      internalID: -3300648980693141572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_266
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 32
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fcf1098abf79c590800000000000000
+      internalID: -7653445652600193808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_267
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 34
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853846d11b18dd2b0800000000000000
+      internalID: -5558143767403003048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_268
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 39
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2c228713acaf4e0800000000000000
+      internalID: -1947021575066565961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_269
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 35
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a4c265c9fc62840800000000000000
+      internalID: 5199071090213407299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_270
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 38
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c62bea0bf5caa40800000000000000
+      internalID: 5380780867250711594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_271
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 31
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320f0e52b35049350800000000000000
+      internalID: 6022444353297903651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_272
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 31
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d930dca810cbdd0800000000000000
+      internalID: -2469096800049193604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_273
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 31
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da14388717215ab40800000000000000
+      internalID: 5450783202564325805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_274
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 33
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f72ce051eb8bb420800000000000000
+      internalID: 2646863005851854836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_275
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 34
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3279b3a7a810a0630800000000000000
+      internalID: 3893926522083055395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_276
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 31
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1254d4ad445d4e980800000000000000
+      internalID: -8510442904126405343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_277
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 34
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08b51bee9f165edb0800000000000000
+      internalID: -4763293304795079808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_278
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 31
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19cdd4f0917ca4840800000000000000
+      internalID: 5209194829452270737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_279
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 31
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1429462922eae0a70800000000000000
+      internalID: 8795158585809343041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 5_280
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 33
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fad28d396a8541a0800000000000000
+      internalID: -6825897475601933582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ellipse 5_0: -6138612802710836934
+      Ellipse 5_1: 170968096693191883
+      Ellipse 5_10: 4029995082386977772
+      Ellipse 5_100: 4661608473480413554
+      Ellipse 5_101: -1911960966825504381
+      Ellipse 5_102: 2093291094885843496
+      Ellipse 5_103: -7038309681915753963
+      Ellipse 5_104: -2121838981680182324
+      Ellipse 5_105: 6880377480087167962
+      Ellipse 5_106: 8637993362171513393
+      Ellipse 5_107: -4128329364159919400
+      Ellipse 5_108: -6162362408921097405
+      Ellipse 5_109: -439782039815594770
+      Ellipse 5_11: -2805631671922819518
+      Ellipse 5_110: 3657096044620948963
+      Ellipse 5_111: -6390338527611000414
+      Ellipse 5_112: -7306229526494553707
+      Ellipse 5_113: -7997869049426586279
+      Ellipse 5_114: -5071161609784076669
+      Ellipse 5_115: -375206960719049000
+      Ellipse 5_116: 7959009343937105655
+      Ellipse 5_117: -2366200747780013689
+      Ellipse 5_118: -7560451632229971340
+      Ellipse 5_119: 927937450736310658
+      Ellipse 5_12: 7839886375650372151
+      Ellipse 5_120: 1339119424575107555
+      Ellipse 5_121: -3549796068353017397
+      Ellipse 5_122: -6680656909276235140
+      Ellipse 5_123: 901757634983808183
+      Ellipse 5_124: -1976154539455217996
+      Ellipse 5_125: -3302657489458563831
+      Ellipse 5_126: 8286322965454867026
+      Ellipse 5_127: -2869953531891559216
+      Ellipse 5_128: 3183855265414095931
+      Ellipse 5_129: 5346998576880490658
+      Ellipse 5_13: 3911302683587265563
+      Ellipse 5_130: 6494284339478676426
+      Ellipse 5_131: -1900368167873933667
+      Ellipse 5_132: 1288009366767149916
+      Ellipse 5_133: 8115300392456797970
+      Ellipse 5_134: -8300588712973752818
+      Ellipse 5_135: -757871366187612757
+      Ellipse 5_136: 1116276142481106747
+      Ellipse 5_137: -5722201483679027187
+      Ellipse 5_138: -2346015457962095472
+      Ellipse 5_139: 5966348938388841710
+      Ellipse 5_14: -4757537637192505622
+      Ellipse 5_140: 8099541073168665441
+      Ellipse 5_141: -8673407466309677517
+      Ellipse 5_142: 195287550504428062
+      Ellipse 5_143: 5965401658538183390
+      Ellipse 5_144: 3695659979386830897
+      Ellipse 5_145: -5718610124607952768
+      Ellipse 5_146: -7027157076569013464
+      Ellipse 5_147: -1741923849783408732
+      Ellipse 5_148: 720042356768356867
+      Ellipse 5_149: -7028419871755059506
+      Ellipse 5_15: -785379522219273766
+      Ellipse 5_150: 43224904017221371
+      Ellipse 5_151: 4121479166492068126
+      Ellipse 5_152: -894814418120657307
+      Ellipse 5_153: 5054467981323677582
+      Ellipse 5_154: -7728056703320698399
+      Ellipse 5_155: -348147803507990503
+      Ellipse 5_156: -4299392941903908087
+      Ellipse 5_157: -4669386559682742869
+      Ellipse 5_158: -5075385546073228034
+      Ellipse 5_159: -8739303428369453967
+      Ellipse 5_16: 9007849543136574016
+      Ellipse 5_160: 4842129122933259458
+      Ellipse 5_161: -8142133542003131030
+      Ellipse 5_162: -2153032693220060296
+      Ellipse 5_163: -8994939937891053915
+      Ellipse 5_164: 1389700782934486632
+      Ellipse 5_165: -3495102768707034478
+      Ellipse 5_166: 568024872097693108
+      Ellipse 5_167: 4351385669240137930
+      Ellipse 5_168: 1440286855738220739
+      Ellipse 5_169: -2186424080101478994
+      Ellipse 5_17: -2159049347522531064
+      Ellipse 5_170: 4583922832267106112
+      Ellipse 5_171: -4056145049454994702
+      Ellipse 5_172: 3709669459364966139
+      Ellipse 5_173: -1129534631146672596
+      Ellipse 5_174: 4551094518429419081
+      Ellipse 5_175: 8660399172662008489
+      Ellipse 5_176: -1150549984134115294
+      Ellipse 5_177: 2900903065019814605
+      Ellipse 5_178: 8744171768679329681
+      Ellipse 5_179: -223248069623235437
+      Ellipse 5_18: -7159227556542177893
+      Ellipse 5_180: -8856881553888897961
+      Ellipse 5_181: 1515498917357618325
+      Ellipse 5_182: -8667590996336582481
+      Ellipse 5_183: -781503855603066724
+      Ellipse 5_184: -2333300595586269255
+      Ellipse 5_185: -2683292226885465177
+      Ellipse 5_186: 3980988575235926085
+      Ellipse 5_187: -1532332352112177357
+      Ellipse 5_188: -1228120984149534427
+      Ellipse 5_189: 1373953937074022293
+      Ellipse 5_19: 2095123971399030626
+      Ellipse 5_190: 1487870462263045621
+      Ellipse 5_191: 5477523514797182600
+      Ellipse 5_192: 9055117092769143322
+      Ellipse 5_193: -6248324273522994550
+      Ellipse 5_194: 8228778353855038366
+      Ellipse 5_195: -7435746815834315383
+      Ellipse 5_196: -3383815628728821170
+      Ellipse 5_197: -5927713056437722885
+      Ellipse 5_198: -6979770215220428443
+      Ellipse 5_199: 8145312589162113516
+      Ellipse 5_2: 6715612088294483550
+      Ellipse 5_20: -8784256563167717115
+      Ellipse 5_200: 4012882226999137727
+      Ellipse 5_201: -2239719729867389551
+      Ellipse 5_202: 7744985148737446767
+      Ellipse 5_203: -2219898610045377638
+      Ellipse 5_204: -7235399674572835347
+      Ellipse 5_205: 4867368635250850545
+      Ellipse 5_206: -2764178512481097791
+      Ellipse 5_207: 3119635143790879196
+      Ellipse 5_208: -1480706446010424205
+      Ellipse 5_209: -4199429482592326866
+      Ellipse 5_21: 2064912472271974173
+      Ellipse 5_210: 6047862728636418333
+      Ellipse 5_211: 9137527272078989263
+      Ellipse 5_212: -2571053131104055826
+      Ellipse 5_213: 606110578014155230
+      Ellipse 5_214: -8118096952181639803
+      Ellipse 5_215: 8886212800592425151
+      Ellipse 5_216: -4737222485898191709
+      Ellipse 5_217: -5844660518814010792
+      Ellipse 5_218: -5363987993814681308
+      Ellipse 5_219: -9190103699373457522
+      Ellipse 5_22: 4590225375921675189
+      Ellipse 5_220: 9039019026798367124
+      Ellipse 5_221: 740327484652335407
+      Ellipse 5_222: -4387277396855304845
+      Ellipse 5_223: 3568815874215424573
+      Ellipse 5_224: 935563449586558279
+      Ellipse 5_225: -7208127640138415608
+      Ellipse 5_226: -2217857236581404536
+      Ellipse 5_227: -3713111240854310652
+      Ellipse 5_228: -6672446316199504473
+      Ellipse 5_229: -4051875324884480872
+      Ellipse 5_23: 4177379903121129364
+      Ellipse 5_230: -7870173559889537089
+      Ellipse 5_231: -2028292415445543849
+      Ellipse 5_232: -8190376763386601582
+      Ellipse 5_233: 2220254241195527029
+      Ellipse 5_234: 5712204358522052275
+      Ellipse 5_235: 1033094613299622150
+      Ellipse 5_236: 6522612497107095734
+      Ellipse 5_237: 7289523913522262519
+      Ellipse 5_238: 9035070590277879949
+      Ellipse 5_239: -1256638251516536695
+      Ellipse 5_24: 4241971187590201706
+      Ellipse 5_240: 6072824779688191377
+      Ellipse 5_241: 542184723148641467
+      Ellipse 5_242: 5851635802595716808
+      Ellipse 5_243: 3905597622049963778
+      Ellipse 5_244: 1632757342916152823
+      Ellipse 5_245: 8035795288163619318
+      Ellipse 5_246: 5429336947012026924
+      Ellipse 5_247: -5326584660416314674
+      Ellipse 5_248: -1270509881630435048
+      Ellipse 5_249: 8155281575573810242
+      Ellipse 5_25: -3320638227263431623
+      Ellipse 5_250: 1855992820355157695
+      Ellipse 5_251: -2588705349699394526
+      Ellipse 5_252: -711521820225823564
+      Ellipse 5_253: 1723386885874010944
+      Ellipse 5_254: -1654256366150622367
+      Ellipse 5_255: 7428864191438155714
+      Ellipse 5_256: -5640933418387674490
+      Ellipse 5_257: 885059479967775467
+      Ellipse 5_258: 3199761498461523047
+      Ellipse 5_259: 2916980792301405884
+      Ellipse 5_26: -2049178876465414756
+      Ellipse 5_260: 3848825986889727307
+      Ellipse 5_261: -9105546892000439715
+      Ellipse 5_262: 318786024345471803
+      Ellipse 5_263: -3692589665104625666
+      Ellipse 5_264: 5660172757117576538
+      Ellipse 5_265: -3300648980693141572
+      Ellipse 5_266: -7653445652600193808
+      Ellipse 5_267: -5558143767403003048
+      Ellipse 5_268: -1947021575066565961
+      Ellipse 5_269: 5199071090213407299
+      Ellipse 5_27: 4024175890124746246
+      Ellipse 5_270: 5380780867250711594
+      Ellipse 5_271: 6022444353297903651
+      Ellipse 5_272: -2469096800049193604
+      Ellipse 5_273: 5450783202564325805
+      Ellipse 5_274: 2646863005851854836
+      Ellipse 5_275: 3893926522083055395
+      Ellipse 5_276: -8510442904126405343
+      Ellipse 5_277: -4763293304795079808
+      Ellipse 5_278: 5209194829452270737
+      Ellipse 5_279: 8795158585809343041
+      Ellipse 5_28: -1634692870174331078
+      Ellipse 5_280: -6825897475601933582
+      Ellipse 5_29: -5497637638602047329
+      Ellipse 5_3: 3806536158870667778
+      Ellipse 5_30: -800941961670087702
+      Ellipse 5_31: -5645813896653598016
+      Ellipse 5_32: -6872946192704279539
+      Ellipse 5_33: -1451322004302939620
+      Ellipse 5_34: 1280811320110719168
+      Ellipse 5_35: 4123210877986920899
+      Ellipse 5_36: 7081555245927120002
+      Ellipse 5_37: -8626480963613696705
+      Ellipse 5_38: -105200015327168693
+      Ellipse 5_39: -3449597497392931438
+      Ellipse 5_4: -3220682488720720458
+      Ellipse 5_40: 4918946858647971684
+      Ellipse 5_41: 3171153688862018786
+      Ellipse 5_42: 6891948224575704709
+      Ellipse 5_43: -7802325025049047776
+      Ellipse 5_44: -678546385386769644
+      Ellipse 5_45: -45892271192367947
+      Ellipse 5_46: 5762068859180868912
+      Ellipse 5_47: 8146074385470844119
+      Ellipse 5_48: -1567656107311769160
+      Ellipse 5_49: -4498993443480790728
+      Ellipse 5_5: -3425623456405431240
+      Ellipse 5_50: 8861408269628879537
+      Ellipse 5_51: 8543670206872858669
+      Ellipse 5_52: 3268702772884111503
+      Ellipse 5_53: -3969841562645438262
+      Ellipse 5_54: -2829607726193210499
+      Ellipse 5_55: -2494858351489256838
+      Ellipse 5_56: 1963257592510555721
+      Ellipse 5_57: -442560459050336655
+      Ellipse 5_58: -6756244565227574268
+      Ellipse 5_59: -3914693890037714873
+      Ellipse 5_6: -3433756260864127973
+      Ellipse 5_60: 5368367326278866961
+      Ellipse 5_61: -8808125312138270578
+      Ellipse 5_62: 5359326684876626693
+      Ellipse 5_63: -8382504116285917448
+      Ellipse 5_64: -3120383762890307686
+      Ellipse 5_65: -8454581280075833527
+      Ellipse 5_66: 8410212534493035296
+      Ellipse 5_67: 7548990688694186986
+      Ellipse 5_68: 9071039346304710649
+      Ellipse 5_69: 1961966821839286475
+      Ellipse 5_7: -3712447448058719893
+      Ellipse 5_70: 6997833279239846560
+      Ellipse 5_71: 5754618719860429832
+      Ellipse 5_72: -8070243760287521194
+      Ellipse 5_73: 520716292074541078
+      Ellipse 5_74: 8486464874836155479
+      Ellipse 5_75: -5422738266721655108
+      Ellipse 5_76: -1102616490154999591
+      Ellipse 5_77: -1870588930379782261
+      Ellipse 5_78: 704161751017573736
+      Ellipse 5_79: 2703047378749224963
+      Ellipse 5_8: 281608264340000128
+      Ellipse 5_80: -2428319655775531381
+      Ellipse 5_81: 8941285333462772463
+      Ellipse 5_82: -4963992544642136689
+      Ellipse 5_83: -2319036028096549229
+      Ellipse 5_84: -3564854367998393237
+      Ellipse 5_85: -3743563553832388535
+      Ellipse 5_86: 1100445043738517384
+      Ellipse 5_87: -7922384691470429107
+      Ellipse 5_88: 11542866749562422
+      Ellipse 5_89: -391442793224027554
+      Ellipse 5_9: -7883063758777261327
+      Ellipse 5_90: -4090010906655992457
+      Ellipse 5_91: -6806461898977261265
+      Ellipse 5_92: 7107045564654401801
+      Ellipse 5_93: -74579231058271963
+      Ellipse 5_94: 3670750508429048397
+      Ellipse 5_95: -8812755592962480677
+      Ellipse 5_96: 2784924792537218029
+      Ellipse 5_97: -1471988633687890849
+      Ellipse 5_98: 794120523019334639
+      Ellipse 5_99: -9053919973375682342
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
