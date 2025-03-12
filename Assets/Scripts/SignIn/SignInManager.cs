@@ -24,6 +24,8 @@ public class SignInManager : MonoBehaviour
     public GameObject termsandConditionsPanel;
     public GameObject privacyPolicyPanel;
 
+    public Toggle acceptToggle;
+
     [Header("InputField")]
     public TMP_InputField emailInput;
     public TMP_InputField passwordInput;
@@ -41,6 +43,7 @@ public class SignInManager : MonoBehaviour
     public TMP_InputField verifyCode2Input;
     public TMP_InputField verifyCode3Input;
     public TMP_InputField verifyCode4Input;
+
 
     [Header("TextMeshProUGUI")]
     public TextMeshProUGUI Otp;
@@ -68,12 +71,12 @@ public class SignInManager : MonoBehaviour
     public Sprite mainImage;
 
     [Header("URl")]
-    private string loginUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/auth/login";
-    private string signupUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/auth/signup";
-    private string sendOtp = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/auth/sendOTP";
-    private string forgotPasswordUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/auth/forgotPassword";
-    private string forgotPasswordverifyOTPUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/auth/verifyOTP";
-    private string resetPasswordUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/auth/resetPassword";
+    private string loginUrl                   = "";
+    private string signupUrl                  = "";
+    private string sendOtp                    = "";
+    private string forgotPasswordUrl          = "";
+    private string forgotPasswordverifyOTPUrl = "";
+    private string resetPasswordUrl           = "";
 
     public byte[] imageFile;
 
@@ -91,9 +94,19 @@ public class SignInManager : MonoBehaviour
 
     private void Start()
     {
+        loginUrl =  ApiDataCall.Instance.baseUrl + "auth/login";
+        signupUrl = ApiDataCall.Instance.baseUrl + "auth/signup";
+        sendOtp =  ApiDataCall.Instance.baseUrl + "auth/sendOTP";
+        forgotPasswordUrl = ApiDataCall.Instance.baseUrl + "auth/forgotPassword";
+        forgotPasswordverifyOTPUrl = ApiDataCall.Instance.baseUrl + "auth/verifyOTP";
+        resetPasswordUrl = ApiDataCall.Instance.baseUrl + "auth/resetPassword";
+
+        emailInput.text = "t101@gmail.com";
+        passwordInput.text = "12345678";
+
         isHide = true;
         isNewPasswordHide = true;
-        isConfirmNewPasswordHide = true;
+        isConfirmNewPasswordHide =    true;
         isCreateAccountPasswordHide = true;
 
         if (PlayerPrefs.GetInt("PanelState", 0) == 0)
@@ -215,25 +228,6 @@ public class SignInManager : MonoBehaviour
     public void LoginButtonClick()
     {
         StartCoroutine(LoginRequest(emailInput.text, passwordInput.text, "user", "android", "abcd"));
-
-        //if (IsValidEmail(emailInput.text))
-        //{
-        //ActivePanel(gameDetailsPanel.name);
-        //emailInput.text = "";
-        //passwordInput.text = "";
-        //}
-        //else
-        //{
-        //    //if (passwordInput.text != "1234")
-        //    //{
-        //    //    Debug.Log("Enter wrong Password");
-        //    //}
-
-        //    if (!IsValidEmail(emailInput.text))
-        //    {
-        //        Debug.Log("Enter wrong Email");
-        //    }
-        //}
     }
 
     public IEnumerator LoginRequest(string email, string password, string userType, string deviceType, string deviceToken)
@@ -245,43 +239,53 @@ public class SignInManager : MonoBehaviour
         form.AddField("deviceType", deviceType);
         form.AddField("deviceToken", deviceToken);
 
-        Debug.Log(email + " email");
-        Debug.Log(password + " password");
-        Debug.Log(userType + " userType");
-        Debug.Log(deviceType + " deviceType");
-        Debug.Log(deviceToken + " deviceToken");
+        Debug.Log(loginUrl);
 
-        // Create request
-        using (UnityWebRequest request = UnityWebRequest.Post(loginUrl, form))
+        if (!IsValidEmail(email))
         {
-            yield return request.SendWebRequest();
-
-            // Check response
-            if (request.result == UnityWebRequest.Result.Success)
+            DialogCanvas.Instance.ShowFailedDialog("Please enter valid email address");
+        }
+        else if(password.Length < 8)
+        {
+            DialogCanvas.Instance.ShowFailedDialog("Password should be 8 character long");
+        }
+        else
+        {
+            // Create request
+            using (UnityWebRequest request = UnityWebRequest.Post(loginUrl, form))
             {
-                Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
-                ActivePanel(gameDetailsPanel.name);
-                emailInput.text = "";
-                passwordInput.text = "";
+                yield return request.SendWebRequest();
 
+                // Check response
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    ActivePanel(gameDetailsPanel.name);
+                    emailInput.text = "";
+                    passwordInput.text = "";
 
-                rootData = JsonUtility.FromJson<RootSign>(request.downloadHandler.text);
+                    rootData = JsonUtility.FromJson<RootSign>(request.downloadHandler.text);
 
-                Debug.Log(rootData.data.email + " rootData.data.email");
-                ApiDataCall.Instnce.email = rootData.data.email;
-                Debug.Log(ApiDataCall.Instnce.email + " ApiDataCall.Instnce.email");
-                ApiDataCall.Instnce.userName = rootData.data.userName;
-                Debug.Log(ApiDataCall.Instnce.userName + " ApiDataCall.Instnce.userName");
-                ApiDataCall.Instnce.profile = rootData.data.profile;
-                Debug.Log(ApiDataCall.Instnce.profile + " ApiDataCall.Instnce.profile");
-                ApiDataCall.Instnce.totalPoint = rootData.data.totalPoint;
-                Debug.Log(ApiDataCall.Instnce.totalPoint + " ApiDataCall.Instnce.totalPoint");
-                ApiDataCall.Instnce.token = rootData.data.token;
-                Debug.Log(ApiDataCall.Instnce.token + " ApiDataCall.Instnce.token");
-            }
-            else
-            {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                    ApiDataCall.Instance.email = rootData.data.email;
+                    ApiDataCall.Instance.userName = rootData.data.userName;
+                    ApiDataCall.Instance.profile = rootData.data.profile;
+                    ApiDataCall.Instance.ucode = rootData.data.ucode;
+                    ApiDataCall.Instance.userType = rootData.data.userType;
+                    ApiDataCall.Instance.totalPoint = rootData.data.totalPoint;
+                    ApiDataCall.Instance.toDayPoint = rootData.data.toDayPoint;
+                    ApiDataCall.Instance.token = rootData.data.token;
+                    ApiDataCall.Instance.userId = rootData.data.userId;
+                }
+                else
+                {
+                    Debug.LogError("POST request failed!");
+                    Debug.LogError("Error: " + request.error);
+                    Debug.LogError("Response Code: " + request.responseCode);
+                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                }
             }
         }
     }
@@ -301,22 +305,35 @@ public class SignInManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("email", email);
 
-        Debug.Log(email + " email");
 
-        // Create request
-        using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordUrl, form))
+        if (!IsValidEmail(email))
         {
-            yield return request.SendWebRequest();
+            DialogCanvas.Instance.ShowFailedDialog("Please enter valid email address");
+        }
+        else
+        {
+            // Create request
+            using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordUrl, form))
+            {
+                yield return request.SendWebRequest();
 
-            // Check response
-            if (request.result == UnityWebRequest.Result.Success)
-            {
-                Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
-                ActivePanel(authenticationPanel.name);
-            }
-            else
-            {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                // Check response
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
+                    ActivePanel(authenticationPanel.name);
+                }
+                else
+                {
+                    Debug.LogError("POST request failed!");
+                    Debug.LogError("Error: " + request.error);
+                    Debug.LogError("Response Code: " + request.responseCode);
+                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                }
             }
         }
     }
@@ -336,8 +353,6 @@ public class SignInManager : MonoBehaviour
         form.AddField("otp", otp);
         form.AddField("email", email);
 
-        Debug.Log(email + " email");
-        Debug.Log(otp + " otp");
 
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordverifyOTPUrl, form))
@@ -357,7 +372,14 @@ public class SignInManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }
     }
@@ -391,7 +413,14 @@ public class SignInManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }
     }
@@ -407,24 +436,42 @@ public class SignInManager : MonoBehaviour
         form.AddField("newPassword", newPassword);
         form.AddField("email", email);
 
-        Debug.Log(email + " email");
-        Debug.Log(newPassword + " newPassword");
+        Debug.Log(" new pss " + newPassword);
+        Debug.Log(" email " + email);
 
-        // Create request
-        using (UnityWebRequest request = UnityWebRequest.Post(resetPasswordUrl, form))
+        if (newPasswordInput.text == "" || confirmNewPasswordInput.text == "")
         {
-            yield return request.SendWebRequest();
+            DialogCanvas.Instance.ShowFailedDialog("\"password\" is not allowed to be empty");
+        }
+        else if(newPasswordInput.text.Length < 8 || confirmNewPasswordInput.text.Length < 8)
+        {
+            DialogCanvas.Instance.ShowFailedDialog("Password should be 8 character long");
+        }
+        else if(!newPasswordInput.text.Equals(confirmNewPasswordInput.text))
+        {
+            DialogCanvas.Instance.ShowFailedDialog("Password and confirm password do not match.");
+        }
+        else
+        {
+            // Create request
+            using (UnityWebRequest request = UnityWebRequest.Post(resetPasswordUrl, form))
+            {
+                yield return request.SendWebRequest();
 
-            // Check response
-            if (request.result == UnityWebRequest.Result.Success)
-            {
-                Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
-                isOpenPasswordPanel = true;
-                createPasswordDonePanel.SetActive(true);
-            }
-            else
-            {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                // Check response
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
+                    isOpenPasswordPanel = true;
+                    createPasswordDonePanel.SetActive(true);
+                }
+                else
+                {
+                    Debug.LogError("POST request failed!");
+                    Debug.LogError("Error: " + request.error);
+                    Debug.LogError("Response Code: " + request.responseCode);
+                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+                }
             }
         }
     }
@@ -452,23 +499,58 @@ public class SignInManager : MonoBehaviour
 
         Debug.Log("email " + email);
         Debug.Log("userName " + userName);
+        Debug.Log("api " + sendOtp);
 
-        // Create request
-        using (UnityWebRequest request = UnityWebRequest.Post(sendOtp, form))
+        if(!IsValidEmail(email))
         {
-            yield return request.SendWebRequest();
-
-            // Check response
-            if (request.result == UnityWebRequest.Result.Success)
-            {
-                Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
-                ActivePanel(otpManagePanel.name);
-            }
-            else
-            {
-                Debug.LogError("Sign-Up Failed: " + request.error);
-            }
+            DialogCanvas.Instance.ShowFailedDialog("Please enter valid email address");
         }
+
+        else if (imageFile == null || imageFile.Length == 0)
+        {
+            DialogCanvas.Instance.ShowFailedDialog("Please select the profile image");
+        }
+
+        else if(createAccountPasswordInput.text == "")
+        {
+            DialogCanvas.Instance.ShowFailedDialog("\"password\" is not allowed to be empty");
+        }
+
+        else if(createAccountPasswordInput.text.Length < 8)
+        {
+            DialogCanvas.Instance.ShowFailedDialog("Password should be 8 character long");
+        }
+
+        else if(!acceptToggle.isOn)
+        {
+            DialogCanvas.Instance.ShowFailedDialog("Please accept terms & conditions and privacy policy");
+        }
+        else
+        {
+            // Create request
+            using (UnityWebRequest request = UnityWebRequest.Post(sendOtp, form))
+            {
+                yield return request.SendWebRequest();
+
+                // Check response
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
+                    ActivePanel(otpManagePanel.name);
+                }
+                else
+                {
+                    Debug.LogError("POST request failed!");
+                    Debug.LogError("Error: " + request.error);
+                    Debug.LogError("Response Code: " + request.responseCode);
+                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                }
+            }
+        }    
     }
 
     public void CreateAccountSignInButtonClick()
@@ -598,13 +680,35 @@ public class SignInManager : MonoBehaviour
 
     Texture2D SpriteToTexture2D(Sprite sprite)
     {
-        Debug.Log("SpriteToTexture2D");
-        // Create new texture
-        Texture2D texture = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, TextureFormat.RGB24, false);
-        Debug.Log(texture + " texture_1");
+        if (sprite == null)
+        {
+            Debug.LogError("Sprite is null!");
+            return null;
+        }
 
+        // Create a new Texture2D with the same dimensions as the sprite
+        Texture2D texture = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, TextureFormat.RGBA32, false);
 
-        texture.ReadPixels(new Rect(0, 0, (int)sprite.rect.width, (int)sprite.rect.height), 0, 0);
+        // Get the original sprite texture
+        Texture2D originalTexture = sprite.texture;
+
+        // Create a RenderTexture
+        RenderTexture renderTexture = RenderTexture.GetTemporary(originalTexture.width, originalTexture.height);
+
+        // Copy the original texture to the RenderTexture
+        Graphics.Blit(originalTexture, renderTexture);
+
+        // Store the previous active RenderTexture
+        RenderTexture previous = RenderTexture.active;
+        RenderTexture.active = renderTexture;
+
+        // Read pixels from the RenderTexture
+        texture.ReadPixels(new Rect(sprite.rect.x, sprite.rect.y, sprite.rect.width, sprite.rect.height), 0, 0);
+        texture.Apply();
+
+        // Restore the previous RenderTexture and clean up
+        RenderTexture.active = previous;
+        RenderTexture.ReleaseTemporary(renderTexture);
 
         return texture;
     }
@@ -793,14 +897,26 @@ public class SignInManager : MonoBehaviour
 
                 rootData = JsonUtility.FromJson<RootSign>(request.downloadHandler.text);
 
-                ApiDataCall.Instnce.email = rootData.data.email;
-                ApiDataCall.Instnce.userName = rootData.data.userName;
-                ApiDataCall.Instnce.profile = rootData.data.profile;
-                ApiDataCall.Instnce.totalPoint = rootData.data.totalPoint;
+                ApiDataCall.Instance.email = rootData.data.email;
+                ApiDataCall.Instance.userName = rootData.data.userName;
+                ApiDataCall.Instance.profile = rootData.data.profile;
+                ApiDataCall.Instance.ucode = rootData.data.ucode;
+                ApiDataCall.Instance.userType = rootData.data.userType;
+                ApiDataCall.Instance.totalPoint = rootData.data.totalPoint;
+                ApiDataCall.Instance.toDayPoint = rootData.data.toDayPoint;
+                ApiDataCall.Instance.token =  rootData.data.token;
+                ApiDataCall.Instance.userId = rootData.data.userId;
             }
             else
             {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status =  SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }
     }
@@ -839,7 +955,7 @@ public class ApiData
     public string ucode;
     public string userType;
     public int totalPoint;
-    public string toDayPoint;
+    public int toDayPoint;
     public string token;
     public string deleteReason;
     public string isSubscription;
@@ -872,7 +988,7 @@ public class SignupData
     public SignupData(string userName, string email, string password)
     {
         this.userName = userName;
-        this.email = email;
+        this.email    =    email;
         this.password = password;
     }
 }

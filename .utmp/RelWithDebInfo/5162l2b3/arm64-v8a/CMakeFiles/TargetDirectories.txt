@@ -1,0 +1,8 @@
+/Users/imac/Findit/.utmp/RelWithDebInfo/5162l2b3/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/imac/Findit/.utmp/RelWithDebInfo/5162l2b3/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/imac/Findit/.utmp/RelWithDebInfo/5162l2b3/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/imac/Findit/.utmp/RelWithDebInfo/5162l2b3/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/imac/Findit/.utmp/RelWithDebInfo/5162l2b3/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+/Users/imac/Findit/.utmp/RelWithDebInfo/5162l2b3/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/imac/Findit/.utmp/RelWithDebInfo/5162l2b3/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/imac/Findit/.utmp/RelWithDebInfo/5162l2b3/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

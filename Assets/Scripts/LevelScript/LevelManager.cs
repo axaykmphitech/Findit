@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.Networking;
 using System.Collections;
+using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 public class LevelManager : MonoBehaviour
 {
@@ -33,6 +36,8 @@ public class LevelManager : MonoBehaviour
     public GameObject editProfileName;
     public GameObject editProfileEmail;
     public GameObject settingContent;
+    public Transform userPhotoListContent;
+    public GameObject userPhotoItemPrefab;
 
     [Header("Int & Float")]
     public int levelNumber = 0;
@@ -88,41 +93,64 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI myProfileUserInput;
     public TextMeshProUGUI settingUserInput;
     public TextMeshProUGUI settingEmailInput;
+    public TextMeshProUGUI[] totalStars;
+    public TextMeshProUGUI[] todayStars;
 
     [Header("Url")]
-    private string contactUsUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/user/contactUs";
-    private string deleteAccountUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/user/deleteAccount";
-    private string changePasswordUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/user/changePassword";
-    private string updateProfileUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/user/updateProfile";
+    private string contactUsUrl      = "";
+    private string deleteAccountUrl  = "";
+    private string changePasswordUrl = "";
+    private string updateProfileUrl  = "";
+    private string userPhotoList     = "";
+    private string getiImageByDate   = "";
+    private string logOutUrl         = "";
 
     public byte[] imageFile;
+    private string deleteReason;
+
+    UJsonResponse uJsonResponse;
 
     public static LevelManager Instance;
 
     private void Awake()
     {
+        Debug.Log("awake");
         Instance = this;
     }
 
     public void Start()
     {
+        Debug.Log("start");
+        contactUsUrl = ApiDataCall.Instance.baseUrl + "user/contactUs";
+        deleteAccountUrl = ApiDataCall.Instance.baseUrl + "user/deleteAccount";
+        changePasswordUrl = ApiDataCall.Instance.baseUrl + "user/changePassword";
+        updateProfileUrl = ApiDataCall.Instance.baseUrl + "user/updateProfile";
+        userPhotoList = ApiDataCall.Instance.baseUrl + "user/userPhotosList";
+        getiImageByDate = ApiDataCall.Instance.baseUrl + "user/getImagesByDate";
+        logOutUrl = ApiDataCall.Instance.baseUrl + "user/logOut";
+
+
         isCurrentPasswordHide = true;
         isNewPasswordHide = true;
         isConfirmPasswordHide = true;
         PanelActive(levelPanel.name);
 
-        myProfileEmailInput.text = ApiDataCall.Instnce.email;
-        settingEmailInput.text = ApiDataCall.Instnce.email;
+        myProfileEmailInput.text = ApiDataCall.Instance.email;
+        settingEmailInput.text =   ApiDataCall.Instance.email;
+        editProfileEmailInput.text = ApiDataCall.Instance.email;
+        editProfileNameInput.text = ApiDataCall.Instance.userName;
 
-        string imageUrl = ApiDataCall.Instnce.profile; // Get image URL
+        string imageUrl = ApiDataCall.Instance.profile;
         StartCoroutine(LoadImageFromURL(imageUrl));
 
-        myProfileUserInput.text = ApiDataCall.Instnce.userName;
-        settingUserInput.text = ApiDataCall.Instnce.userName;
+        myProfileUserInput.text = ApiDataCall.Instance.userName;
+        settingUserInput.text =   ApiDataCall.Instance.userName;
+        SetStars();
     }
 
     IEnumerator LoadImageFromURL(string url)
     {
+        Debug.Log("load iamge from url");
         using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
         {
             yield return request.SendWebRequest();
@@ -130,19 +158,62 @@ public class LevelManager : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-                Sprite sprite = ConvertTextureToSprite(texture);
+                Sprite sprite = Texture2DToSprite(texture);
                 settingPictureImage.sprite = sprite; // Set the sprite to the UI Image
-                myProfilePictureImage.sprite = sprite; // Set the sprite to the UI Image
+                myProfilePictureImage.sprite = sprite;
+                pictureImage.sprite = sprite;// Set the sprite to the UI Image
             }
             else
             {
-                Debug.LogError("Image download failed: " + request.error);
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                //string Json = request.downloadHandler.text;
+                //SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                //DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }
     }
 
-    Sprite ConvertTextureToSprite(Texture2D texture)
+    IEnumerator LoadImageFromURL(Image image ,string url)
     {
+        Debug.Log("load iamge form url");
+        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
+        {
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+                Sprite sprite = Texture2DToSprite(texture);
+                image.sprite = sprite;
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode statuss = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(statuss["message"]);
+            }
+        }
+    }
+
+    Sprite Texture2DToSprite(Texture2D texture)
+    {
+        Debug.Log("texture 2d sprite");
+        if (texture == null)
+        {
+            Debug.LogError("Texture is null!");
+            return null;
+        }
+
+        // Create a new sprite with full texture dimensions
         return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     }
 
@@ -285,165 +356,370 @@ public class LevelManager : MonoBehaviour
 
     public void PlayTodaysPhotosButtonClick()
     {
-        PanelActive(tapPanel.name);
+        Debug.Log("play todays photos burron click");
+        StartCoroutine(GetImageByDateRoutine());
+    }
+
+    public IEnumerator GetImageByDateRoutine()
+    {
+        Debug.Log("get iamge by date routine");
+        WWWForm form = new WWWForm();
+
+        DateTime todayDate = DateTime.Today;
+        string formattedDate = todayDate.ToString("yyyy-MM-dd");
+
+        form.AddField("date", formattedDate);
+
+        // Create request
+        using (UnityWebRequest request = UnityWebRequest.Post(getiImageByDate, form))
+        {
+            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("POST request successful: " + request.downloadHandler.text);
+                PanelActive(tapPanel.name);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+
+                Debug.Log(status["data"]["findImg"]["title"]);
+                Debug.Log(status["data"]["findImg"]["photo"]);
+                Debug.Log(status["data"]["findImg"]["hint"]) ;
+                Debug.Log(status["data"]["findImg"]["xPos"]) ;
+                Debug.Log(status["data"]["findImg"]["xPos"]) ; 
+
+                ApiDataCall.Instance.title  =    status["data"]["findImg"]["title"];
+                ApiDataCall.Instance.photo  =    status["data"]["findImg"]["photo"];
+                ApiDataCall.Instance.hint   =     status["data"]["findImg"]["hint"];
+                ApiDataCall.Instance.xPos   =     status["data"]["findImg"]["xPos"];
+                ApiDataCall.Instance.yPos   =     status["data"]["findImg"]["yPos"];
+                ApiDataCall.Instance.xScale =   status["data"]["findImg"]["xScale"];
+                ApiDataCall.Instance.yScale =   status["data"]["findImg"]["yScale"];
+                ApiDataCall.Instance.id     =       status["data"]["findImg"]["id"];
+                
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            }
+        }
     }
 
     public void playPastButtonClick()
     {
+        Debug.Log("play past button lcick");
         PanelActive(mapsPanel.name);
         LevelSet();
     }
 
     public void SubmitPhotoBtnClick()
     {
+        Debug.Log("submit photo btn click");
         SceneManager.LoadScene(3);
     }
 
     public void SettingButtonClick()
     {
+        Debug.Log("setting button click");
         PanelActive(settingPanel.name);
     }
 
     public void BackMapsBtnClick()
     {
+        Debug.Log("back maps btn click");
         PanelActive(levelPanel.name);
     }
 
     public void SettingBackButtonClick()
     {
+        Debug.Log("settings back button lcik");
         settingContent.GetComponent<RectTransform>().position = new Vector3(settingContent.transform.position.x, 0, settingContent.transform.position.z);
         PanelActive(levelPanel.name);
     }
 
     public void MyProfileButtonClick()
     {
+        Debug.Log("my profile button clikc");
         PanelActive(myProfilePanel.name);
     }
 
     public void AllImagesButtonClick()
     {
+        Debug.Log("all image button lcik");
         PanelActive(allImagePanel.name);
+        StartCoroutine(UserPhotoList());
+    }
+
+    public IEnumerator UserPhotoList()
+    {
+        Debug.Log("user photo list");
+        WWWForm form = new WWWForm();
+        form.AddField("skip" ,  0);
+        form.AddField("limit", 10);
+
+        using (UnityWebRequest request = UnityWebRequest.Post(userPhotoList, form))
+        {
+            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("photlist " + request.downloadHandler.text);
+                string Json = request.downloadHandler.text;
+                uJsonResponse = JsonConvert.DeserializeObject<UJsonResponse>(Json);
+
+                if (uJsonResponse != null)
+                {
+                    Debug.Log("Total Records: " + uJsonResponse.Data.totalRecords);
+
+                    foreach (Transform item in userPhotoListContent)
+                    {
+                        Destroy(item.gameObject);
+                    }
+                    for (int i = 0; i < uJsonResponse.Data.imagesList.Length; i++)
+                    {
+                        ImageData image = uJsonResponse.Data.imagesList[i];
+
+                        Debug.Log(image.title + " " + image.date);
+
+                        GameObject imageItem = Instantiate(userPhotoItemPrefab, userPhotoListContent);
+                        imageItem.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = image.title;
+
+                        string date = image.date;
+                        if (date == "")
+                            date = "No date assigned";
+
+                        imageItem.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = date;
+
+                        if (image.status == "approved")
+                        {
+                            Debug.Log("approved");
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(true);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(3).gameObject.SetActive(false);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.SetActive(false);
+                        }
+
+                        if (image.status == "pending")
+                        {
+                            Debug.Log("pending");
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(3).gameObject.SetActive(true);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.SetActive(false);
+                        }
+
+                        if (image.status == "rejected")
+                        {
+                            Debug.Log("rejected");
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.SetActive(true);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(3).gameObject.SetActive(false);
+                        }
+
+                        StartCoroutine(LoadImageFromURL(imageItem.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>(), image.photo));
+                    }
+
+                    ///image 000
+                    ///title 0010
+                    ///date 00111
+                    ///approved 0012
+                    ///rejected 0013
+                    ///pending  0014
+                }
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            }
+        }
     }
 
     public void AllImagesBackButtonClick()
     {
+        Debug.Log("allimage back button click");
         settingContent.GetComponent<RectTransform>().position = new Vector3(settingContent.transform.position.x, 0, settingContent.transform.position.z);
         PanelActive(settingPanel.name);
     }
 
     public void AllImagesDetailsButtonClick()
     {
+        Debug.Log("all iamge details button clik");
         allImagedetailPanel.SetActive(true);
         isAllImagedetailPanel = true;
     }
 
     public void AllImagedetailCancelButtonClick()
     {
+        Debug.Log("all image detail cancle button lcick");
         allImagedetailPanel.SetActive(false);
         isAllImagedetailPanel = false;
     }
 
     public void SubscriptionButtonClick()
     {
+        Debug.Log("subscription button click");
         PanelActive(subscriptionPanel.name);
     }
 
     public void SubscriptionBackButtonClick()
     {
+        Debug.Log("subscripn back button click");
         settingContent.GetComponent<RectTransform>().position = new Vector3(settingContent.transform.position.x, 0, settingContent.transform.position.z);
         PanelActive(settingPanel.name);
     }
 
     public void SubscriptionTermsandConditionsButtonClick()
     {
+        Debug.Log("subscription termsandcondition button click");
         isSubscriptionPanelClick = true;
         PanelActive(termsandConditionsPanel.name);
     }
 
     public void SubscriptionprivacyPolicyButtonClick()
     {
+        Debug.Log("subscription privacy policy button click");
         isSubscriptionPanelClick = true;
         PanelActive(privacyPolicyPanel.name);
     }
 
     public void SubscribeButtonClick()
     {
+        Debug.Log("subscribe button click");
         PanelActive(settingPanel.name);
     }
 
     public void ChangePasswordButtonClick()
     {
+        Debug.Log("change password button click");
         PanelActive(changePasswordPanel.name);
     }
 
     public void AboutUsButtonClick()
     {
+        Debug.Log("about us button clilck");
         PanelActive(aboutsPanel.name);
     }
 
     public void PrivacyPolicyButtonClick()
     {
+        Debug.Log("privacy policy button lcick");
         PanelActive(privacyPolicyPanel.name);
     }
 
     public void ContactUsButtonClick()
     {
+        Debug.Log("contact us button click");
         PanelActive(contactUsPanel.name);
     }
 
     public void TermsandConditionsButtonClick()
     {
+        Debug.Log("termsand condition button click");
         PanelActive(termsandConditionsPanel.name);
     }
 
     public void DeleteAccountButtonClick()
     {
+        Debug.Log("delete account button click");
         PanelActive(deleteAccountPanel.name);
     }
 
     public void SignOutButtonClick()
     {
+        Debug.Log("signoutbutton click");
         signOutPanel.SetActive(true);
         isSignOutPanel = true;
     }
 
     public void SignOutYesButtonClick()
     {
-        SceneManager.LoadScene(0);
-        isSignOutPanel = false;
+        Debug.Log("signout yes button click");
+        StartCoroutine(LogOutRoutine());
+    }
+
+    public IEnumerator LogOutRoutine()
+    {
+        Debug.Log("logout routine");
+        WWWForm form = new WWWForm();
+
+        using (UnityWebRequest request = UnityWebRequest.Post(logOutUrl, form))
+        {
+            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Lgout " + request.downloadHandler.text);
+                SceneManager.LoadScene(0);
+                isSignOutPanel = false;
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            }
+        }
     }
 
     public void SignOutNoButtonClick()
     {
+        Debug.Log("sign out no button click");
         signOutPanel.SetActive(false);
         isSignOutPanel = false;
     }
 
     public void MyProfileBackButtonClick()
     {
+        Debug.Log("my profile back button lcick");
         settingContent.GetComponent<RectTransform>().position = new Vector3(settingContent.transform.position.x, 0, settingContent.transform.position.z);
         PanelActive(settingPanel.name);
     }
 
     public void EditProfileBackButtonClick()
     {
+        Debug.Log("edit profile back button click");
         PanelActive(myProfilePanel.name);
-        editProfileNameInput.text = "";
-        editProfileEmailInput.text = "";
+        //editProfileNameInput.text = "";
+        //editProfileEmailInput.text = "";
     }
 
     public void EditButtonClick()
     {
+        Debug.Log("edit button click");
         PanelActive(editProfilePanel.name);
     }
 
     public void UpdateProfileButtonClick()
     {
+        Debug.Log("update profile butotn");
         StartCoroutine(UpdateProfileCheck(editProfileNameInput.text, imageFile));
     }
 
     public IEnumerator UpdateProfileCheck(string userName, byte[] profile)
     {
+        Debug.Log("update profile check");
+
         WWWForm form = new WWWForm();
         form.AddField("userName", userName);
         form.AddBinaryData("profile", profile, "profileImage", "image/png");
@@ -454,36 +730,56 @@ public class LevelManager : MonoBehaviour
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(updateProfileUrl, form))
         {
-            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instnce.token);
+            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
             yield return request.SendWebRequest();
 
             // Check response
             if (request.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
-                ApiDataCall.Instnce.userName = userName;
-                myProfileUserInput.text = ApiDataCall.Instnce.userName;
-                settingUserInput.text = ApiDataCall.Instnce.userName;
+                Debug.Log("POST request successful: " + request.downloadHandler.text);
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+
+                int ResponseCode = status["ResponseCode"];
+                Debug.Log(ResponseCode);
+
+
+                ApiDataCall.Instance.userName = userName;
+                myProfileUserInput.text = ApiDataCall.Instance.userName;
+                settingUserInput.text =   ApiDataCall.Instance.userName;
                 settingContent.GetComponent<RectTransform>().position = new Vector3(settingContent.transform.position.x, 0, settingContent.transform.position.z);
-                PanelActive(settingPanel.name);
-                editProfileNameInput.text = "";
+                PanelActive(settingPanel.name) ;
+                editProfileNameInput.text =  "";
                 editProfileEmailInput.text = "";
+
+                StartCoroutine(LoadImageFromURL(settingPictureImage, status["data"]["profile"]));
+                StartCoroutine(LoadImageFromURL(myProfilePictureImage, status["data"]["profile"]));
+                StartCoroutine(LoadImageFromURL(pictureImage, status["data"]["profile"]));
             }
             else
             {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }
     }
 
     public void CameraButtonClick()
     {
+        Debug.Log("camera button click");
         editPictureProfilePanel.SetActive(true);
         isEditPictureProfilePanel = true;
     }
 
     public void CameraChooseButtonClick()
     {
+        Debug.Log("camera choose button lcick");
         editPictureProfilePanel.SetActive(false);
         isEditPictureProfilePanel = false;
         CameraManager.Instance.TakePicture(pictureImage);
@@ -491,6 +787,7 @@ public class LevelManager : MonoBehaviour
 
     public void GalleryButtonClick()
     {
+        Debug.Log("gallery button lcik");
         editPictureProfilePanel.SetActive(false);
         isEditPictureProfilePanel = false;
         PickImages();
@@ -498,11 +795,13 @@ public class LevelManager : MonoBehaviour
 
     public void PickImages()
     {
+        Debug.Log("pick images");
         PickImage(2048);
     }
 
     public void PickImage(int maxSize)
     {
+        Debug.Log("pick image");
         NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
         {
             if (path != null)
@@ -536,6 +835,7 @@ public class LevelManager : MonoBehaviour
 
     byte[] ConvertSpriteToBytes(Sprite sprite)
     {
+
         Debug.Log("ConvertSpriteToBytes");
         if (sprite == null)
         {
@@ -554,19 +854,43 @@ public class LevelManager : MonoBehaviour
 
     Texture2D SpriteToTexture2D(Sprite sprite)
     {
-        Debug.Log("SpriteToTexture2D");
-        // Create new texture
-        Texture2D texture = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, TextureFormat.RGB24, false);
-        Debug.Log(texture + " texture_1");
+        Debug.Log("sprite to texture 2d");
+        if (sprite == null)
+        {
+            Debug.LogError("Sprite is null!");
+            return null;
+        }
 
+        // Create a new Texture2D with the same dimensions as the sprite
+        Texture2D texture = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, TextureFormat.RGBA32, false);
 
-        texture.ReadPixels(new Rect(0, 0, (int)sprite.rect.width, (int)sprite.rect.height), 0, 0);
+        // Get the original sprite texture
+        Texture2D originalTexture = sprite.texture;
+
+        // Create a RenderTexture
+        RenderTexture renderTexture = RenderTexture.GetTemporary(originalTexture.width, originalTexture.height);
+
+        // Copy the original texture to the RenderTexture
+        Graphics.Blit(originalTexture, renderTexture);
+
+        // Store the previous active RenderTexture
+        RenderTexture previous = RenderTexture.active;
+        RenderTexture.active = renderTexture;
+
+        // Read pixels from the RenderTexture
+        texture.ReadPixels(new Rect(sprite.rect.x, sprite.rect.y, sprite.rect.width, sprite.rect.height), 0, 0);
+        texture.Apply();
+
+        // Restore the previous RenderTexture and clean up
+        RenderTexture.active = previous;
+        RenderTexture.ReleaseTemporary(renderTexture);
 
         return texture;
     }
 
     public void ChangePasswordBackButtonClick()
     {
+        Debug.Log("change password back button lcick");
         settingContent.GetComponent<RectTransform>().position = new Vector3(settingContent.transform.position.x, 0, settingContent.transform.position.z);
         PanelActive(settingPanel.name);
         currentPasswordInput.text = "";
@@ -576,11 +900,13 @@ public class LevelManager : MonoBehaviour
 
     public void UpdatePasswordButtonClick()
     {
+        Debug.Log("update password button lcick");
         StartCoroutine(UpdatePasswordCheck(currentPasswordInput.text, newPasswordInput.text));
     }
 
     public IEnumerator UpdatePasswordCheck(string oldPassword, string newPassword)
     {
+        Debug.Log("update password chceck");
         WWWForm form = new WWWForm();
         form.AddField("oldPassword", oldPassword);
         form.AddField("newPassword", newPassword);
@@ -591,8 +917,8 @@ public class LevelManager : MonoBehaviour
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(changePasswordUrl, form))
         {
-            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instnce.token);
-            Debug.Log(ApiDataCall.Instnce.token);
+            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
+            Debug.Log(ApiDataCall.Instance.token);
             yield return request.SendWebRequest();
 
             // Check response
@@ -606,7 +932,14 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }
     }
@@ -719,10 +1052,10 @@ public class LevelManager : MonoBehaviour
         form.AddField("subject", subject);
         form.AddField("message", message);
 
-        Debug.Log(email + " email");
-        Debug.Log(name + " name");
-        Debug.Log(subject + " subject");
-        Debug.Log(message + " message");
+        //Debug.Log(email + " email");
+        //Debug.Log(name + " name");
+        //Debug.Log(subject + " subject");
+        //Debug.Log(message + " message");
 
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(contactUsUrl, form))
@@ -741,7 +1074,14 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }
     }
@@ -772,33 +1112,41 @@ public class LevelManager : MonoBehaviour
 
     public void DeleteButtonClick()
     {
-        StartCoroutine(DeleteCheck(ohterReasonInput.text));
+        StartCoroutine(DeleteCheck(deleteReason));
     }
 
     public IEnumerator DeleteCheck(string deleteReason)
     {
+        if(deleteReason == null)
+        {
+            deleteReason = ohterReasonInput.text;
+        }
+
         WWWForm form = new WWWForm();
         form.AddField("deleteReason", deleteReason);
-
-        Debug.Log(deleteReason + " deleteReason");
-
-        // Create request
+        
         using (UnityWebRequest request = UnityWebRequest.Post(deleteAccountUrl, form))
         {
-            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instnce.token);
+            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
             yield return request.SendWebRequest();
 
-            // Check response
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
                 isDeleteAccountPopUpPanel = false;
                 ohterReasonInput.text = "";
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(0) ;
             }
             else
             {
-                Debug.LogError("Sign-Up Failed: " + request.error);
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: "         + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }
     }
@@ -845,21 +1193,25 @@ public class LevelManager : MonoBehaviour
     public void DeletOption1ButtonClick()
     {
         ButtonSelect(dOption1, dOption2, dOption3, dOption4, dOption5, false);
+        deleteReason = "i'm using deferent account";
     }
 
     public void DeletOption2ButtonClick()
     {
         ButtonSelect(dOption2, dOption1, dOption3, dOption4, dOption5, false);
+        deleteReason = "the app isn't working properly";
     }
 
     public void DeletOption3ButtonClick()
     {
         ButtonSelect(dOption3, dOption1, dOption2, dOption4, dOption5, false);
+        deleteReason = "i'm worried about my privacy";
     }
 
     public void DeletOption4ButtonClick()
     {
         ButtonSelect(dOption4, dOption1, dOption3, dOption2, dOption5, false);
+        deleteReason = "no one repliles";
     }
 
     public void DeletOption5ButtonClick()
@@ -932,4 +1284,45 @@ public class LevelManager : MonoBehaviour
         signOutPanel.SetActive(panel.Equals(signOutPanel.name));
         subscriptionPanel.SetActive(panel.Equals(subscriptionPanel.name));
     }
+
+    public void SetStars()
+    {
+        foreach (var item in totalStars)
+            item.text = ApiDataCall.Instance.totalPoint.ToString();
+
+        foreach (var item in todayStars)
+            item.text = ApiDataCall.Instance.toDayPoint.ToString();
+    }
+
+
+}
+
+[Serializable]
+public class UserData
+{
+    public string UserId { get; set; }
+    public string Photo { get; set; }
+    public string Title { get; set; }
+    public string Hint { get; set; }
+    public string Date { get; set; }
+    public string Status { get; set; }
+    public string RejectReason { get; set; }
+    public string Id { get; set; }
+}
+
+[Serializable]
+public class UData
+{
+    public int TotalRecords { get; set; }
+    public List<ImageData> ImagesList { get; set; }
+}
+
+[Serializable]
+public class UJsonResponse
+{
+    public string Version { get; set; }
+    public int StatusCode { get; set; }
+    public bool IsSuccess { get; set; }
+    public Data Data      { get; set; }
+    public string Message { get; set; }
 }

@@ -11,6 +11,12 @@ public class DragSprite : MonoBehaviour
 
     private Bounds boundaryBounds;
 
+    private void OnEnable()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled =  true;
+    }
+
     void Start()
     {
         boundaryObject = this.gameObject.transform.parent.transform;
@@ -23,6 +29,7 @@ public class DragSprite : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(dragging);
         if (dragging)
         {
             Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
@@ -43,6 +50,7 @@ public class DragSprite : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("down");
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         offset.z = 0; 
         dragging = true;
@@ -50,6 +58,7 @@ public class DragSprite : MonoBehaviour
 
     void OnMouseUp()
     {
+        Debug.Log("up");
         dragging = false;
     }
 }

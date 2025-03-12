@@ -153,12 +153,9 @@ public class CameraManager : MonoBehaviour
             return null;
         }
 
-
-        // Convert Sprite to Texture2D
         Texture2D texture = SpriteToTexture2D(sprite);
         Debug.Log(texture + " texture");
 
-        // Encode to PNG (You can also use EncodeToJPG())
         return texture.EncodeToPNG();
     }
 
@@ -169,7 +166,6 @@ public class CameraManager : MonoBehaviour
         // Create new texture
         Texture2D texture = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, TextureFormat.RGB24, false);
         Debug.Log(texture + " texture_1");
-
 
         texture.ReadPixels(new Rect(0, 0, (int)sprite.rect.width, (int)sprite.rect.height), 0, 0);
 

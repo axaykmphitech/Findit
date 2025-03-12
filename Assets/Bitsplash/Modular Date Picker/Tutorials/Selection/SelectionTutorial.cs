@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using TMPro;
+using System.Globalization;
 
 namespace Bitsplash.DatePicker.Tutorials
 {
@@ -66,7 +67,12 @@ namespace Bitsplash.DatePicker.Tutorials
                     var date = selection.GetItem(i);
                     text += date.ToShortDateString();
                 }
-                InfoText.text = text;
+
+                DateTime parsedDate = DateTime.Today;
+                parsedDate = DateTime.ParseExact(text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                string formattedDate = parsedDate.ToString("yyyy-MM-dd");
+
+                InfoText.text = formattedDate;
                 InfoText.GetComponent<TextMeshProUGUI>().color = Color.black;
             }
         }
@@ -77,7 +83,6 @@ namespace Bitsplash.DatePicker.Tutorials
         // Update is called once per frame
         void Update()
         {
-
         }
     }
 }

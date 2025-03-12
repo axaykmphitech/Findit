@@ -5778,7 +5778,7 @@ GameObject:
   - component: {fileID: 1283467389}
   - component: {fileID: 1283467388}
   m_Layer: 5
-  m_Name: Hint
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7568,6 +7568,7 @@ MonoBehaviour:
   isPanelOpen: 0
   isHintPanel: 0
   Sharetext: {fileID: 1914285471}
+  totalStars: {fileID: 878075349}
 --- !u!1 &1716150917
 GameObject:
   m_ObjectHideFlags: 0

@@ -200,6 +200,7 @@ namespace Bitsplash.DatePicker
 
         private void SetText(string text)
         {
+            Debug.Log("Date "+ text);
             this.text = text;
             MediateTextMeshProText(text);
             var comp = mTextObject as Text;

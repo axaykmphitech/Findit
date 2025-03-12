@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +18,11 @@ public class GameManager : MonoBehaviour
     public GameObject submitPanel;
     public GameObject createLevelPanel;
     public GameObject rightAns;
+    public RawImage updateImagePreview;
+
+    [Header("Buttons")]
+    public Button deletePreviewImageButton;
+    public Button uploadPreviewImageButton;
 
     [Header("Transform")]
     public Transform level;
@@ -42,6 +49,11 @@ public class GameManager : MonoBehaviour
     [Header("Camera")]
     public Camera camera;
 
+    private byte[] imageFile;
+
+    [Header("URl")]
+    private string uploadPhotoUrl = "";
+
     public static GameManager Instance;
 
     public void Awake()
@@ -51,6 +63,8 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+        uploadPhotoUrl = ApiDataCall.Instance.baseUrl + "user/uploadPhoto";
+
         ActivePanel(submitPanel.name);
         StartCoroutine(GetData());
     }
@@ -70,7 +84,7 @@ public class GameManager : MonoBehaviour
                 camera.orthographicSize = 13;
                 ActivePanel(submitPanel.name);
                 level.gameObject.SetActive(false);
-                level.GetComponent<SpriteRenderer>().sprite = null;
+                //level.GetComponent<SpriteRenderer>().sprite = null;
                 level.GetComponent<TapCreateSpriteLevel>().isAnsSpriteAvailable = false;
                 level.GetComponent<TapCreateSpriteLevel>().isCreated = false;
 
@@ -80,6 +94,8 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+
     }
 
     public void Save()
@@ -153,33 +169,101 @@ public class GameManager : MonoBehaviour
         camera.orthographicSize = 13;
         level.gameObject.SetActive(false);
         ActivePanel(submitPanel.name);
-        level.GetComponent<SpriteRenderer>().sprite = null;
-        level.GetComponent<TapCreateSpriteLevel>().isAnsSpriteAvailable = false;
-        level.GetComponent<TapCreateSpriteLevel>().isCreated = false;
+        //level.GetComponent<SpriteRenderer>().sprite = null;
+        //level.GetComponent<TapCreateSpriteLevel>().isAnsSpriteAvailable = false;
+        //level.GetComponent<TapCreateSpriteLevel>().isCreated = false;
 
-        if (level.transform.childCount == 1)
-        {
-            Destroy(level.transform.GetChild(0).gameObject);
-        }
+        //if (level.transform.childCount == 1)
+        //{
+        //    Destroy(level.transform.GetChild(0).gameObject);
+        //}
     }
 
     public void ContinueButtonClick()
     {
-        if (level.transform.childCount == 0)
-        {
-            level.GetComponent<TapCreateSpriteLevel>().enabled = false;
-            level.GetComponent<BoxCollider2D>().enabled = false;
-            canvas.gameObject.SetActive(true);
-        }
-        else if (level.transform.childCount == 1)
-        {
-            level.GetComponent<TapCreateSpriteLevel>().enabled = false;
-            level.GetComponent<BoxCollider2D>().enabled = false;
-            level.transform.GetChild(0).GetComponent<DragCornerHandles>().enabled = false;
-            level.transform.GetChild(0).GetComponent<DragSprite>().enabled = false;
-            canvas.gameObject.SetActive(true);
-        }
+        AddImage();
     }
+
+    public void AddImage()
+    {
+        string xPos = TapCreateSpriteLevel.Instance.xPos.ToString();
+        string yPos = TapCreateSpriteLevel.Instance.yPos.ToString();
+        string xScale = TapCreateSpriteLevel.Instance.xScale.ToString();
+        string yScale = TapCreateSpriteLevel.Instance.yScale.ToString();
+
+        StartCoroutine(AddImageRoutine(imageFile, imageTitleInput.text, hintInput.text, xPos, yPos, xScale, yScale));
+    }
+
+    public IEnumerator AddImageRoutine(byte[] photo, string title, string hint, string xPos, string yPos, string xScale, string yScale)
+    {
+        WWWForm form = new WWWForm();
+        form.AddBinaryData("photo", photo, "photo.png", "image/png");
+        form.AddField("title", title);
+        form.AddField("hint", hint);
+        form.AddField("xPos", xPos);
+        form.AddField("yPos", yPos);
+        form.AddField("xScale", xScale);
+        form.AddField("yScale", yScale);
+
+        if(!level.GetComponent<TapCreateSpriteLevel>().isAnsSpriteAvailable)
+        {
+            DialogCanvas.Instance.ShowFailedDialog("Please submit the right answer");
+        }
+        else
+        {
+            //Debug.Log("photo " + photo);
+            //Debug.Log("title " + title);
+            //Debug.Log("hint " + hint);
+            //Debug.Log("xPos " + xPos);
+            //Debug.Log("yPos " + yPos);
+            //Debug.Log("xScale " + xScale);
+            //Debug.Log("yScale " + yScale);
+
+            Debug.Log("URL: " + uploadPhotoUrl);
+            using (UnityWebRequest request = UnityWebRequest.Post(uploadPhotoUrl, form))
+            {
+                request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
+                yield return request.SendWebRequest();
+
+                // Check response
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    Debug.Log("POST request successful: " + request.downloadHandler.text);
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+
+                    int ResponseCode = status["ResponseCode"];
+                    Debug.Log(ResponseCode);
+
+                    if (level.transform.childCount == 0)
+                    {
+                        level.GetComponent<TapCreateSpriteLevel>().enabled = false;
+                        level.GetComponent<BoxCollider2D>().enabled = false;
+                        canvas.gameObject.SetActive(true);
+                    }
+                    else if (level.transform.childCount == 1)
+                    {
+                        level.GetComponent<TapCreateSpriteLevel>().enabled = false;
+                        level.GetComponent<BoxCollider2D>().enabled = false;
+                        level.transform.GetChild(0).GetComponent<DragCornerHandles>().enabled = false;
+                        level.transform.GetChild(0).GetComponent<DragSprite>().enabled = false;
+                        canvas.gameObject.SetActive(true);
+                    }
+                }
+                else
+                {
+                    Debug.LogError("POST request failed!");
+                    Debug.LogError("Error: " + request.error);
+                    Debug.LogError("Response Code: " + request.responseCode);
+                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                }
+            }
+        }
+}
 
     public void OkButtonClick()
     {
@@ -230,6 +314,11 @@ public class GameManager : MonoBehaviour
         //}
     }
 
+    public void SubmitImageUploadButtonClick()
+    {
+        PickImages();
+    }
+
     public void PickImages()
     {
         PickImage(2048);
@@ -242,6 +331,10 @@ public class GameManager : MonoBehaviour
             if (path != null)
             {
                 Texture2D texture = NativeGallery.LoadImageAtPath(path, maxSize);
+                updateImagePreview.texture = texture;
+
+                uploadPreviewImageButton.gameObject.SetActive(false);
+                deletePreviewImageButton.gameObject.SetActive(true);
 
                 if (texture == null)
                 {
@@ -250,15 +343,125 @@ public class GameManager : MonoBehaviour
                 }
                 Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
                 renderer.sprite = sprite;
+
+                imageFile = ConvertSpriteToBytes(sprite);
             }
         });
         Debug.Log("Permission result: " + permission);
+    }
+
+    public void DeletePreviewImage()
+    {
+        updateImagePreview.texture = null;
+        renderer.sprite = null;
+        uploadPreviewImageButton.gameObject.SetActive(true);
+        deletePreviewImageButton.gameObject.SetActive(false);
     }
 
     public void ActivePanel(string panel)
     {
         submitPanel.SetActive(panel.Equals(submitPanel.name));
         createLevelPanel.SetActive(panel.Equals(createLevelPanel.name));
+    }
+
+    byte[] ConvertSpriteToBytes(Texture texture)
+    {
+        Debug.Log("ConvertSpriteToBytes");
+        if (texture == null)
+        {
+            Debug.LogError("Sprite is null!");
+            return null;
+        }
+
+        Texture2D texture2D = TextureToTexture2D(texture);
+        Debug.Log(texture + " texture");
+
+        return texture2D.EncodeToPNG();
+    }
+
+    byte[] ConvertSpriteToBytes(Sprite sprite)
+    {
+        Debug.Log("ConvertSpriteToBytes");
+        if (sprite == null)
+        {
+            Debug.LogError("Sprite is null!");
+            return null;
+        }
+
+
+        // Convert Sprite to Texture2D
+        Texture2D texture = SpriteToTexture2D(sprite);
+        Debug.Log(texture + " texture");
+
+        // Encode to PNG (You can also use EncodeToJPG())
+        return texture.EncodeToPNG();
+    }
+
+    Texture2D SpriteToTexture2D(Sprite sprite)
+    {
+        if (sprite == null)
+        {
+            Debug.LogError("Sprite is null!");
+            return null;
+        }
+
+        // Create a new Texture2D with the same dimensions as the sprite
+        Texture2D texture = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, TextureFormat.RGBA32, false);
+
+        // Get the original sprite texture
+        Texture2D originalTexture = sprite.texture;
+
+        // Create a RenderTexture
+        RenderTexture renderTexture = RenderTexture.GetTemporary(originalTexture.width, originalTexture.height);
+
+        // Copy the original texture to the RenderTexture
+        Graphics.Blit(originalTexture, renderTexture);
+
+        // Store the previous active RenderTexture
+        RenderTexture previous = RenderTexture.active;
+        RenderTexture.active = renderTexture;
+
+        // Read pixels from the RenderTexture
+        texture.ReadPixels(new Rect(sprite.rect.x, sprite.rect.y, sprite.rect.width, sprite.rect.height), 0, 0);
+        texture.Apply();
+
+        // Restore the previous RenderTexture and clean up
+        RenderTexture.active = previous;
+        RenderTexture.ReleaseTemporary(renderTexture);
+
+        return texture;
+    }
+
+    Texture2D TextureToTexture2D(Texture texture)
+    {
+        if (texture == null)
+        {
+            Debug.LogError("Texture is null!");
+            return null;
+        }
+
+        // Create a new Texture2D with the same dimensions as the input texture
+        Texture2D texture2D = new Texture2D(texture.width, texture.height, TextureFormat.RGBA32, false);
+
+        // Create a RenderTexture
+        RenderTexture renderTexture = RenderTexture.GetTemporary(texture.width, texture.height);
+
+        // Copy the input texture to the RenderTexture
+        Graphics.Blit(texture, renderTexture);
+
+        // Store the previous active RenderTexture
+        RenderTexture previous = RenderTexture.active;
+        RenderTexture.active = renderTexture;
+
+        // Read pixels from the RenderTexture
+        texture2D.ReadPixels(new Rect(0, 0, texture.width, texture.height), 0, 0);
+        texture2D.Apply();
+
+        // Restore the previous RenderTexture and clean up
+        RenderTexture.active = previous;
+        RenderTexture.ReleaseTemporary(renderTexture);
+
+        return texture2D;
     }
 }
 

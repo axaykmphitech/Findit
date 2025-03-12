@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class TapCreateSpriteLevel : MonoBehaviour
 {
+    public static TapCreateSpriteLevel Instance;
+
     [Header("GameObject")]
     public GameObject spritePrefab;
+    private GameObject rightAnsSprite;
 
     [Header("Bool")]
     public bool isHolding = false;
@@ -18,6 +21,16 @@ public class TapCreateSpriteLevel : MonoBehaviour
 
     [Header("Transform")]
     public Transform level;
+
+    public float xPos;
+    public float yPos;
+    public float xScale;
+    public float yScale;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void Update()
     {
@@ -47,6 +60,14 @@ public class TapCreateSpriteLevel : MonoBehaviour
                 ResetHold(); 
             }
         }
+
+        if(rightAnsSprite != null)
+        {
+            xPos = rightAnsSprite.transform.position.x;
+            yPos = rightAnsSprite.transform.position.y;
+            xScale = rightAnsSprite.transform.localScale.x;
+            yScale = rightAnsSprite.transform.localScale.y;
+        }
     }
 
     public void OnMouseDown()
@@ -75,13 +96,13 @@ public class TapCreateSpriteLevel : MonoBehaviour
             {
                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mousePosition.z = 0f;
-                GameObject newSprite = Instantiate(spritePrefab, mousePosition, Quaternion.identity);
-                newSprite.transform.SetParent(level);
-                newSprite.name = "CreatedSprite";
+                rightAnsSprite = Instantiate(spritePrefab, mousePosition, Quaternion.identity);
+                rightAnsSprite.transform.SetParent(level);
+                rightAnsSprite.name = "CreatedSprite";
 
-                if (newSprite.GetComponent<BoxCollider2D>() == null)
+                if (rightAnsSprite.GetComponent<BoxCollider2D>() == null)
                 {
-                    newSprite.AddComponent<BoxCollider2D>();
+                    rightAnsSprite.AddComponent<BoxCollider2D>();
                 }
 
                 Debug.Log("New Sprite Created!");

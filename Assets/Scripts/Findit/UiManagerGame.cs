@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class UiManagerGame : MonoBehaviour
 {
@@ -28,6 +31,9 @@ public class UiManagerGame : MonoBehaviour
     [Header("ShareText")]
     public ShareText Sharetext;
 
+    [Header("Text")]
+    public TextMeshProUGUI totalStars;
+
     public static UiManagerGame Instance;
 
     public void Awake()
@@ -38,6 +44,46 @@ public class UiManagerGame : MonoBehaviour
     public void Start()
     {
         ActivePanel(gamePanel.name);
+        SetStars();
+        SetUpLevel();
+    }
+
+    IEnumerator LoadImageFromURL(string url)
+    {
+        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
+        {
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+                Sprite sprite = Texture2DToSprite(texture);
+                levelObject.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            }
+        }
+    }
+
+    Sprite Texture2DToSprite(Texture2D texture)
+    {
+        if (texture == null)
+        {
+            Debug.LogError("Texture is null!");
+            return null;
+        }
+
+        // Create a new sprite with full texture dimensions
+        return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     }
 
     public void Update()
@@ -155,5 +201,27 @@ public class UiManagerGame : MonoBehaviour
         subscriptionPanel.SetActive(panel.Equals(subscriptionPanel.name));
         privacyPolicyPanel.SetActive(panel.Equals(privacyPolicyPanel.name));
         termsandConditionsPanel.SetActive(panel.Equals(termsandConditionsPanel.name));
+    }
+
+    public void SetStars()
+    {
+        totalStars.text = ApiDataCall.Instance.totalPoint.ToString();
+    }
+
+    public void SetUpLevel()
+    {
+        if(ApiDataCall.Instance.photo != "")
+            StartCoroutine(LoadImageFromURL(ApiDataCall.Instance.photo));
+        gamePanel.transform.GetChild(2).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = ApiDataCall.Instance.title;
+        hintPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = ApiDataCall.Instance.hint;
+
+        float x = float.Parse(ApiDataCall.Instance.xPos);
+        float y = float.Parse(ApiDataCall.Instance.yPos);
+        float xS = float.Parse(ApiDataCall.Instance.xScale);
+        float yS = float.Parse(ApiDataCall.Instance.yScale);
+
+        Transform rightAns = levelObject.transform.GetChild(0);
+        rightAns.transform.position = new Vector3(x, y, -1);
+        rightAns.transform.localScale = new Vector3(xS,yS, 0.2f);
     }
 }
