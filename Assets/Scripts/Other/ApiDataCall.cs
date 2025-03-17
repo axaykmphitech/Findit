@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ApiDataCall : MonoBehaviour
@@ -28,6 +29,10 @@ public class ApiDataCall : MonoBehaviour
     public string xScale;
     public string yScale;
     public string id;
+
+    [Header("used Date")]
+    public List<string> usedDateList = new List<string>(); 
+
 
     public static ApiDataCall Instance;
 

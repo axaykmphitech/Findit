@@ -172,6 +172,7 @@ namespace Bitsplash.DatePicker
                     color = DisabledTextColor;
                     backColor = DisabledBackgroundColor;
                 }
+                //Debug.Log("DATE: " + mEnabled);
             }
 
             if (Mark != null)

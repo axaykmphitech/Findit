@@ -37,11 +37,12 @@ public class TapSprite : MonoBehaviour
         uiManage = UiManagerGame.Instance;
         rightObject = Resources.Load<GameObject>("Right");
         wrongObject = Resources.Load<GameObject>("Wrong");
+
+        SetLives();
     }
 
     public void Update()
     {
-        Debug.Log("update");
         if (Input.GetMouseButtonDown(0) && !UiManagerGame.Instance.isSelectOver && !iswon)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -85,7 +86,6 @@ public class TapSprite : MonoBehaviour
 
                         if (uiManage.livesCount == 2)
                         {
-
                             uiManage.hintButton.SetActive(true);
                         }
                     }
@@ -99,9 +99,29 @@ public class TapSprite : MonoBehaviour
 
     private void SetLives()
     {
-        for (int i = 0; i <= ApiDataCall.Instance.toDayPoint; i++)//3
+        /// 3 - 000
+        /// 2 - 100
+        /// 1 - 110
+        /// 0 - 111
+
+        if(ApiDataCall.Instance.toDayPoint == 3)
         {
-            uiManage.leviesObject.transform.GetChild(i - 1).transform.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
+
+        }
+        if(ApiDataCall.Instance.toDayPoint == 2)
+        {
+            uiManage.leviesObject.transform.GetChild(0).transform.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
+        }
+        if(ApiDataCall.Instance.toDayPoint == 1)
+        {
+            uiManage.leviesObject.transform.GetChild(0).transform.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
+            uiManage.leviesObject.transform.GetChild(1).transform.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
+        }
+        if(ApiDataCall.Instance.toDayPoint == 0)
+        {
+            uiManage.leviesObject.transform.GetChild(0).transform.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
+            uiManage.leviesObject.transform.GetChild(1).transform.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
+            uiManage.leviesObject.transform.GetChild(2).transform.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
         }
     }
 
@@ -161,7 +181,7 @@ public class TapSprite : MonoBehaviour
         Debug.Log("id " + imageId);
         Debug.Log("iscorrect " + isCorrect);
         Debug.Log("star " + star);
-        Debug.Log("todaypoint " + toDayPoint);
+        Debug.Log("todaypoint " + toDayPoint) ;
         Debug.Log("total point " + totalPoint);
 
         using (UnityWebRequest request = UnityWebRequest.Post(submitAnswer, form))
@@ -172,7 +192,7 @@ public class TapSprite : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
-
+                ApiDataCall.Instance.toDayPoint = 3 - uiManage.livesCount; 
             }
             else
             {
@@ -182,7 +202,7 @@ public class TapSprite : MonoBehaviour
                 Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json) ;
                 DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }

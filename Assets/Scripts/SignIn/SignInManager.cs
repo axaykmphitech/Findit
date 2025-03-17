@@ -39,10 +39,12 @@ public class SignInManager : MonoBehaviour
     public TMP_InputField otp2Input;
     public TMP_InputField otp3Input;
     public TMP_InputField otp4Input;
+    public TMP_InputField newOtpInput;
     public TMP_InputField verifyCode1Input;
     public TMP_InputField verifyCode2Input;
     public TMP_InputField verifyCode3Input;
     public TMP_InputField verifyCode4Input;
+    public TMP_InputField newVerifyOTPInput;
 
 
     [Header("TextMeshProUGUI")]
@@ -101,8 +103,8 @@ public class SignInManager : MonoBehaviour
         forgotPasswordverifyOTPUrl = ApiDataCall.Instance.baseUrl + "auth/verifyOTP";
         resetPasswordUrl = ApiDataCall.Instance.baseUrl + "auth/resetPassword";
 
-        emailInput.text = "t101@gmail.com";
-        passwordInput.text = "12345678";
+        emailInput.text = "t104@gmail.com";
+        passwordInput.text = "1234567890";
 
         isHide = true;
         isNewPasswordHide = true;
@@ -342,7 +344,8 @@ public class SignInManager : MonoBehaviour
     {
         string otpVerifyCodeText = otpVerifyCode.text;
 
-        otpVerifyCodeText = verifyCode1Input.text + verifyCode2Input.text + verifyCode3Input.text + verifyCode4Input.text;
+        //otpVerifyCodeText = verifyCode1Input.text + verifyCode2Input.text + verifyCode3Input.text + verifyCode4Input.text;
+        otpVerifyCodeText = newVerifyOTPInput.text;
 
         StartCoroutine(ForgotPasswordVerfyCodeCheck(otpVerifyCodeText, forgotPasswordInput.text));
     }
@@ -353,6 +356,7 @@ public class SignInManager : MonoBehaviour
         form.AddField("otp", otp);
         form.AddField("email", email);
 
+        Debug.Log(otp + " here ");
 
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordverifyOTPUrl, form))
@@ -471,6 +475,10 @@ public class SignInManager : MonoBehaviour
                     Debug.LogError("Error: " + request.error);
                     Debug.LogError("Response Code: " + request.responseCode);
                     Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    DialogCanvas.Instance.ShowFailedDialog(status["message"]);
                 }
             }
         }
@@ -849,7 +857,8 @@ public class SignInManager : MonoBehaviour
     {
         string otpText = Otp.text;
 
-        otpText = otp1Input.text + otp2Input.text + otp3Input.text + otp4Input.text;
+        //otpText = otp1Input.text + otp2Input.text + otp3Input.text + otp4Input.text;
+        otpText = newOtpInput.text;
 
         //otp1Input.text = otpText;
         //otp2Input.text = otpText;

@@ -46,12 +46,16 @@ public class UiManagerGame : MonoBehaviour
         ActivePanel(gamePanel.name);
         SetStars();
         SetUpLevel();
+
+        livesCount = 3 - ApiDataCall.Instance.toDayPoint;
     }
 
     IEnumerator LoadImageFromURL(string url)
     {
         using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
         {
+            levelObject.GetComponent<SpriteRenderer>().sprite = null;
+            DialogCanvas.Instance.loadingDialog.SetActive(true);
             yield return request.SendWebRequest();
 
             if (request.result == UnityWebRequest.Result.Success)
@@ -59,6 +63,7 @@ public class UiManagerGame : MonoBehaviour
                 Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
                 Sprite sprite = Texture2DToSprite(texture);
                 levelObject.GetComponent<SpriteRenderer>().sprite = sprite;
+                DialogCanvas.Instance.loadingDialog.SetActive(false);
             }
             else
             {
@@ -118,7 +123,24 @@ public class UiManagerGame : MonoBehaviour
 
     public void TryAgainBtnClick()
     {
-        SceneManager.LoadScene(2);
+        
+        if (ApiDataCall.Instance.toDayPoint <= 0)
+        {
+            if (ApiDataCall.Instance.totalPoint >= 3)
+            {
+                ApiDataCall.Instance.toDayPoint = 3;
+                ApiDataCall.Instance.totalPoint -= 3;
+                SceneManager.LoadScene(2);
+            }
+            else
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void Getmorelivefor10tokensButtonClick()

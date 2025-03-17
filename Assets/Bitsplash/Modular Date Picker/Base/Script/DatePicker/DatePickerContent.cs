@@ -300,7 +300,7 @@ namespace Bitsplash.DatePicker
         {
             return date.Day.ToString();
         }
-        void GenerateCells()
+        public void GenerateCells()
         {
             Clear();
             if (cellPrefab == null)
@@ -355,6 +355,8 @@ namespace Bitsplash.DatePicker
 
         void FillCells(DateTime monthFirst)
         {
+            Debug.Log("here");
+
             monthFirst = monthFirst.Date;
             mMonthFirst = monthFirst;
 
@@ -373,13 +375,31 @@ namespace Bitsplash.DatePicker
             DateTime monthLast = monthFirst + TimeSpan.FromDays(DateTime.DaysInMonth(monthFirst.Year, monthFirst.Month) - 1);
             DateTime current = startFrom;
             mDateToCell.Clear();
+            
             for (int i = 0; i < mCells.Length; i++)
             {
+                bool isDateUsed = false;
+
+                foreach (string dateStr in ApiDataCall.Instance.usedDateList)
+                {
+                    if (DateTime.TryParseExact(dateStr, "yyyy-MM-dd",
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None,
+                    out DateTime parsedDate))
+                    {
+                        if(parsedDate.Day.Equals(current.Day) && parsedDate.Month.Equals(current.Month) && parsedDate.Year.Equals(current.Year))
+                        {
+                            isDateUsed = true;
+                        }
+                    }
+                }
+
                 mCells[i].DayValue = current;
                 mCells[i].SetText(DateToString(current));
                 bool cellenabled = true;
-                if (current < monthFirst || current > monthLast || current < startDate || current > endDate)
+                if (current < monthFirst || current > monthLast || current < startDate || current > endDate || isDateUsed)
                     cellenabled = false;
+
                 mCells[i].SetInitialSettings(cellenabled, false);
                 mDateToCell[current.Date] = mCells[i];
                 current += TimeSpan.FromDays(1);

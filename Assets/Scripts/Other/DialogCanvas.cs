@@ -6,6 +6,7 @@ public class DialogCanvas : MonoBehaviour
     public static DialogCanvas Instance;
 
     public GameObject failedDialog;
+    public GameObject loadingDialog;
 
     private void Awake()
     {

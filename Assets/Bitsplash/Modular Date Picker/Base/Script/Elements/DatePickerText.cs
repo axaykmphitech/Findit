@@ -200,7 +200,7 @@ namespace Bitsplash.DatePicker
 
         private void SetText(string text)
         {
-            Debug.Log("Date "+ text);
+            //Debug.Log("Date "+ text);
             this.text = text;
             MediateTextMeshProText(text);
             var comp = mTextObject as Text;
@@ -215,7 +215,7 @@ namespace Bitsplash.DatePicker
             var comp = mTextObject as Text;
             if (comp != null)
                 comp.color = color;
-
+            //Debug.Log("set color " + color);
         }
     }
 }

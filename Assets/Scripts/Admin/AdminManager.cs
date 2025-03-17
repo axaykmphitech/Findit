@@ -11,6 +11,7 @@ using System;
 using System.Globalization;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using SimpleJSON;
 
 public class AdminManager : MonoBehaviour
 {
@@ -162,6 +163,7 @@ public class AdminManager : MonoBehaviour
     private string deleteImageUrl = baseUrl + "admin/imagesDelete";
     private string editImageSchedule = baseUrl + "admin/editScheduledImage";
     private string imageListUrl = baseUrl + "admin/imagesList";
+    private string getImageDateList = baseUrl + "admin/imagesDateList";
 
     private byte[] imageFile;
 
@@ -175,7 +177,7 @@ public class AdminManager : MonoBehaviour
     public void Start()
     {
         signEmailInput.text = "admin@gmail.com";
-        signPassInput.text = "123"; 
+        signPassInput.text = "admin@123"; 
 
         isSignpass = true;
         isCreateNewPass = true;
@@ -447,7 +449,7 @@ public class AdminManager : MonoBehaviour
         {
             DialogCanvas.Instance.ShowFailedDialog("Password should be 8 character long");
         }
-        //Debug.Log(email + " email");
+        Debug.Log(email + " email");
         //Debug.Log(password + " password");
         //Debug.Log(deviceType + " deviceType");
         //Debug.Log(deviceToken + " deviceToken");
@@ -512,7 +514,7 @@ public class AdminManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("email", email);
 
-        //Debug.Log(email + " email");
+        Debug.Log(email + " email");
 
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordUrl, form))
@@ -564,7 +566,7 @@ public class AdminManager : MonoBehaviour
         form.AddField("email", email);
         form.AddField("otp", otp);
 
-        //Debug.Log(email + " email");
+        Debug.Log(email + " email");
         //Debug.Log(otp + " otp");
 
         // Create request
@@ -609,7 +611,7 @@ public class AdminManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("email", email);
 
-        //Debug.Log(email + " email");
+        Debug.Log(email + " email");
 
         using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordUrl, form))
         {
@@ -651,7 +653,7 @@ public class AdminManager : MonoBehaviour
         form.AddField("email", email);
         form.AddField("newPassword", newPassword);
 
-        //Debug.Log(email + " email");
+        Debug.Log(email + " email");
         //Debug.Log(newPassword + " newPassword");
 
         // Create request
@@ -775,11 +777,52 @@ public class AdminManager : MonoBehaviour
 
     public void SelectDateButtonClick()
     {
-        imageDetailPanel.SetActive(false);
-        selectdatePanel.SetActive(true);
-        isSelectdatePanel = true;
-        DatePicker[0].Content.Selection.Clear();
+        StartCoroutine(GetImageDateListAgain());
     }
+
+    public IEnumerator GetImageDateListAgain()
+    {
+        WWWForm form = new WWWForm();
+
+        using (UnityWebRequest request = UnityWebRequest.Post(getImageDateList, form))
+        {
+            request.SetRequestHeader("Authorization", "Bearer " + token);
+            yield return request.SendWebRequest();
+
+            // Check response
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                imageDetailPanel.SetActive(false);
+                selectdatePanel.SetActive(true);
+                isSelectdatePanel = true;
+
+                Debug.Log("POST request successful: " + request.downloadHandler.text);
+                string Json = request.downloadHandler.text;
+                JSONNode status = JSON.Parse(Json);
+
+                ApiDataCall.Instance.usedDateList.Clear();
+                foreach (JSONNode item in status["data"].AsArray)
+                {
+                    string date = item["date"];
+                    ApiDataCall.Instance.usedDateList.Add(date);
+                }
+                DatePicker[0].Content.Selection.Clear();
+                DatePicker[0].Content.GenerateCells();
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            }
+        }
+    }
+
 
     public void CancelDateButtonClick()
     {
@@ -826,10 +869,50 @@ public class AdminManager : MonoBehaviour
 
     public void ScheduledImageDateButtonClick()
     {
-        editImageDetaildatePanel.SetActive(true);
-        editImagedatePanel.SetActive(false);
-        isEditImageDetaildatePanel = true;
-        DatePicker[1].Content.Selection.Clear();
+        StartCoroutine(GetImageDateList3());
+    }
+
+    public IEnumerator GetImageDateList3()
+    {
+        WWWForm form = new WWWForm();
+
+        using (UnityWebRequest request = UnityWebRequest.Post(getImageDateList, form))
+        {
+            request.SetRequestHeader("Authorization", "Bearer " + token);
+            yield return request.SendWebRequest();
+
+            // Check response
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                editImageDetaildatePanel.SetActive(true);
+                editImagedatePanel.SetActive(false);
+                isEditImageDetaildatePanel = true;
+
+                Debug.Log("POST request successful: " + request.downloadHandler.text);
+                string Json = request.downloadHandler.text;
+                JSONNode status = JSON.Parse(Json);
+
+                ApiDataCall.Instance.usedDateList.Clear();
+                foreach (JSONNode item in status["data"].AsArray)
+                {
+                    string date = item["date"];
+                    ApiDataCall.Instance.usedDateList.Add(date);
+                }
+                DatePicker[1].Content.Selection.Clear();
+                DatePicker[1].Content.GenerateCells();
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            }
+        }
     }
 
     public void ScheduledImageDateCancelButtonClick()
@@ -1298,9 +1381,49 @@ public class AdminManager : MonoBehaviour
 
     public void SubmitImageDateButtonClick()
     {
-        datePanel.SetActive(true);
-        isDatePanel = true;
-        DatePicker[2].Content.Selection.Clear();
+        StartCoroutine(GetImageDateList());
+    }
+
+    public IEnumerator GetImageDateList()
+    {
+        WWWForm form = new WWWForm();
+
+        using (UnityWebRequest request = UnityWebRequest.Post(getImageDateList, form))
+        {
+            request.SetRequestHeader("Authorization", "Bearer " + token);
+            yield return request.SendWebRequest();
+
+            // Check response
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("POST request successful: " + request.downloadHandler.text);
+                string Json = request.downloadHandler.text;
+                JSONNode status = JSON.Parse(Json);
+
+                datePanel.SetActive(true);
+                isDatePanel = true;
+
+                ApiDataCall.Instance.usedDateList.Clear();
+                foreach (JSONNode item in status["data"].AsArray)
+                {
+                    string date = item["date"];
+                    ApiDataCall.Instance.usedDateList.Add(date);
+                }
+                DatePicker[2].Content.Selection.Clear();
+                DatePicker[2].Content.GenerateCells();
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            }
+        }
     }
 
     public void SelectPointBackButtonClick()
@@ -1521,7 +1644,7 @@ public class AdminManager : MonoBehaviour
         else
         {
             //Debug.Log("photo " + photo);
-            //Debug.Log("title " + title);
+            Debug.Log("title " + title);
             //Debug.Log("hint " + hint);
             //Debug.Log("date " + date);
             //Debug.Log("xPos " + xPos);
@@ -1584,7 +1707,7 @@ public class AdminManager : MonoBehaviour
         form.AddField("skip", skip);
         form.AddField("limit", limit);
 
-        //Debug.Log("status " + status);
+        Debug.Log("status " + status);
         //Debug.Log("skip " + skip);
         //Debug.Log("limit " + limit);
 
@@ -1648,7 +1771,7 @@ public class AdminManager : MonoBehaviour
         form.AddField("skip", skip);
         form.AddField("limit", limit);
 
-        //Debug.Log("status " + status);
+        Debug.Log("status " + status);
         //Debug.Log("skip " + skip);
         //Debug.Log("limit " + limit);
 
@@ -1681,6 +1804,7 @@ public class AdminManager : MonoBehaviour
 
                         GameObject imageItem = Instantiate(imageItemPrefab, scheduledImageContent);
                         imageItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = image.title.ToString();
+                        imageItem.GetComponent<Button>().onClick.RemoveAllListeners();
                         imageItem.GetComponent<Button>().onClick.AddListener(() => OpenScheduleImageDetailedPanel(image,image.photo, image.title, image.hint, image.date));
                         StartCoroutine(LoadImage(imageItem.transform.GetChild(0).GetComponent<RawImage>(), image.photo.ToString()));
                     }
@@ -1706,6 +1830,7 @@ public class AdminManager : MonoBehaviour
 
     IEnumerator LoadImage(RawImage rawImage, string imageUrl)
     {
+        Debug.Log(imageUrl);
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(imageUrl);
         yield return request.SendWebRequest();
 
@@ -1721,32 +1846,40 @@ public class AdminManager : MonoBehaviour
             Debug.LogError("Response Code: " + request.responseCode);
             Debug.LogError("Response Text: " + request.downloadHandler.text);
 
-            string Json = request.downloadHandler.text;
-            SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
-            DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            //string Json = request.downloadHandler.text;
+            //SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+            //DialogCanvas.Instance.ShowFailedDialog(status["message"]);
         }
     }
 
     private void OpenNewImageDetailedPanel(ImageData image, string imageUrl, string title, string hint)
     {
+        ImageData imageData = image;
+
         imageDetailPanel.SetActive(true);
         StartCoroutine(LoadImage(imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetComponent<RawImage>(), imageUrl));
         imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>().text = title;
         imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(4).GetChild(1).GetComponent<TextMeshProUGUI>().text = hint;
         TextMeshProUGUI date = imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(5).GetChild(0).GetComponent<TextMeshProUGUI>();
-        imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<Button>().onClick.AddListener(() => StartCoroutine(UpdateNewImageRoutine("accepted", image.id, date, image.xPos, image.yPos, image.xScale, image.yScale)));
-        imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(() => OpenReasonPanel(image));
+        imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<Button>().onClick.AddListener(() => StartCoroutine(UpdateNewImageRoutine("accepted", imageData.id, date, imageData.xPos, imageData.yPos, imageData.xScale, imageData.yScale)));
+        imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(() => OpenReasonPanel(imageData));
     }
 
     private void OpenScheduleImageDetailedPanel(ImageData image, string imageUrl, string title, string hint, string date)
     {
+        ImageData imageData = image;
+        string imageUrl2 = imageUrl;
+        string title2 = title;
+        string hint2 = hint;
+        string date2 = date;
+
         scheduledImageDetailPanel.SetActive(true);
-        StartCoroutine(LoadImage(scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<RawImage>(), imageUrl));
-        scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(2).GetComponent<TextMeshProUGUI>().text =  title;
-        scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>().text =  date;
-        scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text =  hint;
-        deleteButton.onClick.AddListener(() => StartCoroutine(DeleteImageRoutine(image.id)));
-        scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<Button>().onClick.AddListener(() => OpenEditImageDialog(image));
+        StartCoroutine(LoadImage(scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<RawImage>(), imageUrl2));
+        scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(2).GetComponent<TextMeshProUGUI>().text =  title2;
+        scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>().text =  date2;
+        scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text =  hint2;
+        deleteButton.onClick.AddListener(() => StartCoroutine(DeleteImageRoutine(imageData.id)));
+        scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<Button>().onClick.AddListener(() => OpenEditImageDialog(imageData));
     }
 
     public IEnumerator UpdateNewImageRoutine(string status, string imageId, TextMeshProUGUI date, string xPos, string yPos, string xScale, string yScale)
@@ -1764,7 +1897,7 @@ public class AdminManager : MonoBehaviour
         form.AddField("yScale", yScale);
 
         //Debug.Log("status " + status);
-        //Debug.Log("imageId " + imageId);
+        Debug.Log("imageId " + imageId);
         //Debug.Log("date " + formattedDate);
         //Debug.Log("xPos " + xPos);
         //Debug.Log("yPos " + yPos);
@@ -1802,8 +1935,10 @@ public class AdminManager : MonoBehaviour
 
     public void OpenReasonPanel(ImageData image)
     {
+        ImageData imageData = image;
+
         TMP_InputField resonInputField = reasonPanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<TMP_InputField>();
-        reasonPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<Button>().onClick.AddListener(()=> StartCoroutine(RejectNewImageRoutine("rejected", resonInputField, image.id, image.date, image.xPos, image.yPos, image.xScale, image.yScale)));
+        reasonPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<Button>().onClick.AddListener(()=> StartCoroutine(RejectNewImageRoutine("rejected", resonInputField, imageData.id, imageData.date, imageData.xPos, imageData.yPos, imageData.xScale, imageData.yScale)));
     }
 
     public IEnumerator RejectNewImageRoutine(string status, TMP_InputField resonInputField, string imageId, string date, string xPos, string yPos, string xScale, string yScale)
@@ -1820,7 +1955,7 @@ public class AdminManager : MonoBehaviour
 
         //Debug.Log("status " + status);
         //Debug.Log("rejectReason" + resonInputField.text);
-        //Debug.Log("imageId " + imageId);
+        Debug.Log("imageId " + imageId);
         //Debug.Log("date " + date);
         //Debug.Log("xPos " + xPos);
         //Debug.Log("yPos " + yPos);
@@ -1861,49 +1996,57 @@ public class AdminManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("imageId", imageId);
 
-        //Debug.Log("imageId " + imageId);
+        Debug.Log("imageId " + imageId);
         //Debug.Log("URL: " + deleteImageUrl);
 
-        using (UnityWebRequest request = UnityWebRequest.Post(deleteImageUrl, form))
+        foreach (var item in response.data.imagesList)
         {
-            request.SetRequestHeader("Authorization", "Bearer " + token);
-            yield return request.SendWebRequest();
-
-            // Check response
-            if (request.result == UnityWebRequest.Result.Success)
+           if(item.id == imageId)
             {
-                Debug.Log("POST request successful: " + request.downloadHandler.text);
-                string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
-                int ResponseCode = data["ResponseCode"];
-                StartCoroutine(GetSchedulelistRoutine("accepted", "0", "10"));
-            }
-            else
-            {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                using (UnityWebRequest request = UnityWebRequest.Post(deleteImageUrl, form))
+                {
+                    request.SetRequestHeader("Authorization", "Bearer " + token);
+                    yield return request.SendWebRequest();
 
-                string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
-                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                    // Check response
+                    if (request.result == UnityWebRequest.Result.Success)
+                    {
+                        Debug.Log("POST request successful: " + request.downloadHandler.text);
+                        string Json = request.downloadHandler.text;
+                        SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
+                        int ResponseCode = data["ResponseCode"];
+                        StartCoroutine(GetSchedulelistRoutine("accepted", "0", "10"));
+                    }
+                    else
+                    {
+                        Debug.LogError("POST request failed!");
+                        Debug.LogError("Error: " + request.error);
+                        Debug.LogError("Response Code: " + request.responseCode);
+                        Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                        string Json = request.downloadHandler.text;
+                        SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                        DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                    }
+                }
             }
-        }
+        }    
     }
 
     public void OpenEditImageDialog(ImageData image)
     {
+        ImageData imageData = image;
+
         //Debug.Log("sdfsdf", editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0));
-        StartCoroutine(LoadImage(editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<RawImage>(), image.photo));
-        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(2).GetComponent<TextMeshProUGUI>().text = image.title;
-        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text = image.hint;
-        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = image.date;
+        StartCoroutine(LoadImage(editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<RawImage>(), imageData.photo));
+        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(2).GetComponent<TextMeshProUGUI>().text = imageData.title;
+        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text = imageData.hint;
+        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = imageData.date;
 
         TextMeshProUGUI dateText = editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>();
         RawImage rawImage = editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<RawImage>();
 
-        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(1).GetComponent<Button>().onClick.AddListener(() => StartCoroutine(EditImageRoutine(rawImage, image.id, image.title, image.hint, dateText, image.xPos, image.yPos, image.xScale, image.yScale)));
+        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(1).GetComponent<Button>().onClick.AddListener(() => StartCoroutine(EditImageRoutine(rawImage, imageData.id, imageData.title, imageData.hint, dateText, imageData.xPos, imageData.yPos, imageData.xScale, imageData.yScale)));
     }
 
     public IEnumerator EditImageRoutine(RawImage rawImage, string imageId, string title, string hint, TextMeshProUGUI date, string xPos, string yPos, string xScale, string yScale)
@@ -1925,15 +2068,8 @@ public class AdminManager : MonoBehaviour
         form.AddField("xScale", xScale);
         form.AddField("yScale", yScale);
 
-        //Debug.Log("photo " + fileImage);
-        //Debug.Log("title " + title);
-        //Debug.Log("hint " + hint);
-        //Debug.Log("date " + formattedDate);
-        //Debug.Log("xPos " + xPos);
-        //Debug.Log("yPos " + yPos);
-        //Debug.Log("xScale " + xScale);
-        //Debug.Log("yScale " + yScale);
-
+        Debug.Log("photo " + imageId);
+        
         //Debug.Log("URL: " + editImageSchedule);
         using (UnityWebRequest request = UnityWebRequest.Post(editImageSchedule, form))
         {

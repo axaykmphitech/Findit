@@ -33,6 +33,7 @@ namespace Bitsplash.DatePicker.Tutorials
         public void OnDisplayChanged()
         {
             var cell = DatePicker.Content.GetCellObjectByDate(DateTime.Now);
+            Debug.Log(cell);
             if (cell != null)
             {
                 cell.CellEnabled = false;
@@ -68,12 +69,20 @@ namespace Bitsplash.DatePicker.Tutorials
                     text += date.ToShortDateString();
                 }
 
-                DateTime parsedDate = DateTime.Today;
-                parsedDate = DateTime.ParseExact(text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
-                string formattedDate = parsedDate.ToString("yyyy-MM-dd");
+                try
+                {
+                    Debug.Log("TEXT::  " + text);
+                    DateTime parsedDate = DateTime.Today;
+                    parsedDate = DateTime.ParseExact(text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                    string formattedDate = parsedDate.ToString("yyyy-MM-dd");
 
-                InfoText.text = formattedDate;
-                InfoText.GetComponent<TextMeshProUGUI>().color = Color.black;
+                    InfoText.text = formattedDate;
+                    InfoText.GetComponent<TextMeshProUGUI>().color = Color.black;
+                }
+                catch(Exception)
+                {
+
+                }
             }
         }
         void OnSelectionChanged()

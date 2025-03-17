@@ -104,6 +104,7 @@ public class LevelManager : MonoBehaviour
     private string userPhotoList     = "";
     private string getiImageByDate   = "";
     private string logOutUrl         = "";
+    private string userPhotoHistory  = ""; 
 
     public byte[] imageFile;
     private string deleteReason;
@@ -128,6 +129,7 @@ public class LevelManager : MonoBehaviour
         userPhotoList = ApiDataCall.Instance.baseUrl + "user/userPhotosList";
         getiImageByDate = ApiDataCall.Instance.baseUrl + "user/getImagesByDate";
         logOutUrl = ApiDataCall.Instance.baseUrl + "user/logOut";
+        userPhotoHistory = ApiDataCall.Instance.baseUrl + "user/getUserHistory";
 
 
         isCurrentPasswordHide = true;
@@ -356,8 +358,26 @@ public class LevelManager : MonoBehaviour
 
     public void PlayTodaysPhotosButtonClick()
     {
-        Debug.Log("play todays photos burron click");
-        StartCoroutine(GetImageByDateRoutine());
+        if (ApiDataCall.Instance.toDayPoint <= 0)
+        {
+            if (ApiDataCall.Instance.totalPoint >= 3)
+            {
+                ApiDataCall.Instance.toDayPoint = 3;
+                ApiDataCall.Instance.totalPoint -= 3;
+                Debug.Log("play todays photos burron click");
+                StartCoroutine(GetImageByDateRoutine());
+            }
+            else
+            {
+                DialogCanvas.Instance.ShowFailedDialog("Insufficient points in your account");
+            }
+        }
+        else
+        {
+            Debug.Log("play todays photos burron click");
+            StartCoroutine(GetImageByDateRoutine());
+        }
+
     }
 
     public IEnumerator GetImageByDateRoutine()
@@ -414,11 +434,153 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public IEnumerator GetImageByDateRoutine(string formattedDate)
+    {
+        Debug.Log("get iamge by date routine");
+        WWWForm form = new WWWForm();
+
+        form.AddField("date", formattedDate);
+
+        // Create request
+        using (UnityWebRequest request = UnityWebRequest.Post(getiImageByDate, form))
+        {
+            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("POST request successful: " + request.downloadHandler.text);
+                PanelActive(tapPanel.name);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+
+                Debug.Log(status["data"]["findImg"]["title"]);
+                Debug.Log(status["data"]["findImg"]["photo"]);
+                Debug.Log(status["data"]["findImg"]["hint"]);
+                Debug.Log(status["data"]["findImg"]["xPos"]);
+                Debug.Log(status["data"]["findImg"]["xPos"]);
+
+                ApiDataCall.Instance.title = status["data"]["findImg"]["title"];
+                ApiDataCall.Instance.photo = status["data"]["findImg"]["photo"];
+                ApiDataCall.Instance.hint = status["data"]["findImg"]["hint"];
+                ApiDataCall.Instance.xPos = status["data"]["findImg"]["xPos"];
+                ApiDataCall.Instance.yPos = status["data"]["findImg"]["yPos"];
+                ApiDataCall.Instance.xScale = status["data"]["findImg"]["xScale"];
+                ApiDataCall.Instance.yScale = status["data"]["findImg"]["yScale"];
+                ApiDataCall.Instance.id = status["data"]["findImg"]["id"];
+
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            }
+        }
+    }
+
     public void playPastButtonClick()
     {
-        Debug.Log("play past button lcick");
-        PanelActive(mapsPanel.name);
-        LevelSet();
+        string currentMonth = DateTime.Now.ToString("MM");
+        string currentYear  = DateTime.Now.ToString("yyyy");
+        StartCoroutine(PastPhotoesRoutine(currentMonth, currentYear));
+
+    }
+
+    public IEnumerator PastPhotoesRoutine(string currentMonth, string currentYear)
+    {
+        WWWForm form = new WWWForm();
+
+        form.AddField("month", currentMonth);
+        form.AddField("year",  currentYear);
+
+        using (UnityWebRequest request = UnityWebRequest.Post(userPhotoHistory, form))
+        {
+            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("play past button lcick");
+                PanelActive(mapsPanel.name);
+                LevelSet();
+
+                Debug.Log(request.downloadHandler.text);
+                StarResponse response = JsonConvert.DeserializeObject<StarResponse>(request.downloadHandler.text);
+                Debug.Log(response.Data.Count);
+                Debug.Log(response.Data.Count);
+
+                for (int i = 0; i < response.Data.Count; i++)
+                {
+                    Debug.Log("response" + response.Data.Count);
+                    GameObject levelItem = Instantiate(levelPrefab, content.transform);
+                    DateTime dateObject = DateTime.Parse(response.Data[i].Date);
+                    string day = dateObject.Day.ToString();
+                    levelItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = day;
+                    int stars = int.Parse(response.Data[i].UserStar);
+                    if(stars == 3)
+                    {
+                        levelItem.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
+                        levelItem.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(true);
+                        levelItem.transform.GetChild(1).GetChild(2).GetChild(0).gameObject.SetActive(true);
+                    }
+                    else if(stars == 2)
+                    {
+                        levelItem.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
+                        levelItem.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(true) ;
+                        levelItem.transform.GetChild(1).GetChild(2).GetChild(0).gameObject.SetActive(true) ;
+                    }
+                    else if(stars == 1)
+                    {
+                        levelItem.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
+                        levelItem.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(false);
+                        levelItem.transform.GetChild(1).GetChild(2).GetChild(0).gameObject.SetActive(true);
+                    }
+                    else if(stars == 0)
+                    {
+                        levelItem.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
+                        levelItem.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(false);
+                        levelItem.transform.GetChild(1).GetChild(2).GetChild(0).gameObject.SetActive(false);
+                    }
+
+                    Debug.Log(response.Data[i].Date);
+                    int index = i;
+                    string date = response.Data[index].Date;
+                    levelItem.GetComponent<Button>().onClick.AddListener(() => LevelButton(date));
+                    Debug.Log("response" + response.Data[i].Date);
+                }
+            }
+            else
+            {
+                Debug.LogError("POST request failed!");
+                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Response Code: " + request.responseCode);
+                Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                string Json = request.downloadHandler.text;
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+            }
+        }
+    }
+
+    private void LevelButton(string date)
+    {
+        if (ApiDataCall.Instance.toDayPoint > 0)
+        {
+            Debug.Log(date);
+            StartCoroutine(GetImageByDateRoutine(date));
+        }
+        else
+        {
+            DialogCanvas.Instance.ShowFailedDialog("Insufficient points in your account");
+        }
     }
 
     public void SubmitPhotoBtnClick()
@@ -477,9 +639,10 @@ public class LevelManager : MonoBehaviour
                 string Json = request.downloadHandler.text;
                 uJsonResponse = JsonConvert.DeserializeObject<UJsonResponse>(Json);
 
+                Debug.Log(Json);
+
                 if (uJsonResponse != null)
                 {
-                    Debug.Log("Total Records: " + uJsonResponse.Data.totalRecords);
 
                     foreach (Transform item in userPhotoListContent)
                     {
@@ -495,15 +658,15 @@ public class LevelManager : MonoBehaviour
                         imageItem.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = image.title;
 
                         string date = image.date;
-                        if (date == "")
+                        if (date == "" || date.ToLower() == "invalid date")
                             date = "No date assigned";
 
                         imageItem.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = date;
 
-                        if (image.status == "approved")
+                        if (image.status == "accepted")
                         {
                             Debug.Log("approved");
-                            imageItem.transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(true);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(true) ;
                             imageItem.transform.GetChild(0).GetChild(1).GetChild(3).gameObject.SetActive(false);
                             imageItem.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.SetActive(false);
                         }
@@ -511,17 +674,17 @@ public class LevelManager : MonoBehaviour
                         if (image.status == "pending")
                         {
                             Debug.Log("pending");
-                            imageItem.transform.GetChild(0).GetChild(1).GetChild(3).gameObject.SetActive(true);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.SetActive(true) ;
                             imageItem.transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
-                            imageItem.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.SetActive(false);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(3).gameObject.SetActive(false);
                         }
 
                         if (image.status == "rejected")
                         {
                             Debug.Log("rejected");
-                            imageItem.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.SetActive(true);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.SetActive(false);
                             imageItem.transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
-                            imageItem.transform.GetChild(0).GetChild(1).GetChild(3).gameObject.SetActive(false);
+                            imageItem.transform.GetChild(0).GetChild(1).GetChild(3).gameObject.SetActive(true) ;
                         }
 
                         StartCoroutine(LoadImageFromURL(imageItem.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>(), image.photo));
@@ -914,32 +1077,43 @@ public class LevelManager : MonoBehaviour
         Debug.Log(oldPassword + " oldPassword");
         Debug.Log(newPassword + " newPassword");
 
-        // Create request
-        using (UnityWebRequest request = UnityWebRequest.Post(changePasswordUrl, form))
+        if(oldPassword.Length < 8 || newPassword.Length < 8 || confirmPasswordInput.text.Length < 8)
         {
-            request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
-            Debug.Log(ApiDataCall.Instance.token);
-            yield return request.SendWebRequest();
-
-            // Check response
-            if (request.result == UnityWebRequest.Result.Success)
+            DialogCanvas.Instance.ShowFailedDialog("Password should be 8 character long");
+        }
+        else if(newPassword != confirmPasswordInput.text)
+        {
+            DialogCanvas.Instance.ShowFailedDialog("New password and confirm password doed not match");
+        }
+        else
+        {
+            // Create request
+            using (UnityWebRequest request = UnityWebRequest.Post(changePasswordUrl, form))
             {
-                Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
-                PanelActive(settingPanel.name);
-                currentPasswordInput.text = "";
-                newPasswordInput.text = "";
-                confirmPasswordInput.text = "";
-            }
-            else
-            {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
+                Debug.Log(ApiDataCall.Instance.token);
+                yield return request.SendWebRequest();
 
-                string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
-                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                // Check response
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
+                    PanelActive(settingPanel.name);
+                    currentPasswordInput.text = "";
+                    newPasswordInput.text = "";
+                    confirmPasswordInput.text = "";
+                }
+                else
+                {
+                    Debug.LogError("POST request failed!");
+                    Debug.LogError("Error: " + request.error);
+                    Debug.LogError("Response Code: " + request.responseCode);
+                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                }
             }
         }
     }
@@ -1159,19 +1333,19 @@ public class LevelManager : MonoBehaviour
 
     public void LevelSet()
     {
-        foreach (Transform child in content.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        //foreach (Transform child in content.transform)
+        //{
+        //    Destroy(child.gameObject);
+        //}
 
-        for (int i = 1; i <= levelNumber; i++)
-        {
-            GameObject A = Instantiate(levelPrefab, content.transform);
-            A.transform.localScale = Vector3.one;
-            A.name = i.ToString();
-            A.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.ToString();
-            A.GetComponent<Button>().onClick.AddListener(ClenderLevelButtonClick);
-        }
+        //for (int i = 1; i <= levelNumber; i++)
+        //{
+        //    GameObject A = Instantiate(levelPrefab, content.transform);
+        //    A.transform.localScale = Vector3.one;
+        //    A.name = i.ToString();
+        //    A.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.ToString();
+        //    A.GetComponent<Button>().onClick.AddListener(ClenderLevelButtonClick);
+        //}
     }
 
     public void ClenderLevelButtonClick()
@@ -1293,8 +1467,6 @@ public class LevelManager : MonoBehaviour
         foreach (var item in todayStars)
             item.text = ApiDataCall.Instance.toDayPoint.ToString();
     }
-
-
 }
 
 [Serializable]
@@ -1324,5 +1496,23 @@ public class UJsonResponse
     public int StatusCode { get; set; }
     public bool IsSuccess { get; set; }
     public Data Data      { get; set; }
+    public string Message { get; set; }
+}
+
+[Serializable]
+public class StarData
+{
+    public string Date { get; set; }
+    public string UserStar { get; set; }
+    public string Id { get; set; }
+}
+
+[Serializable]
+public class StarResponse
+{
+    public string Version { get; set; }
+    public int StatusCode { get; set; }
+    public bool IsSuccess { get; set; }
+    public List<StarData> Data { get; set; }
     public string Message { get; set; }
 }

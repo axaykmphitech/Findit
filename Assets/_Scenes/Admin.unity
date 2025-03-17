@@ -30055,7 +30055,7 @@ MonoBehaviour:
   FontStyle: 0
   EnabledTextColor: {r: 0, g: 0, b: 0, a: 1}
   SelectedTextColor: {r: 0, g: 0, b: 0, a: 1}
-  DisabledTextColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+  DisabledTextColor: {r: 0.7764706, g: 0.7764706, b: 0.7764706, a: 1}
   MarkSprite: {fileID: 21300000, guid: cc3cecc111c92b1409621ed5170f5761, type: 3}
   SelectedBackgroundColor: {r: 0.9607843, g: 0.9607843, b: 0.95686275, a: 1}
   EnabledBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
@@ -38104,7 +38104,7 @@ MonoBehaviour:
   FontStyle: 0
   EnabledTextColor: {r: 0, g: 0, b: 0, a: 1}
   SelectedTextColor: {r: 0, g: 0, b: 0, a: 1}
-  DisabledTextColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+  DisabledTextColor: {r: 0.7764706, g: 0.7764706, b: 0.7764706, a: 1}
   MarkSprite: {fileID: 21300000, guid: cc3cecc111c92b1409621ed5170f5761, type: 3}
   SelectedBackgroundColor: {r: 0.9607843, g: 0.9607843, b: 0.95686275, a: 1}
   EnabledBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
@@ -38124,7 +38124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 746317b581967e24a9b69effdf5b1106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 0
+  isOpen: 1
 --- !u!222 &1416103540
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60313,7 +60313,7 @@ MonoBehaviour:
   FontStyle: 0
   EnabledTextColor: {r: 0, g: 0, b: 0, a: 1}
   SelectedTextColor: {r: 0, g: 0, b: 0, a: 1}
-  DisabledTextColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+  DisabledTextColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   MarkSprite: {fileID: 21300000, guid: cc3cecc111c92b1409621ed5170f5761, type: 3}
   SelectedBackgroundColor: {r: 0.9607843, g: 0.9607843, b: 0.95686275, a: 1}
   EnabledBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
