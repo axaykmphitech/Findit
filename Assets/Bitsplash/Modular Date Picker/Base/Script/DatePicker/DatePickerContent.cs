@@ -302,6 +302,7 @@ namespace Bitsplash.DatePicker
         }
         public void GenerateCells()
         {
+            Debug.Log("genereate cels");
             Clear();
             if (cellPrefab == null)
                 return;
@@ -355,8 +356,6 @@ namespace Bitsplash.DatePicker
 
         void FillCells(DateTime monthFirst)
         {
-            Debug.Log("here");
-
             monthFirst = monthFirst.Date;
             mMonthFirst = monthFirst;
 

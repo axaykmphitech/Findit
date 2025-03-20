@@ -24,7 +24,7 @@ public class DialogCanvas : MonoBehaviour
     public void ShowFailedDialog(string message)
     {
         failedDialog.SetActive(true);
-        failedDialog.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = message;
+        failedDialog.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = message;//
     }
 
     public void CloseFailedDialog()

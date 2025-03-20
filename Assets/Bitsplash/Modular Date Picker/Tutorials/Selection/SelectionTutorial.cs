@@ -65,7 +65,7 @@ namespace Bitsplash.DatePicker.Tutorials
 
                 for (int i = 0; i < selection.Count; i++)
                 {
-                    var date = selection.GetItem(i);
+                    var date =  selection.GetItem(i);
                     text += date.ToShortDateString();
                 }
 
@@ -92,6 +92,7 @@ namespace Bitsplash.DatePicker.Tutorials
         // Update is called once per frame
         void Update()
         {
+
         }
     }
 }

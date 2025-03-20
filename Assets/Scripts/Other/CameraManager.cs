@@ -25,7 +25,6 @@ public class CameraManager : MonoBehaviour
 
     public void Start()
     {
-        Debug.Log("Checking Camera Permission...");
 
         if (Permission.HasUserAuthorizedPermission(Permission.Camera))
         {

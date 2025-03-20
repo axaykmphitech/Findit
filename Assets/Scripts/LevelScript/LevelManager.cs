@@ -7,6 +7,8 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 public class LevelManager : MonoBehaviour
 {
@@ -111,17 +113,19 @@ public class LevelManager : MonoBehaviour
 
     UJsonResponse uJsonResponse;
 
+    public TextMeshProUGUI dateText;
+    private int cM;
+    private int cY;
+    
     public static LevelManager Instance;
 
     private void Awake()
     {
-        Debug.Log("awake");
         Instance = this;
     }
 
     public void Start()
     {
-        Debug.Log("start");
         contactUsUrl = ApiDataCall.Instance.baseUrl + "user/contactUs";
         deleteAccountUrl = ApiDataCall.Instance.baseUrl + "user/deleteAccount";
         changePasswordUrl = ApiDataCall.Instance.baseUrl + "user/changePassword";
@@ -440,6 +444,7 @@ public class LevelManager : MonoBehaviour
         WWWForm form = new WWWForm();
 
         form.AddField("date", formattedDate);
+        Debug.Log(formattedDate);
 
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(getiImageByDate, form))
@@ -489,8 +494,40 @@ public class LevelManager : MonoBehaviour
     {
         string currentMonth = DateTime.Now.ToString("MM");
         string currentYear  = DateTime.Now.ToString("yyyy");
+        cM = int.Parse(currentMonth);
+        cY = int.Parse(currentYear);
         StartCoroutine(PastPhotoesRoutine(currentMonth, currentYear));
+    }
 
+    public static string GetMonthName(string monthNumber)
+    {
+        if (int.TryParse(monthNumber, out int month) && month >= 1 && month <= 12)
+        {
+            return CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
+        }
+        return "Invalid Month";
+    }
+
+    public void PreviousMonthButton()
+    {
+        cM--;
+        if(cM < 1)
+        {
+            cY--;
+            cM = 12;
+        }
+        StartCoroutine(PastPhotoesRoutine(cM.ToString(), cY.ToString()));
+    }
+
+    public void NextMonthButton()
+    {
+        cM++;
+        if (cM > 12)
+        {
+            cY++;
+            cM = 1;
+        }
+        StartCoroutine(PastPhotoesRoutine(cM.ToString(), cY.ToString()));
     }
 
     public IEnumerator PastPhotoesRoutine(string currentMonth, string currentYear)
@@ -500,6 +537,9 @@ public class LevelManager : MonoBehaviour
         form.AddField("month", currentMonth);
         form.AddField("year",  currentYear);
 
+        string dateCombo = GetMonthName(currentMonth) + " "+ currentYear;
+        dateText.text = dateCombo;
+
         using (UnityWebRequest request = UnityWebRequest.Post(userPhotoHistory, form))
         {
             request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
@@ -507,7 +547,6 @@ public class LevelManager : MonoBehaviour
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log("play past button lcick");
                 PanelActive(mapsPanel.name);
                 LevelSet();
 
@@ -515,6 +554,11 @@ public class LevelManager : MonoBehaviour
                 StarResponse response = JsonConvert.DeserializeObject<StarResponse>(request.downloadHandler.text);
                 Debug.Log(response.Data.Count);
                 Debug.Log(response.Data.Count);
+
+                foreach (Transform item in content.transform)
+                {
+                    Destroy(item.gameObject);
+                }
 
                 for (int i = 0; i < response.Data.Count; i++)
                 {
@@ -597,7 +641,6 @@ public class LevelManager : MonoBehaviour
 
     public void BackMapsBtnClick()
     {
-        Debug.Log("back maps btn click");
         PanelActive(levelPanel.name);
     }
 
@@ -648,7 +691,7 @@ public class LevelManager : MonoBehaviour
                     {
                         Destroy(item.gameObject);
                     }
-                    for (int i = 0; i < uJsonResponse.Data.imagesList.Length; i++)
+                    for (int i = 0; i < uJsonResponse.Data.imagesList.Count; i++)
                     {
                         ImageData image = uJsonResponse.Data.imagesList[i];
 
@@ -1208,14 +1251,21 @@ public class LevelManager : MonoBehaviour
         settingContent.GetComponent<RectTransform>().position = new Vector3(settingContent.transform.position.x, 0, settingContent.transform.position.z);
         PanelActive(settingPanel.name);
         contactusUsernameInput.text = "";
-        contactusEmailInput.text = "";
-        contactusSubjectInput.text = "";
-        contactusMessageInput.text = "";
+        contactusEmailInput.text =    "";
+        contactusSubjectInput.text =  "";
+        contactusMessageInput.text =  "";
     }
 
     public void ContactUsSubmitButtonClick()
     {
         StartCoroutine(contactUsCheck(contactusUsernameInput.text, contactusEmailInput.text, contactusSubjectInput.text, contactusMessageInput.text));
+    }
+
+    public bool IsValidEmail(string email)
+    {
+        string pattern = @"^[a-zA-Z0-9_+&*-]+(?:\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$";
+        Regex regex = new Regex(pattern);
+        return regex.IsMatch(email);
     }
 
     public IEnumerator contactUsCheck(string name, string email, string subject, string message)
@@ -1232,32 +1282,42 @@ public class LevelManager : MonoBehaviour
         //Debug.Log(message + " message");
 
         // Create request
-        using (UnityWebRequest request = UnityWebRequest.Post(contactUsUrl, form))
+
+        if (!IsValidEmail(email))
         {
-            yield return request.SendWebRequest();
-
-            // Check response
-            if (request.result == UnityWebRequest.Result.Success)
+            DialogCanvas.Instance.ShowFailedDialog("Please enter valid email address");
+        }
+        else
+        {
+            using (UnityWebRequest request = UnityWebRequest.Post(contactUsUrl, form))
             {
-                Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
-                PanelActive(settingPanel.name);
-                contactusUsernameInput.text = "";
-                contactusEmailInput.text = "";
-                contactusSubjectInput.text = "";
-                contactusMessageInput.text = "";
-            }
-            else
-            {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                yield return request.SendWebRequest();
 
-                string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
-                DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                // Check response
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
+                    PanelActive(settingPanel.name);
+                    contactusUsernameInput.text = "";
+                    contactusEmailInput.text = "";
+                    contactusSubjectInput.text = "";
+                    contactusMessageInput.text = "";
+                }
+                else
+                {
+                    Debug.LogError("POST request failed!");
+                    Debug.LogError("Error: " + request.error);
+                    Debug.LogError("Response Code: " + request.responseCode);
+                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    DialogCanvas.Instance.ShowFailedDialog(status["message"]);
+                }
             }
         }
+
+        
     }
 
     public void DeleteAccountBackButtonClick()

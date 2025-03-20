@@ -103,8 +103,8 @@ public class SignInManager : MonoBehaviour
         forgotPasswordverifyOTPUrl = ApiDataCall.Instance.baseUrl + "auth/verifyOTP";
         resetPasswordUrl = ApiDataCall.Instance.baseUrl + "auth/resetPassword";
 
-        emailInput.text = "t104@gmail.com";
-        passwordInput.text = "1234567890";
+        //emailInput.text = "t104@gmail.com";
+        //passwordInput.text = "1234567890";
 
         isHide = true;
         isNewPasswordHide = true;
@@ -218,7 +218,7 @@ public class SignInManager : MonoBehaviour
 
     public IEnumerator FindItPanelChange()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         ActivePanel(signInPanel.name);
     }
 
@@ -324,6 +324,10 @@ public class SignInManager : MonoBehaviour
                 {
                     Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
                     ActivePanel(authenticationPanel.name);
+
+                    //string Json = request.downloadHandler.text;
+                    //SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    //DialogCanvas.Instance.ShowFailedDialog(status["data"]["otpCode"]);
                 }
                 else
                 {
@@ -414,6 +418,10 @@ public class SignInManager : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
+
+                //string Json = request.downloadHandler.text;
+                //SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                //DialogCanvas.Instance.ShowFailedDialog(status["data"]["otpCode"]);
             }
             else
             {
@@ -545,6 +553,10 @@ public class SignInManager : MonoBehaviour
                 {
                     Debug.Log("Sign-Up Successful: " + request.downloadHandler.text);
                     ActivePanel(otpManagePanel.name);
+
+                    //string Json = request.downloadHandler.text;
+                    //SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    //DialogCanvas.Instance.ShowFailedDialog(status["data"]["otpCode"]);
                 }
                 else
                 {

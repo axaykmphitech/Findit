@@ -60,6 +60,10 @@ public class AdminManager : MonoBehaviour
     public Transform scheduledImageContent;
     public RawImage updateImagePreview;
 
+    [Header("Scroll View")]
+    public ScrollRect newImageScroll;
+    public ScrollRect scheduleImageScroll;
+
     [Header("Button")]
     public Button signInPassInputHide;
     public Button createNewPassInputHide;
@@ -176,8 +180,8 @@ public class AdminManager : MonoBehaviour
 
     public void Start()
     {
-        signEmailInput.text = "admin@gmail.com";
-        signPassInput.text = "admin@123"; 
+        //signEmailInput.text = "admin@gmail.com";
+        //signPassInput.text = "admin@123"; 
 
         isSignpass = true;
         isCreateNewPass = true;
@@ -186,6 +190,64 @@ public class AdminManager : MonoBehaviour
         isNewPasswordHide = true;
         isConfirmPasswordHide = true;
         ActivePanel(signInPanel.name);
+
+        //newImageScroll.onValueChanged.AddListener(NewImageOnScroll);
+        //scheduleImageScroll.onValueChanged.AddListener(ScheduleImageOnScroll);
+    }
+
+    public bool isReachedBottom1;
+    public bool isReachedBottom2;
+    private int totalNewImage;
+    private int totalScheduleImage;
+    private int skip1 = 0;
+    private int skip2 = 0;
+    
+
+    void NewImageOnScroll(Vector2 pos)
+    {
+        // For Vertical Scroll
+        if (pos.y <= 0.01f)
+        {
+            if(!isReachedBottom1 && skip1 < totalNewImage)
+            {
+                isReachedBottom1 = true;
+                skip1 += 10;
+                Debug.Log("Reached Bottom! " + skip1);
+                StartCoroutine(GetNewImagelistRoutine("pending"));
+            }
+        }
+        if(pos.y > 0.01)
+        {
+            isReachedBottom1 = false;
+        }
+        if (pos.x >= 0.99f)
+        {
+            Debug.Log("Reached Right End!");
+        }
+    }
+
+    void ScheduleImageOnScroll(Vector2 pos)
+    {
+        // For Vertical Scroll
+        if (pos.y <= 0.01f)
+        {
+            if (!isReachedBottom2 && skip2 < totalScheduleImage)
+            {
+                isReachedBottom2 = true;
+                skip2 += 10;
+                Debug.Log("Reached Bottom! " + skip2);
+                StartCoroutine(GetSchedulelistRoutine("accepted"));
+            }
+        }
+        if (pos.y > 0.01)
+        {
+            isReachedBottom2 = false;
+        }
+        // For Horizontal Scroll
+        if (pos.x >= 0.99f)
+        {
+            Debug.Log("Reached Right End!");
+        }
     }
 
     public void Update()
@@ -449,7 +511,6 @@ public class AdminManager : MonoBehaviour
         {
             DialogCanvas.Instance.ShowFailedDialog("Password should be 8 character long");
         }
-        Debug.Log(email + " email");
         //Debug.Log(password + " password");
         //Debug.Log(deviceType + " deviceType");
         //Debug.Log(deviceToken + " deviceToken");
@@ -475,7 +536,7 @@ public class AdminManager : MonoBehaviour
 
                     token = status["data"]["token"];
 
-                    StartCoroutine(GetNewImagelistRoutine("pending", "0", "10"));
+                    StartCoroutine(GetNewImagelistRoutine("pending"));
                 }
                 else
                 {
@@ -739,16 +800,18 @@ public class AdminManager : MonoBehaviour
     {
         newImageObject.SetActive(true);
         scheduledImagesObject.SetActive(false);
-
-        StartCoroutine(GetNewImagelistRoutine("pending", "0", "10"));
+        response.data.imagesList.Clear();
+        StartCoroutine(GetNewImagelistRoutine("pending"));
+        skip2 = 0;
     }
 
     public void ScheduledImagesButtonClick()
     {
         newImageObject.SetActive(false);
         scheduledImagesObject.SetActive(true);
-
-        StartCoroutine(GetSchedulelistRoutine("accepted", "0", "10"));
+        response.data.imagesList.Clear();
+        StartCoroutine(GetSchedulelistRoutine("accepted"));
+        skip1 = 0;
     }
 
     public void AppleNewImageButtonClick()
@@ -822,7 +885,6 @@ public class AdminManager : MonoBehaviour
             }
         }
     }
-
 
     public void CancelDateButtonClick()
     {
@@ -1682,7 +1744,7 @@ public class AdminManager : MonoBehaviour
                         mainLevel.transform.GetChild(0).GetComponent<DragCornerHandles>().enabled = false;
                         mainLevel.transform.GetChild(0).GetComponent<DragSprite>().enabled = false;
                     }
-                    StartCoroutine(GetSchedulelistRoutine("accepted", "0", "10"));
+                    StartCoroutine(GetSchedulelistRoutine("accepted"));
                 }
                 else
                 {
@@ -1700,18 +1762,16 @@ public class AdminManager : MonoBehaviour
         
     }
 
-    public IEnumerator GetNewImagelistRoutine(string status, string skip, string limit)
+    public IEnumerator GetNewImagelistRoutine(string status)
     {
         WWWForm form = new WWWForm();
         form.AddField("status", status);
-        form.AddField("skip", skip);
-        form.AddField("limit", limit);
+        //form.AddField("skip", skip);
+        //form.AddField("limit", limit);
 
-        Debug.Log("status " + status);
         //Debug.Log("skip " + skip);
         //Debug.Log("limit " + limit);
 
-        Debug.Log("URL: " + imageListUrl);
         using (UnityWebRequest request = UnityWebRequest.Post(imageListUrl, form))
         {
             request.SetRequestHeader("Authorization", "Bearer " + token);
@@ -1724,24 +1784,26 @@ public class AdminManager : MonoBehaviour
                 SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
                 Debug.Log(Json);
 
+                
                 response = JsonConvert.DeserializeObject<JsonResponse>(Json);
+
                 if (response != null && response.isSuccess)
                 {
                     Debug.Log("Total Records: " + response.data.totalRecords);
+                    totalNewImage = int.Parse(response.data.totalRecords.ToString());
 
-                    foreach (Transform item in newImageContent)
+                    foreach (Transform item in scheduledImageContent)
                     {
                         Destroy(item.gameObject);
                     }
 
-                    for (int i = 0; i < response.data.imagesList.Length; i++)
+                    for (int i = 0; i < response.data.imagesList.Count; i++)
                     {
                         ImageData image = response.data.imagesList[i];
 
                         GameObject imageItem = Instantiate(imageItemPrefab, newImageContent);
                         imageItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = image.title.ToString();
                         imageItem.GetComponent<Button>().onClick.AddListener(() => OpenNewImageDetailedPanel(image, image.photo, image.title, image.hint));
-                        Debug.Log(image.photo.ToString());
                         StartCoroutine(LoadImage(imageItem.transform.GetChild(0).GetComponent<RawImage>(), image.photo.ToString()));
                     }
                 }
@@ -1764,14 +1826,13 @@ public class AdminManager : MonoBehaviour
         }
     }
 
-    public IEnumerator GetSchedulelistRoutine(string status, string skip, string limit)
+    public IEnumerator GetSchedulelistRoutine(string status)
     {
         WWWForm form = new WWWForm();
         form.AddField("status", status);
-        form.AddField("skip", skip);
-        form.AddField("limit", limit);
+        //form.AddField("skip", skip);
+        //form.AddField("limit", limit);
 
-        Debug.Log("status " + status);
         //Debug.Log("skip " + skip);
         //Debug.Log("limit " + limit);
 
@@ -1789,16 +1850,18 @@ public class AdminManager : MonoBehaviour
                 Debug.Log(Json);
 
                 response = JsonConvert.DeserializeObject<JsonResponse>(Json);
+
                 if (response != null && response.isSuccess)
                 {
                     Debug.Log("Total Records: " + response.data.totalRecords);
+                    totalScheduleImage = int.Parse(response.data.totalRecords.ToString());
 
                     foreach (Transform item in scheduledImageContent)
                     {
                         Destroy(item.gameObject);
                     }
 
-                    for (int i = 0; i < response.data.imagesList.Length; i++)
+                    for (int i = 0; i < response.data.imagesList.Count; i++)
                     {
                         ImageData image = response.data.imagesList[i];
 
@@ -1830,7 +1893,6 @@ public class AdminManager : MonoBehaviour
 
     IEnumerator LoadImage(RawImage rawImage, string imageUrl)
     {
-        Debug.Log(imageUrl);
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(imageUrl);
         yield return request.SendWebRequest();
 
@@ -1841,10 +1903,10 @@ public class AdminManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("POST request failed!");
-            Debug.LogError("Error: " + request.error);
-            Debug.LogError("Response Code: " + request.responseCode);
-            Debug.LogError("Response Text: " + request.downloadHandler.text);
+            //Debug.LogError("POST request failed!");
+            //Debug.LogError("Error: " + request.error);
+            //Debug.LogError("Response Code: " + request.responseCode);
+            //Debug.LogError("Response Text: " + request.downloadHandler.text);
 
             //string Json = request.downloadHandler.text;
             //SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
@@ -1854,6 +1916,7 @@ public class AdminManager : MonoBehaviour
 
     private void OpenNewImageDetailedPanel(ImageData image, string imageUrl, string title, string hint)
     {
+        Debug.Log(image.id);
         ImageData imageData = image;
 
         imageDetailPanel.SetActive(true);
@@ -1861,6 +1924,9 @@ public class AdminManager : MonoBehaviour
         imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>().text = title;
         imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(4).GetChild(1).GetComponent<TextMeshProUGUI>().text = hint;
         TextMeshProUGUI date = imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(5).GetChild(0).GetComponent<TextMeshProUGUI>();
+
+        imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<Button>().onClick.RemoveAllListeners();
+        imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<Button>().onClick.RemoveAllListeners();
         imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<Button>().onClick.AddListener(() => StartCoroutine(UpdateNewImageRoutine("accepted", imageData.id, date, imageData.xPos, imageData.yPos, imageData.xScale, imageData.yScale)));
         imageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<Button>().onClick.AddListener(() => OpenReasonPanel(imageData));
     }
@@ -1870,7 +1936,7 @@ public class AdminManager : MonoBehaviour
         ImageData imageData = image;
         string imageUrl2 = imageUrl;
         string title2 = title;
-        string hint2 = hint;
+        string hint2 =  hint;
         string date2 = date;
 
         scheduledImageDetailPanel.SetActive(true);
@@ -1879,13 +1945,15 @@ public class AdminManager : MonoBehaviour
         scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>().text =  date2;
         scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text =  hint2;
         deleteButton.onClick.AddListener(() => StartCoroutine(DeleteImageRoutine(imageData.id)));
+
+        scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<Button>().onClick.RemoveAllListeners();
         scheduledImageDetailPanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<Button>().onClick.AddListener(() => OpenEditImageDialog(imageData));
     }
 
     public IEnumerator UpdateNewImageRoutine(string status, string imageId, TextMeshProUGUI date, string xPos, string yPos, string xScale, string yScale)
     {
         string formattedDate = date.text;
-        Debug.Log(formattedDate);
+        Debug.Log(imageId);
 
         WWWForm form = new WWWForm();
         form.AddField("status", status);
@@ -1917,7 +1985,8 @@ public class AdminManager : MonoBehaviour
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
                 int ResponseCode = data["ResponseCode"];
-                StartCoroutine(GetNewImagelistRoutine("pending", "0", "10"));
+                StartCoroutine(GetNewImagelistRoutine("pending"));
+                canvas.gameObject.SetActive(true);
             }
             else
             {
@@ -1975,7 +2044,7 @@ public class AdminManager : MonoBehaviour
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
                 int ResponseCode = data["ResponseCode"];
-                StartCoroutine(GetNewImagelistRoutine("pending", "0", "10"));
+                StartCoroutine(GetNewImagelistRoutine("pending"));
             }
             else
             {
@@ -2015,7 +2084,7 @@ public class AdminManager : MonoBehaviour
                         string Json = request.downloadHandler.text;
                         SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
                         int ResponseCode = data["ResponseCode"];
-                        StartCoroutine(GetSchedulelistRoutine("accepted", "0", "10"));
+                        StartCoroutine(GetSchedulelistRoutine("accepted"));
                     }
                     else
                     {
@@ -2046,6 +2115,7 @@ public class AdminManager : MonoBehaviour
         TextMeshProUGUI dateText = editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>();
         RawImage rawImage = editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<RawImage>();
 
+        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(1).GetComponent<Button>().onClick.RemoveAllListeners();
         editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(1).GetComponent<Button>().onClick.AddListener(() => StartCoroutine(EditImageRoutine(rawImage, imageData.id, imageData.title, imageData.hint, dateText, imageData.xPos, imageData.yPos, imageData.xScale, imageData.yScale)));
     }
 
@@ -2088,8 +2158,8 @@ public class AdminManager : MonoBehaviour
                 scheduledImagesDateButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color32(184, 184, 184, 255);
                 ActivePanel(imageSelectPanel.name);
                 isEditImagedatePanel = false;
-
-                StartCoroutine(GetSchedulelistRoutine("accepted", "0", "10"));
+                canvas.gameObject.SetActive(true);
+                StartCoroutine(GetSchedulelistRoutine("accepted"));
             }
             else
             {
@@ -2129,7 +2199,7 @@ public class ImageData
 public class Data
 {
     public int totalRecords;
-    public ImageData[] imagesList;
+    public List<ImageData> imagesList;
 }
 
 [System.Serializable]

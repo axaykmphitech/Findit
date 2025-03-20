@@ -38,7 +38,6 @@ public class ApiDataCall : MonoBehaviour
 
     public void Awake()
     {
-        Debug.Log("awake");
         if (Instance == null)
         {
             Instance = this;
