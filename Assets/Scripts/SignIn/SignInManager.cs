@@ -57,7 +57,7 @@ public class SignInManager : MonoBehaviour
     public bool isConfirmNewPasswordHide = false;
     public bool isCreateAccountPasswordHide = false;
     public bool isOpenPasswordPanel = false;
-    public bool isPicturePanelOpen = false;
+    public bool isPicturePanelOpen =  false;
     public bool isCongratulationsPanel = false;
 
     [Header("Button")]
@@ -89,13 +89,17 @@ public class SignInManager : MonoBehaviour
 
     public static SignInManager Instance;
 
+    private bool oneTime = false;
+
     public void Awake()
     {
         Instance = this;
+        Debug.Log("Awake");
     }
 
     private void Start()
     {
+        Debug.Log("Start");
         loginUrl =  ApiDataCall.Instance.baseUrl + "auth/login";
         signupUrl = ApiDataCall.Instance.baseUrl + "auth/signup";
         sendOtp =  ApiDataCall.Instance.baseUrl + "auth/sendOTP";
@@ -104,11 +108,11 @@ public class SignInManager : MonoBehaviour
         resetPasswordUrl = ApiDataCall.Instance.baseUrl + "auth/resetPassword";
 
         //emailInput.text = "t104@gmail.com";
-        //passwordInput.text = "1234567890";
+        //passwordInput.text = "1234567890" ;
 
         isHide = true;
         isNewPasswordHide = true;
-        isConfirmNewPasswordHide =    true;
+        isConfirmNewPasswordHide  = true;
         isCreateAccountPasswordHide = true;
 
         if (PlayerPrefs.GetInt("PanelState", 0) == 0)
@@ -118,8 +122,14 @@ public class SignInManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("signin open");
             ActivePanel(signInPanel.name);
         }
+
+        newOtpInput.characterLimit = 4;
+        newVerifyOTPInput.characterLimit = 4;
+        ///PlayerPrefs.SetString("email", email);
+        ///PlayerPrefs.SetString("password", password);
     }
 
     void SetPanelState()
@@ -143,7 +153,7 @@ public class SignInManager : MonoBehaviour
     public IEnumerator ChangeTime()
     {
         yield return new WaitForSeconds(0.2f);
-        PlayerPrefs.SetInt("PanelState", 1);
+        PlayerPrefs.SetInt("PanelState",   1);
     }
 
     private void Update()
@@ -153,7 +163,7 @@ public class SignInManager : MonoBehaviour
             StartCoroutine(FindItPanelChange());
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.   Escape))
         {
             if (signInPanel.activeInHierarchy)
             {
@@ -219,7 +229,32 @@ public class SignInManager : MonoBehaviour
     public IEnumerator FindItPanelChange()
     {
         yield return new WaitForSeconds(3);
-        ActivePanel(signInPanel.name);
+        if (PlayerPrefs.GetString("email", "") != "" && PlayerPrefs.GetString("password", "") != "")
+        {
+            string email = PlayerPrefs.GetString("email", "");
+            string pass = PlayerPrefs.GetString("password", "");
+
+            if(email == "admin@gmail.com")
+            {
+                if(!oneTime)
+                {
+                    SceneManager.LoadScene(4);
+                    oneTime = true;
+                }
+            }
+            else
+            {
+                if(!oneTime)
+                {
+                    StartCoroutine(LoginRequest(email, pass, "user", "android", "abcd"));
+                    oneTime = true;
+                }
+            }
+        }
+        else
+        {
+            ActivePanel(signInPanel.name);
+        }
     }
 
     public void TemporaryAdminButtonClick()
@@ -235,13 +270,11 @@ public class SignInManager : MonoBehaviour
     public IEnumerator LoginRequest(string email, string password, string userType, string deviceType, string deviceToken)
     {
         WWWForm form = new WWWForm();
-        form.AddField("email", email);
-        form.AddField("password", password);
-        form.AddField("userType", userType);
-        form.AddField("deviceType", deviceType);
+        form.AddField("email",       email);
+        form.AddField("password",    password);
+        form.AddField("userType",    userType);
+        form.AddField("deviceType",  deviceType);
         form.AddField("deviceToken", deviceToken);
-
-        Debug.Log(loginUrl);
 
         if (!IsValidEmail(email))
         {
@@ -253,16 +286,14 @@ public class SignInManager : MonoBehaviour
         }
         else
         {
-            // Create request
             using (UnityWebRequest request = UnityWebRequest.Post(loginUrl, form))
             {
                 yield return request.SendWebRequest();
 
-                // Check response
                 if (request.result == UnityWebRequest.Result.Success)
                 {
                     ActivePanel(gameDetailsPanel.name);
-                    emailInput.text = "";
+                    emailInput.text =    "";
                     passwordInput.text = "";
 
                     rootData = JsonUtility.FromJson<RootSign>(request.downloadHandler.text);
@@ -276,6 +307,9 @@ public class SignInManager : MonoBehaviour
                     ApiDataCall.Instance.toDayPoint = rootData.data.toDayPoint;
                     ApiDataCall.Instance.token = rootData.data.token;
                     ApiDataCall.Instance.userId = rootData.data.userId;
+
+                    PlayerPrefs.SetString("email",       email);
+                    PlayerPrefs.SetString("password", password);
                 }
                 else
                 {
@@ -295,6 +329,7 @@ public class SignInManager : MonoBehaviour
     public void SignUpButtonClick()
     {
         ActivePanel(createAccountPanel.name);
+        newOtpInput.text = "";
     }
 
     public void ForgetPasswordSendEmailCOdeButtonClick()
@@ -360,7 +395,6 @@ public class SignInManager : MonoBehaviour
         form.AddField("otp", otp);
         form.AddField("email", email);
 
-        Debug.Log(otp + " here ");
 
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordverifyOTPUrl, form))
@@ -407,7 +441,6 @@ public class SignInManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("email", email);
 
-        Debug.Log(email + " email");
 
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordUrl, form))
@@ -448,8 +481,6 @@ public class SignInManager : MonoBehaviour
         form.AddField("newPassword", newPassword);
         form.AddField("email", email);
 
-        Debug.Log(" new pss " + newPassword);
-        Debug.Log(" email " + email);
 
         if (newPasswordInput.text == "" || confirmNewPasswordInput.text == "")
         {
@@ -513,9 +544,6 @@ public class SignInManager : MonoBehaviour
         form.AddField("userName", userName);
         form.AddField("email", email);
 
-        Debug.Log("email " + email);
-        Debug.Log("userName " + userName);
-        Debug.Log("api " + sendOtp);
 
         if(!IsValidEmail(email))
         {
@@ -622,7 +650,7 @@ public class SignInManager : MonoBehaviour
     public void AuthenticationPanelBackButtonClick()
     {
         ActivePanel(forgotPasswordPanel.name);
-
+        newVerifyOTPInput.text = "";
         for (int i = 0; i < OTPInputManager.Instance.otpFields.Length; i++)
         {
             OTPInputManager.Instance.otpFields[i].text = "";
@@ -664,7 +692,7 @@ public class SignInManager : MonoBehaviour
 
                 pictureImage.sprite = sprite;
                 imageFile = ConvertSpriteToBytes(sprite);
-                Debug.Log(imageFile + " imageFile");
+                
 
                 if (imageFile == null)
                 {
@@ -677,15 +705,12 @@ public class SignInManager : MonoBehaviour
                 }
             }
         });
-        Debug.Log("Permission result: " + permission);
     }
 
     byte[] ConvertSpriteToBytes(Sprite sprite)
     {
-        Debug.Log("ConvertSpriteToBytes");
         if (sprite == null)
         {
-            Debug.LogError("Sprite is null!");
             return null;
         }
 
@@ -702,7 +727,6 @@ public class SignInManager : MonoBehaviour
     {
         if (sprite == null)
         {
-            Debug.LogError("Sprite is null!");
             return null;
         }
 
@@ -820,12 +844,10 @@ public class SignInManager : MonoBehaviour
     {
         if (IsValidEmail(inputField.text))
         {
-            Debug.Log("Valid Email");
             inputField.textComponent.color = Color.black;
         }
         else
         {
-            Debug.Log("Invalid Email Format");
             inputField.textComponent.color = Color.red;
         }
     }
@@ -861,7 +883,8 @@ public class SignInManager : MonoBehaviour
         ActivePanel(createAccountPanel.name);
         createAccountUsernameInput.text = "";
         createAccountPasswordInput.text = "";
-        createAccountemailInput.text = "";
+        createAccountemailInput.text =    "";
+        newOtpInput.text = "";
         pictureImage.GetComponent<Image>().sprite = mainImage;
     }
 
@@ -877,7 +900,6 @@ public class SignInManager : MonoBehaviour
         //otp3Input.text = otpText;
         //otp4Input.text = otpText;
 
-        Debug.Log(otpText + " otpText");
 
         StartCoroutine(VerifySignUp(otpText, imageFile, createAccountUsernameInput.text, createAccountemailInput.text, createAccountPasswordInput.text, "user", "android", "abcd"));
     }
@@ -895,15 +917,6 @@ public class SignInManager : MonoBehaviour
         form.AddField("deviceType", deviceType);
         form.AddField("deviceToken", deviceToken);
 
-        Debug.Log("email " + email);
-        Debug.Log("userName " + userName);
-        Debug.Log("otp " + otp);
-        Debug.Log("profile " + profile);
-        Debug.Log("password " + password);
-        Debug.Log("userType " + userType);
-        Debug.Log("deviceType " + deviceType);
-        Debug.Log("deviceToken " + deviceToken);
-
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(signupUrl, form))
         {
@@ -918,15 +931,18 @@ public class SignInManager : MonoBehaviour
 
                 rootData = JsonUtility.FromJson<RootSign>(request.downloadHandler.text);
 
-                ApiDataCall.Instance.email = rootData.data.email;
+                ApiDataCall.Instance.email =    rootData.data.email;
                 ApiDataCall.Instance.userName = rootData.data.userName;
                 ApiDataCall.Instance.profile = rootData.data.profile;
                 ApiDataCall.Instance.ucode = rootData.data.ucode;
-                ApiDataCall.Instance.userType = rootData.data.userType;
+                ApiDataCall.Instance.userType =   rootData.data.userType;
                 ApiDataCall.Instance.totalPoint = rootData.data.totalPoint;
                 ApiDataCall.Instance.toDayPoint = rootData.data.toDayPoint;
-                ApiDataCall.Instance.token =  rootData.data.token;
-                ApiDataCall.Instance.userId = rootData.data.userId;
+                ApiDataCall.Instance.token =   rootData.data.token;
+                ApiDataCall.Instance.userId =  rootData.data.userId;
+
+                PlayerPrefs.SetString("email", email);
+                PlayerPrefs.SetString("password", password);
             }
             else
             {

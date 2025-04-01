@@ -72,23 +72,27 @@ public class TapCreateSpriteLevel : MonoBehaviour
 
     public void OnMouseDown()
     {
+        Debug.Log("On Mouse Down");
         isHolding = true;
         holdTime = 0f;
     }
 
     public void OnMouseUp()
     {
+        Debug.Log("On Mounse Up");
         ResetHold();
     }
 
     public void ResetHold()
     {
+        Debug.Log("Reset Hold");
         isHolding = false;
         holdTime = 0f;
     }
 
     public void CreateSpriteAtPosition()
     {
+        Debug.Log("Create Sprite At Position");
         if (!isCreated)
         {
             isCreated = true;
@@ -104,8 +108,6 @@ public class TapCreateSpriteLevel : MonoBehaviour
                 {
                     rightAnsSprite.AddComponent<BoxCollider2D>();
                 }
-
-                Debug.Log("New Sprite Created!");
                 isAnsSpriteAvailable = true;
             }
             else

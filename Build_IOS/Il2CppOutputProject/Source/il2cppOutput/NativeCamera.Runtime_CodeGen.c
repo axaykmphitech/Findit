@@ -1,0 +1,322 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void NativeCamera_get_PermissionType_mFD9FF633BE6115C3843BFC6ACCBB3B754DF07CAA (void);
+extern void NativeCamera_set_PermissionType_mF089DC1DC9C06413B960723098C5D826305022F9 (void);
+extern void NativeCamera_RequestPermission_m427192509C744F2D5612EFA436EAF019DC580AAA (void);
+extern void NativeCamera_CheckPermission_m33DA8DB7DCFC3F104AA23E89DFFDD2895615B5B7 (void);
+extern void NativeCamera__NativeCamera_CheckPermission_mBA65A3F23A88956C36B428138CB8CF914F891075 (void);
+extern void NativeCamera__NativeCamera_RequestPermission_mFF2A1C56D52588344090E7E4AC3352FD0B523EB2 (void);
+extern void NativeCamera__NativeCamera_CanOpenSettings_m9669238326F4B3BC0BA8979EDC552F7447BF2E11 (void);
+extern void NativeCamera__NativeCamera_OpenSettings_m5FD7161414315CBDFBDF9DDFCAC4184D289E3CDA (void);
+extern void NativeCamera__NativeCamera_HasCamera_m4609F602C13722CB70C1C6553D4E22780999B26C (void);
+extern void NativeCamera__NativeCamera_TakePicture_m297A53373955B2EA1B154A03F18CE569518B59ED (void);
+extern void NativeCamera__NativeCamera_RecordVideo_m26EB4DC0972772FFC1F4521E17F2F8F7816584CA (void);
+extern void NativeCamera__NativeCamera_GetImageProperties_m7A666ADF5C25CCC3C9C28C1399CDAFDA3BEA1761 (void);
+extern void NativeCamera__NativeCamera_GetVideoProperties_mE8A0DE43BF69428796A293D34678309D8825827D (void);
+extern void NativeCamera__NativeCamera_GetVideoThumbnail_m86263934AA445B7405A57CD18E25FBDC56EF37E9 (void);
+extern void NativeCamera__NativeCamera_LoadImageAtPath_m9E8BE5FA7502D08B03FDDA2472A0327E1D4162AD (void);
+extern void NativeCamera_get_TemporaryImagePath_m8697D60DFA6387A8227ABEE74C34C46FDC14E027 (void);
+extern void NativeCamera_get_IOSSelectedImagePath_m797A6A282C2E14DCD2C7729A4F3BA3E0EC054BC3 (void);
+extern void NativeCamera_CheckPermission_m0445839C87DFBA62F088F4A2116FFA53173470CD (void);
+extern void NativeCamera_RequestPermission_m22C7DBA897A6DB77BFB1C2DF886FC1F331CFEDB1 (void);
+extern void NativeCamera_RequestPermissionAsync_mC8600A67BB4F1B65AB202009AA15E8A1406395F3 (void);
+extern void NativeCamera_RequestPermissionAsync_m6DF2C8CC7726FC872CA507EA8312314CF89A8A40 (void);
+extern void NativeCamera_CanOpenSettings_m56BCC77D77E381E5181E956C018F4BBFB4E102BA (void);
+extern void NativeCamera_OpenSettings_m8732D49A39F244910C6722CB78FD44694C0C254B (void);
+extern void NativeCamera_TakePicture_mC2A748E023DC5C34D19AF571325AF952A714AAD4 (void);
+extern void NativeCamera_RecordVideo_mFC9802F5F9A52504C23E339018820D8CED325292 (void);
+extern void NativeCamera_DeviceHasCamera_m73F0E99DB7C414EA95D5600918FFC502373E41E7 (void);
+extern void NativeCamera_IsCameraBusy_m3373F1A16F70303B7F53D47A1143BED4152C2F54 (void);
+extern void NativeCamera_LoadImageAtPath_m0F2B227CF63FE99A67155B8C52A719AF5949C747 (void);
+extern void NativeCamera_LoadImageAtPathAsync_m7B912F60F0DF9C36558976E4F53701CF76073FC0 (void);
+extern void NativeCamera_GetVideoThumbnail_m7568A298D0A3BEABBDD10C973A4F9EB657C8644B (void);
+extern void NativeCamera_GetVideoThumbnailAsync_mED350F6F164784DF8E762509F0B22C0BC7EB7A89 (void);
+extern void NativeCamera_GetImageProperties_m906832D1F45ECF5821CFA3236192AE053761C050 (void);
+extern void NativeCamera_GetVideoProperties_m2E7F06E4A9C55A06A5752F8337951217018250EB (void);
+extern void NativeCamera_CheckPermission_mDBAA96E2682E6804008B8C52855029CE005DC8D6 (void);
+extern void ImageProperties__ctor_mDB1459622F0FFEEA741B63898D7CE5B41AA4F9EC (void);
+extern void VideoProperties__ctor_m61A493A9C32C95FE9B3F84709AC0A2E92283F97D (void);
+extern void PermissionCallback__ctor_m7CA919F20741081C2F81A209707B998CCC4D3782 (void);
+extern void PermissionCallback_Invoke_m0D631ECACFB70385F4288017D881CFB459CACA47 (void);
+extern void PermissionCallback_BeginInvoke_m2623016C072980DFF99367F96400C8B37C88B839 (void);
+extern void PermissionCallback_EndInvoke_m2B8461AD4BEF74F43786926160BA150D32090E78 (void);
+extern void CameraCallback__ctor_m39376148047C9B1A537BC5DB202E142431A77AFE (void);
+extern void CameraCallback_Invoke_mE8BD077A2F42B9DBC93521F630A1461381D3BB1A (void);
+extern void CameraCallback_BeginInvoke_m690E44108A53130266E7C1A57DC6E62F2B0BDCDF (void);
+extern void CameraCallback_EndInvoke_m64D370EA45BBA56CF1B29C19E1B766B43542D7A6 (void);
+extern void U3CU3Ec__DisplayClass34_0__ctor_mA5C92AB9C0E34FCFAC22842E6FC212D3CFDE42D5 (void);
+extern void U3CU3Ec__DisplayClass34_0_U3CRequestPermissionAsyncU3Eb__0_m5DD36A3C9FFDCFE3967132FDFBE9E29994CD55F4 (void);
+extern void U3CU3Ec__DisplayClass42_0__ctor_m02A480E94AF54377F68E85763C206A572AE473F3 (void);
+extern void U3CU3Ec__DisplayClass42_0_U3CLoadImageAtPathAsyncU3Eb__0_mD91BBEB1C219A7BE37D24E44EC5F6138C37E0212 (void);
+extern void U3CU3Ec__DisplayClass44_0__ctor_m1D4C8680D5A6CDF30E9FF9D0A84739A33CA4B3BE (void);
+extern void U3CU3Ec__DisplayClass44_0_U3CGetVideoThumbnailAsyncU3Eb__0_mCB6AC255212A1B774FC987C35F44CFCA3C66D5B3 (void);
+extern void U3CGetVideoThumbnailAsyncU3Ed__44__ctor_m02548FCD83D20124BE110E0B1940D15B6DEA758F (void);
+extern void U3CGetVideoThumbnailAsyncU3Ed__44_MoveNext_mA8A3F72180EE26D8768C3F26E331D22154A367EE (void);
+extern void U3CGetVideoThumbnailAsyncU3Ed__44_SetStateMachine_mFEDFBE97155B2FE36A1EA85C76AD33976D373E3D (void);
+extern void U3CLoadImageAtPathAsyncU3Ed__42__ctor_m7B42BF481AA310DBA745A7B2658F87C1D35E6BD9 (void);
+extern void U3CLoadImageAtPathAsyncU3Ed__42_MoveNext_mB488C3851DA46E2EAA5E19F13E6CD1930F7840D2 (void);
+extern void U3CLoadImageAtPathAsyncU3Ed__42_SetStateMachine_mF516BF64B0CE9462C7C3097973C32E5E3A418251 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m97D6F0665D5518509212FAD768B85E7D625A639C (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m44611545C859F391394E65B0BF33EA2AA7664173 (void);
+extern void NCCameraCallbackiOS_get_IsBusy_m9F87E496A3AC7F0B87DBDEB9B83572FB012B9ABA (void);
+extern void NCCameraCallbackiOS_set_IsBusy_mE9430DC4EF0FB6B2886E1745A5366C1C1C736601 (void);
+extern void NCCameraCallbackiOS__NativeCamera_IsCameraBusy_mD6BB6BD8D6C98A21ED54547F000201AA6B072A1E (void);
+extern void NCCameraCallbackiOS_Initialize_m056AEBAA4F9F101B18200CFDE27A4A09F3BDCFA8 (void);
+extern void NCCameraCallbackiOS_Update_m0DD66E73BE361507EDDD983F3B1D129EE56E22EF (void);
+extern void NCCameraCallbackiOS_OnMediaReceived_m622F5D25E393368C3955B8E8EB22823FEE828836 (void);
+extern void NCCameraCallbackiOS__ctor_mE968248C208D510DD191161A020E9446802253A6 (void);
+extern void NCPermissionCallbackiOS_Initialize_mDBB065A1D415018991A907ABC34D69C06BABCF1A (void);
+extern void NCPermissionCallbackiOS_OnPermissionRequested_mABE73820D51E2D5A85555124BA6CAEEEEAD10FF5 (void);
+extern void NCPermissionCallbackiOS__ctor_m3D22A34E8DA4D368A0B9016649A94CCB3B92BDE9 (void);
+static Il2CppMethodPointer s_methodPointers[74] = 
+{
+	NativeCamera_get_PermissionType_mFD9FF633BE6115C3843BFC6ACCBB3B754DF07CAA,
+	NativeCamera_set_PermissionType_mF089DC1DC9C06413B960723098C5D826305022F9,
+	NativeCamera_RequestPermission_m427192509C744F2D5612EFA436EAF019DC580AAA,
+	NativeCamera_CheckPermission_m33DA8DB7DCFC3F104AA23E89DFFDD2895615B5B7,
+	NativeCamera__NativeCamera_CheckPermission_mBA65A3F23A88956C36B428138CB8CF914F891075,
+	NativeCamera__NativeCamera_RequestPermission_mFF2A1C56D52588344090E7E4AC3352FD0B523EB2,
+	NativeCamera__NativeCamera_CanOpenSettings_m9669238326F4B3BC0BA8979EDC552F7447BF2E11,
+	NativeCamera__NativeCamera_OpenSettings_m5FD7161414315CBDFBDF9DDFCAC4184D289E3CDA,
+	NativeCamera__NativeCamera_HasCamera_m4609F602C13722CB70C1C6553D4E22780999B26C,
+	NativeCamera__NativeCamera_TakePicture_m297A53373955B2EA1B154A03F18CE569518B59ED,
+	NativeCamera__NativeCamera_RecordVideo_m26EB4DC0972772FFC1F4521E17F2F8F7816584CA,
+	NativeCamera__NativeCamera_GetImageProperties_m7A666ADF5C25CCC3C9C28C1399CDAFDA3BEA1761,
+	NativeCamera__NativeCamera_GetVideoProperties_mE8A0DE43BF69428796A293D34678309D8825827D,
+	NativeCamera__NativeCamera_GetVideoThumbnail_m86263934AA445B7405A57CD18E25FBDC56EF37E9,
+	NativeCamera__NativeCamera_LoadImageAtPath_m9E8BE5FA7502D08B03FDDA2472A0327E1D4162AD,
+	NativeCamera_get_TemporaryImagePath_m8697D60DFA6387A8227ABEE74C34C46FDC14E027,
+	NativeCamera_get_IOSSelectedImagePath_m797A6A282C2E14DCD2C7729A4F3BA3E0EC054BC3,
+	NativeCamera_CheckPermission_m0445839C87DFBA62F088F4A2116FFA53173470CD,
+	NativeCamera_RequestPermission_m22C7DBA897A6DB77BFB1C2DF886FC1F331CFEDB1,
+	NativeCamera_RequestPermissionAsync_mC8600A67BB4F1B65AB202009AA15E8A1406395F3,
+	NativeCamera_RequestPermissionAsync_m6DF2C8CC7726FC872CA507EA8312314CF89A8A40,
+	NativeCamera_CanOpenSettings_m56BCC77D77E381E5181E956C018F4BBFB4E102BA,
+	NativeCamera_OpenSettings_m8732D49A39F244910C6722CB78FD44694C0C254B,
+	NativeCamera_TakePicture_mC2A748E023DC5C34D19AF571325AF952A714AAD4,
+	NativeCamera_RecordVideo_mFC9802F5F9A52504C23E339018820D8CED325292,
+	NativeCamera_DeviceHasCamera_m73F0E99DB7C414EA95D5600918FFC502373E41E7,
+	NativeCamera_IsCameraBusy_m3373F1A16F70303B7F53D47A1143BED4152C2F54,
+	NativeCamera_LoadImageAtPath_m0F2B227CF63FE99A67155B8C52A719AF5949C747,
+	NativeCamera_LoadImageAtPathAsync_m7B912F60F0DF9C36558976E4F53701CF76073FC0,
+	NativeCamera_GetVideoThumbnail_m7568A298D0A3BEABBDD10C973A4F9EB657C8644B,
+	NativeCamera_GetVideoThumbnailAsync_mED350F6F164784DF8E762509F0B22C0BC7EB7A89,
+	NULL,
+	NativeCamera_GetImageProperties_m906832D1F45ECF5821CFA3236192AE053761C050,
+	NativeCamera_GetVideoProperties_m2E7F06E4A9C55A06A5752F8337951217018250EB,
+	NativeCamera_CheckPermission_mDBAA96E2682E6804008B8C52855029CE005DC8D6,
+	ImageProperties__ctor_mDB1459622F0FFEEA741B63898D7CE5B41AA4F9EC,
+	VideoProperties__ctor_m61A493A9C32C95FE9B3F84709AC0A2E92283F97D,
+	PermissionCallback__ctor_m7CA919F20741081C2F81A209707B998CCC4D3782,
+	PermissionCallback_Invoke_m0D631ECACFB70385F4288017D881CFB459CACA47,
+	PermissionCallback_BeginInvoke_m2623016C072980DFF99367F96400C8B37C88B839,
+	PermissionCallback_EndInvoke_m2B8461AD4BEF74F43786926160BA150D32090E78,
+	CameraCallback__ctor_m39376148047C9B1A537BC5DB202E142431A77AFE,
+	CameraCallback_Invoke_mE8BD077A2F42B9DBC93521F630A1461381D3BB1A,
+	CameraCallback_BeginInvoke_m690E44108A53130266E7C1A57DC6E62F2B0BDCDF,
+	CameraCallback_EndInvoke_m64D370EA45BBA56CF1B29C19E1B766B43542D7A6,
+	U3CU3Ec__DisplayClass34_0__ctor_mA5C92AB9C0E34FCFAC22842E6FC212D3CFDE42D5,
+	U3CU3Ec__DisplayClass34_0_U3CRequestPermissionAsyncU3Eb__0_m5DD36A3C9FFDCFE3967132FDFBE9E29994CD55F4,
+	U3CU3Ec__DisplayClass42_0__ctor_m02A480E94AF54377F68E85763C206A572AE473F3,
+	U3CU3Ec__DisplayClass42_0_U3CLoadImageAtPathAsyncU3Eb__0_mD91BBEB1C219A7BE37D24E44EC5F6138C37E0212,
+	U3CU3Ec__DisplayClass44_0__ctor_m1D4C8680D5A6CDF30E9FF9D0A84739A33CA4B3BE,
+	U3CU3Ec__DisplayClass44_0_U3CGetVideoThumbnailAsyncU3Eb__0_mCB6AC255212A1B774FC987C35F44CFCA3C66D5B3,
+	NULL,
+	NULL,
+	U3CGetVideoThumbnailAsyncU3Ed__44__ctor_m02548FCD83D20124BE110E0B1940D15B6DEA758F,
+	U3CGetVideoThumbnailAsyncU3Ed__44_MoveNext_mA8A3F72180EE26D8768C3F26E331D22154A367EE,
+	U3CGetVideoThumbnailAsyncU3Ed__44_SetStateMachine_mFEDFBE97155B2FE36A1EA85C76AD33976D373E3D,
+	U3CLoadImageAtPathAsyncU3Ed__42__ctor_m7B42BF481AA310DBA745A7B2658F87C1D35E6BD9,
+	U3CLoadImageAtPathAsyncU3Ed__42_MoveNext_mB488C3851DA46E2EAA5E19F13E6CD1930F7840D2,
+	U3CLoadImageAtPathAsyncU3Ed__42_SetStateMachine_mF516BF64B0CE9462C7C3097973C32E5E3A418251,
+	NULL,
+	NULL,
+	NULL,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m97D6F0665D5518509212FAD768B85E7D625A639C,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m44611545C859F391394E65B0BF33EA2AA7664173,
+	NCCameraCallbackiOS_get_IsBusy_m9F87E496A3AC7F0B87DBDEB9B83572FB012B9ABA,
+	NCCameraCallbackiOS_set_IsBusy_mE9430DC4EF0FB6B2886E1745A5366C1C1C736601,
+	NCCameraCallbackiOS__NativeCamera_IsCameraBusy_mD6BB6BD8D6C98A21ED54547F000201AA6B072A1E,
+	NCCameraCallbackiOS_Initialize_m056AEBAA4F9F101B18200CFDE27A4A09F3BDCFA8,
+	NCCameraCallbackiOS_Update_m0DD66E73BE361507EDDD983F3B1D129EE56E22EF,
+	NCCameraCallbackiOS_OnMediaReceived_m622F5D25E393368C3955B8E8EB22823FEE828836,
+	NCCameraCallbackiOS__ctor_mE968248C208D510DD191161A020E9446802253A6,
+	NCPermissionCallbackiOS_Initialize_mDBB065A1D415018991A907ABC34D69C06BABCF1A,
+	NCPermissionCallbackiOS_OnPermissionRequested_mABE73820D51E2D5A85555124BA6CAEEEEAD10FF5,
+	NCPermissionCallbackiOS__ctor_m3D22A34E8DA4D368A0B9016649A94CCB3B92BDE9,
+};
+extern void ImageProperties__ctor_mDB1459622F0FFEEA741B63898D7CE5B41AA4F9EC_AdjustorThunk (void);
+extern void VideoProperties__ctor_m61A493A9C32C95FE9B3F84709AC0A2E92283F97D_AdjustorThunk (void);
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[2] = 
+{
+	{ 0x06000024, ImageProperties__ctor_mDB1459622F0FFEEA741B63898D7CE5B41AA4F9EC_AdjustorThunk },
+	{ 0x06000025, VideoProperties__ctor_m61A493A9C32C95FE9B3F84709AC0A2E92283F97D_AdjustorThunk },
+};
+static const int32_t s_InvokerIndices[74] = 
+{
+	25934,
+	25074,
+	26017,
+	25916,
+	25916,
+	24567,
+	25916,
+	26017,
+	25916,
+	20568,
+	20505,
+	24723,
+	24723,
+	18630,
+	19686,
+	25934,
+	25934,
+	24557,
+	24557,
+	22651,
+	24705,
+	25881,
+	26017,
+	18229,
+	16939,
+	25881,
+	25881,
+	17098,
+	19678,
+	16672,
+	18612,
+	-1,
+	25172,
+	25173,
+	24572,
+	1903,
+	1901,
+	6116,
+	12073,
+	2419,
+	12135,
+	6116,
+	12135,
+	2445,
+	12135,
+	15969,
+	12073,
+	15969,
+	15741,
+	15969,
+	15741,
+	-1,
+	-1,
+	15969,
+	15969,
+	12135,
+	15969,
+	15969,
+	12135,
+	-1,
+	-1,
+	-1,
+	26044,
+	15969,
+	25881,
+	25060,
+	25916,
+	25074,
+	15969,
+	12135,
+	15969,
+	25074,
+	12135,
+	15969,
+};
+static const Il2CppTokenRangePair s_rgctxIndices[3] = 
+{
+	{ 0x0200000E, { 10, 4 } },
+	{ 0x02000011, { 14, 13 } },
+	{ 0x06000020, { 0, 10 } },
+};
+extern const uint32_t g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1_tFE1F581D3713A40C27402F49C3FDBA254C12B83A;
+extern const uint32_t g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1__ctor_m0F27BBFA931D2EC4AD1E198BFD1BF986277538AF;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_Create_mD7B84B18BFB1AE83670414E9C1E10A6519A1B8B7;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_t1B209B4B83112A76F5E126B8DA14875DE5408DDD;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_t1B209B4B83112A76F5E126B8DA14875DE5408DDD;
+extern const uint32_t g_rgctx_Func_1_tFBC398D49F6010F3953802B9F7ADA3421C6D1BB5;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_Start_TisU3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1_tFE1F581D3713A40C27402F49C3FDBA254C12B83A_m03F08E10AC8C126467C3EEA65B5449A5132FAD19;
+extern const uint32_t g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1U26_tB2163F0FB6DD23C6FDA060427F2E0A1C5A8B9210;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_get_Task_m39FD73783843396980B86C5FB50490DCC985DA5A;
+extern const uint32_t g_rgctx_Task_1_t41FDEBB2340036C5273333983FC7D64B82A2ABFC;
+extern const uint32_t g_rgctx_U3CU3Ec__DisplayClass45_0_1_t750209F52F74272FAFC0104665644E9660C8122B;
+extern const uint32_t g_rgctx_Func_1_t876D7F635A44DB1822529066D2655FD0BAA2B8D3;
+extern const uint32_t g_rgctx_Func_1_Invoke_m0B556F638DC354A71E80EC5B4A50201632F47A4C;
+extern const uint32_t g_rgctx_T_t1EBFFE85737E14101F98CA8F132BB75EF5811A58;
+extern const uint32_t g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1_t907DFC31EB51DA0D6D19743B70DAC83DE8EC041C;
+extern const uint32_t g_rgctx_U3CU3Ec__DisplayClass45_0_1_t85C68F57969C74F39D566F421EE28DE68A48CB7E;
+extern const uint32_t g_rgctx_U3CU3Ec__DisplayClass45_0_1__ctor_m7E7F1F3391E323ADE02B10F9E3C9E2FDE134DAB2;
+extern const uint32_t g_rgctx_Func_1_tF9581F60D9E3A8250950B68AFA9E9493DC407518;
+extern const uint32_t g_rgctx_T_tA3B65CA658EEA31435CA81498D06B5643A1AEFC6;
+extern const uint32_t g_rgctx_U3CU3Ec__DisplayClass45_0_1_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Eb__0_mA9CD0A2C17C27E3C1297CD99446DDBF5BB92FCFC;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_t47EAE5ADF4CF4BCACD995D84D64CE2147257A3C2;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_t9B661AC8C2EFA6BAB94C77BB24A5DDA82D61F833_TisU3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1_t907DFC31EB51DA0D6D19743B70DAC83DE8EC041C_m5AD360C785014E44D60AE959176594EE5FB925E1;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_t47EAE5ADF4CF4BCACD995D84D64CE2147257A3C2;
+extern const uint32_t g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1U26_t268859448194B177049BD4CEF32B9F1376F4F656;
+extern const uint32_t g_rgctx_Func_1_Invoke_mF0D05A5BBF03E99D12996EDF3ED674BDC6A3CE64;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_SetException_m0E97768F768301F4EE4BE17EB98FD75C45A94C30;
+extern const uint32_t g_rgctx_AsyncTaskMethodBuilder_1_SetResult_m5FA1F40EDC8FC0E33FE4EF24C1E0EBA76AB48C47;
+static const Il2CppRGCTXDefinition s_rgctxValues[27] = 
+{
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1_tFE1F581D3713A40C27402F49C3FDBA254C12B83A },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1__ctor_m0F27BBFA931D2EC4AD1E198BFD1BF986277538AF },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_Create_mD7B84B18BFB1AE83670414E9C1E10A6519A1B8B7 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_t1B209B4B83112A76F5E126B8DA14875DE5408DDD },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_t1B209B4B83112A76F5E126B8DA14875DE5408DDD },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_Func_1_tFBC398D49F6010F3953802B9F7ADA3421C6D1BB5 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_Start_TisU3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1_tFE1F581D3713A40C27402F49C3FDBA254C12B83A_m03F08E10AC8C126467C3EEA65B5449A5132FAD19 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1U26_tB2163F0FB6DD23C6FDA060427F2E0A1C5A8B9210 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_get_Task_m39FD73783843396980B86C5FB50490DCC985DA5A },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_Task_1_t41FDEBB2340036C5273333983FC7D64B82A2ABFC },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_U3CU3Ec__DisplayClass45_0_1_t750209F52F74272FAFC0104665644E9660C8122B },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_Func_1_t876D7F635A44DB1822529066D2655FD0BAA2B8D3 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Func_1_Invoke_m0B556F638DC354A71E80EC5B4A50201632F47A4C },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_t1EBFFE85737E14101F98CA8F132BB75EF5811A58 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1_t907DFC31EB51DA0D6D19743B70DAC83DE8EC041C },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_U3CU3Ec__DisplayClass45_0_1_t85C68F57969C74F39D566F421EE28DE68A48CB7E },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_U3CU3Ec__DisplayClass45_0_1__ctor_m7E7F1F3391E323ADE02B10F9E3C9E2FDE134DAB2 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_Func_1_tF9581F60D9E3A8250950B68AFA9E9493DC407518 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_tA3B65CA658EEA31435CA81498D06B5643A1AEFC6 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_U3CU3Ec__DisplayClass45_0_1_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Eb__0_mA9CD0A2C17C27E3C1297CD99446DDBF5BB92FCFC },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_t47EAE5ADF4CF4BCACD995D84D64CE2147257A3C2 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_t9B661AC8C2EFA6BAB94C77BB24A5DDA82D61F833_TisU3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1_t907DFC31EB51DA0D6D19743B70DAC83DE8EC041C_m5AD360C785014E44D60AE959176594EE5FB925E1 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_t47EAE5ADF4CF4BCACD995D84D64CE2147257A3C2 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_U3CTryCallNativeAndroidFunctionOnSeparateThreadU3Ed__45_1U26_t268859448194B177049BD4CEF32B9F1376F4F656 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Func_1_Invoke_mF0D05A5BBF03E99D12996EDF3ED674BDC6A3CE64 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_SetException_m0E97768F768301F4EE4BE17EB98FD75C45A94C30 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_AsyncTaskMethodBuilder_1_SetResult_m5FA1F40EDC8FC0E33FE4EF24C1E0EBA76AB48C47 },
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_NativeCamera_Runtime_CodeGenModule;
+const Il2CppCodeGenModule g_NativeCamera_Runtime_CodeGenModule = 
+{
+	"NativeCamera.Runtime.dll",
+	74,
+	s_methodPointers,
+	2,
+	s_adjustorThunks,
+	s_InvokerIndices,
+	0,
+	NULL,
+	3,
+	s_rgctxIndices,
+	27,
+	s_rgctxValues,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};

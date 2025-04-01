@@ -38,6 +38,7 @@ public class ApiDataCall : MonoBehaviour
 
     public void Awake()
     {
+        Debug.Log("awke");
         if (Instance == null)
         {
             Instance = this;
@@ -47,5 +48,26 @@ public class ApiDataCall : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if(pause)
+        {
+            PlayerPrefs.SetInt("PanelState", 0);
+        }
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if(!focus)
+        {
+            PlayerPrefs.SetInt("PanelState", 0);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("PanelState", 0);
     }
 }

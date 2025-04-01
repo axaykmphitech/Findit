@@ -58,11 +58,13 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        Debug.Log("Awake");
         Instance = this;
     }
 
     public void Start()
     {
+        Debug.Log("Start");
         uploadPhotoUrl = ApiDataCall.Instance.baseUrl + "user/uploadPhoto";
 
         ActivePanel(submitPanel.name);
@@ -81,7 +83,7 @@ public class GameManager : MonoBehaviour
             }
             else if (createLevelPanel.activeInHierarchy && !canvas.isActiveAndEnabled)
             {
-                camera.orthographicSize = 13;
+                camera.orthographicSize =  13;
                 ActivePanel(submitPanel.name);
                 level.gameObject.SetActive(false);
                 //level.GetComponent<SpriteRenderer>().sprite = null;
@@ -94,46 +96,51 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-
-
     }
 
     public void Save()
     {
+        Debug.Log("Save");
         rightAns = level.transform.GetChild(0).gameObject;
-        PlayerPrefs.SetFloat("xPos", rightAns.transform.position.x);
-        PlayerPrefs.SetFloat("yPos", rightAns.transform.position.y);
+        PlayerPrefs.SetFloat("xPos",      rightAns.transform.position.x);
+        PlayerPrefs.SetFloat("yPos",      rightAns.transform.position.y);
         PlayerPrefs.SetFloat("xHeight", rightAns.transform.localScale.x);
         PlayerPrefs.SetFloat("yHeight", rightAns.transform.localScale.y);
     }
 
     public void Get()
     {
-        xPos = PlayerPrefs.GetFloat("xPos");
-        yPos = PlayerPrefs.GetFloat("yPos");
+        Debug.Log("get");
+        xPos =      PlayerPrefs.GetFloat("xPos");
+        yPos =    PlayerPrefs.GetFloat("yPos");
         xHeight = PlayerPrefs.GetFloat("xHeight");
         yHeight = PlayerPrefs.GetFloat("yHeight");
 
         GameObject newObject = new GameObject("RightAns");
         newObject.transform.SetParent(level);
-        newObject.transform.position = new Vector2(xPos, yPos);
+        newObject.transform.position =   new Vector2(xPos, yPos);
         newObject.transform.localScale = new Vector2(xHeight, yHeight);
         newObject.AddComponent<BoxCollider2D>();
 
         SpriteRenderer spriteRenderer = newObject.AddComponent<SpriteRenderer>();
-        spriteRenderer.sprite = squre;
+        spriteRenderer.sprite =   squre;
         spriteRenderer.sortingOrder = 2;
     }
 
     public void SubmitPanelBackBtnClick()
     {
+        Debug.Log("sumit panel back button click");
         imageTitleInput.text = "";
         hintInput.text = "";
+        updateImagePreview.texture = null;
+        deletePreviewImageButton.gameObject.SetActive(false);
+        uploadPreviewImageButton.gameObject.SetActive(true) ;
         SceneManager.LoadScene(1);
     }
 
     public void SelectPointButtonClick()
     {
+        Debug.Log("Select point butotn click");
         if (level.GetComponent<SpriteRenderer>().sprite != null)
         {
             level.gameObject.SetActive(true);
@@ -144,12 +151,13 @@ public class GameManager : MonoBehaviour
 
     void FitCameraToSprite()
     {
+        Debug.Log("Fit camera to sprite");
         if (targetSprite == null || camera == null) return;
 
         Bounds spriteBounds = targetSprite.bounds;
 
         float spriteHeight = spriteBounds.size.y;
-        float spriteWidth = spriteBounds.size.x;
+        float spriteWidth =  spriteBounds.size.x;
 
         float screenRatio = (float)Screen.width / Screen.height;
         float spriteRatio = spriteWidth / spriteHeight;
@@ -166,6 +174,7 @@ public class GameManager : MonoBehaviour
 
     public void CreateLevelImageBackButtonClick()
     {
+        Debug.Log("Create level image back buton click");
         camera.orthographicSize = 13;
         level.gameObject.SetActive(false);
         ActivePanel(submitPanel.name);
@@ -181,11 +190,13 @@ public class GameManager : MonoBehaviour
 
     public void ContinueButtonClick()
     {
+        Debug.Log("Continue button click");
         AddImage();
     }
 
     public void AddImage()
     {
+        Debug.Log("Add image");
         string xPos = TapCreateSpriteLevel.Instance.xPos.ToString();
         string yPos = TapCreateSpriteLevel.Instance.yPos.ToString();
         string xScale = TapCreateSpriteLevel.Instance.xScale.ToString();
@@ -196,6 +207,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator AddImageRoutine(byte[] photo, string title, string hint, string xPos, string yPos, string xScale, string yScale)
     {
+        Debug.Log("Add Image routine");
         WWWForm form = new WWWForm();
         form.AddBinaryData("photo", photo, "photo.png", "image/png");
         form.AddField("title", title);
@@ -211,15 +223,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //Debug.Log("photo " + photo);
-            //Debug.Log("title " + title);
-            //Debug.Log("hint " + hint);
-            //Debug.Log("xPos " + xPos);
-            //Debug.Log("yPos " + yPos);
-            //Debug.Log("xScale " + xScale);
-            //Debug.Log("yScale " + yScale);
 
-            Debug.Log("URL: " + uploadPhotoUrl);
             using (UnityWebRequest request = UnityWebRequest.Post(uploadPhotoUrl, form))
             {
                 request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
@@ -240,6 +244,9 @@ public class GameManager : MonoBehaviour
                         level.GetComponent<TapCreateSpriteLevel>().enabled = false;
                         level.GetComponent<BoxCollider2D>().enabled = false;
                         canvas.gameObject.SetActive(true);
+                        updateImagePreview.texture = null;
+                        deletePreviewImageButton.gameObject.SetActive(false);
+                        uploadPreviewImageButton.gameObject.SetActive(true) ;
                     }
                     else if (level.transform.childCount == 1)
                     {
@@ -267,6 +274,7 @@ public class GameManager : MonoBehaviour
 
     public void OkButtonClick()
     {
+        Debug.Log("Ok button click");
         imageTitleInput.text = "";
         hintInput.text = "";
         SceneManager.LoadScene(1);
@@ -274,6 +282,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GetData()
     {
+        Debug.Log("Get data");
         yield return new WaitForSeconds(0);
         //WWWForm form = new WWWForm();
         //UnityWebRequest www = UnityWebRequest.Get("https://api.jsonbin.io/v3/qs/6762b7e8acd3cb34a8bbb02b");
@@ -316,16 +325,19 @@ public class GameManager : MonoBehaviour
 
     public void SubmitImageUploadButtonClick()
     {
+        Debug.Log("Submit image upload butotn click");
         PickImages();
     }
 
     public void PickImages()
     {
+        Debug.Log("Pick Image");
         PickImage(2048);
     }
 
     public void PickImage(int maxSize)
     {
+        Debug.Log("Pick Image");
         NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
         {
             if (path != null)
@@ -334,7 +346,7 @@ public class GameManager : MonoBehaviour
                 updateImagePreview.texture = texture;
 
                 uploadPreviewImageButton.gameObject.SetActive(false);
-                deletePreviewImageButton.gameObject.SetActive(true);
+                deletePreviewImageButton.gameObject.SetActive(true) ;
 
                 if (texture == null)
                 {
@@ -347,11 +359,11 @@ public class GameManager : MonoBehaviour
                 imageFile = ConvertSpriteToBytes(sprite);
             }
         });
-        Debug.Log("Permission result: " + permission);
     }
 
     public void DeletePreviewImage()
     {
+        Debug.Log("Delete Preview Image");
         updateImagePreview.texture = null;
         renderer.sprite = null;
         uploadPreviewImageButton.gameObject.SetActive(true);
@@ -360,38 +372,35 @@ public class GameManager : MonoBehaviour
 
     public void ActivePanel(string panel)
     {
+        Debug.Log("Active panel");
         submitPanel.SetActive(panel.Equals(submitPanel.name));
         createLevelPanel.SetActive(panel.Equals(createLevelPanel.name));
     }
 
     byte[] ConvertSpriteToBytes(Texture texture)
     {
-        Debug.Log("ConvertSpriteToBytes");
+        Debug.Log("Convert sprite to bytes");
         if (texture == null)
         {
-            Debug.LogError("Sprite is null!");
             return null;
         }
 
         Texture2D texture2D = TextureToTexture2D(texture);
-        Debug.Log(texture + " texture");
 
         return texture2D.EncodeToPNG();
     }
 
     byte[] ConvertSpriteToBytes(Sprite sprite)
     {
-        Debug.Log("ConvertSpriteToBytes");
+        Debug.Log("Convert sprite to bytes");
         if (sprite == null)
         {
-            Debug.LogError("Sprite is null!");
             return null;
         }
 
 
         // Convert Sprite to Texture2D
         Texture2D texture = SpriteToTexture2D(sprite);
-        Debug.Log(texture + " texture");
 
         // Encode to PNG (You can also use EncodeToJPG())
         return texture.EncodeToPNG();
@@ -399,9 +408,9 @@ public class GameManager : MonoBehaviour
 
     Texture2D SpriteToTexture2D(Sprite sprite)
     {
+        Debug.Log("Sprite to texture 2d");
         if (sprite == null)
         {
-            Debug.LogError("Sprite is null!");
             return null;
         }
 
@@ -434,9 +443,9 @@ public class GameManager : MonoBehaviour
 
     Texture2D TextureToTexture2D(Texture texture)
     {
+        Debug.Log("Textrute to texture 2d");
         if (texture == null)
         {
-            Debug.LogError("Texture is null!");
             return null;
         }
 

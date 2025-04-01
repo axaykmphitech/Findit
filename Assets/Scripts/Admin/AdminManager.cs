@@ -181,7 +181,7 @@ public class AdminManager : MonoBehaviour
     public void Start()
     {
         //signEmailInput.text = "admin@gmail.com";
-        //signPassInput.text = "admin@123"; 
+        //signPassInput.text = "admin@123";
 
         isSignpass = true;
         isCreateNewPass = true;
@@ -191,6 +191,16 @@ public class AdminManager : MonoBehaviour
         isConfirmPasswordHide = true;
         ActivePanel(signInPanel.name);
 
+        if (PlayerPrefs.GetString("email", "") != "" && PlayerPrefs.GetString("password", "") != "")
+        {
+            string email = PlayerPrefs.GetString("email", "");
+            string pass = PlayerPrefs.GetString("password", "");
+
+            if(email == "admin@gmail.com")
+            {
+                StartCoroutine(LoginRoutine(pass, email, "android", "asfbsduyf", "admin"));
+            }
+        }
         //newImageScroll.onValueChanged.AddListener(NewImageOnScroll);
         //scheduleImageScroll.onValueChanged.AddListener(ScheduleImageOnScroll);
     }
@@ -212,7 +222,6 @@ public class AdminManager : MonoBehaviour
             {
                 isReachedBottom1 = true;
                 skip1 += 10;
-                Debug.Log("Reached Bottom! " + skip1);
                 StartCoroutine(GetNewImagelistRoutine("pending"));
             }
         }
@@ -222,7 +231,6 @@ public class AdminManager : MonoBehaviour
         }
         if (pos.x >= 0.99f)
         {
-            Debug.Log("Reached Right End!");
         }
     }
 
@@ -235,7 +243,6 @@ public class AdminManager : MonoBehaviour
             {
                 isReachedBottom2 = true;
                 skip2 += 10;
-                Debug.Log("Reached Bottom! " + skip2);
                 StartCoroutine(GetSchedulelistRoutine("accepted"));
             }
         }
@@ -246,7 +253,6 @@ public class AdminManager : MonoBehaviour
         // For Horizontal Scroll
         if (pos.x >= 0.99f)
         {
-            Debug.Log("Reached Right End!");
         }
     }
 
@@ -309,7 +315,7 @@ public class AdminManager : MonoBehaviour
                 imageDetailPanel.SetActive(true);
                 reasonPanel.SetActive(false);
                 isReasonPanel = false;
-                rejectReasonInput.text = "";
+                //rejectReasonInput.text = "";
             }
             else if (imageDetailopenPanel.activeInHierarchy)
             {
@@ -498,7 +504,9 @@ public class AdminManager : MonoBehaviour
         form.AddField("deviceToken", deviceToken);
         form.AddField("userType", userType);
 
-        if(!IsValidEmail(email))
+
+
+        if (!IsValidEmail(email))
         {
             DialogCanvas.Instance.ShowFailedDialog("Please enter valid email address");
         }
@@ -511,7 +519,8 @@ public class AdminManager : MonoBehaviour
         {
             DialogCanvas.Instance.ShowFailedDialog("Password should be 8 character long");
         }
-        //Debug.Log(password + " password");
+
+        
         //Debug.Log(deviceType + " deviceType");
         //Debug.Log(deviceToken + " deviceToken");
         //Debug.Log(userType + " userType");
@@ -537,6 +546,9 @@ public class AdminManager : MonoBehaviour
                     token = status["data"]["token"];
 
                     StartCoroutine(GetNewImagelistRoutine("pending"));
+
+                    PlayerPrefs.SetString("email", email);
+                    PlayerPrefs.SetString("password", password);
                 }
                 else
                 {
@@ -546,12 +558,11 @@ public class AdminManager : MonoBehaviour
                     Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                     string Json = request.downloadHandler.text;
-                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                    SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json) ;
                     DialogCanvas.Instance.ShowFailedDialog(status["message"]);
                 }
             }
         }
-        // Create request    
     }
 
     public void ForgotPasswordButtonClick()
@@ -574,8 +585,6 @@ public class AdminManager : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("email", email);
-
-        Debug.Log(email + " email");
 
         // Create request
         using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordUrl, form))
@@ -627,7 +636,6 @@ public class AdminManager : MonoBehaviour
         form.AddField("email", email);
         form.AddField("otp", otp);
 
-        Debug.Log(email + " email");
         //Debug.Log(otp + " otp");
 
         // Create request
@@ -672,7 +680,6 @@ public class AdminManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("email", email);
 
-        Debug.Log(email + " email");
 
         using (UnityWebRequest request = UnityWebRequest.Post(forgotPasswordUrl, form))
         {
@@ -714,7 +721,6 @@ public class AdminManager : MonoBehaviour
         form.AddField("email", email);
         form.AddField("newPassword", newPassword);
 
-        Debug.Log(email + " email");
         //Debug.Log(newPassword + " newPassword");
 
         // Create request
@@ -1051,6 +1057,11 @@ public class AdminManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         isSignOutPanel = false;
+
+        PlayerPrefs.SetString("email", "");
+        PlayerPrefs.SetString("password", "");
+
+        PlayerPrefs.SetInt("PanelState", 1);
     }
 
     public void SignOutNoButtonClick()
@@ -1119,7 +1130,6 @@ public class AdminManager : MonoBehaviour
 
                 if (texture == null)
                 {
-                    Debug.Log("Couldn't load texture from " + path);
                     return;
                 }
                 Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
@@ -1127,7 +1137,6 @@ public class AdminManager : MonoBehaviour
                 pictureImage.sprite = sprite;
             }
         });
-        Debug.Log("Permission result: " + permission);
     }
 
     public void ChangePasswordBackButtonClick()
@@ -1258,7 +1267,10 @@ public class AdminManager : MonoBehaviour
         submitImageDateButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Select Date";
         submitImageDateButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color32(184, 184, 184, 255);
         submitImageTitleInput.text = "";
-        submitImageHintInput.text = "";
+        submitImageHintInput.text  = "";
+        deletePreviewImageButton.gameObject.SetActive(false);
+        uploadPreviewImageButton.gameObject.SetActive(true);
+        updateImagePreview.texture = null;
     }
 
     public void SubmitImageUploadButtonClick()
@@ -1284,7 +1296,6 @@ public class AdminManager : MonoBehaviour
                 deletePreviewImageButton.gameObject.SetActive(true);
                 if (texture == null)
                 {
-                    Debug.Log("Couldn't load texture from " + path);
                     return;
                 }
                 Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
@@ -1293,7 +1304,6 @@ public class AdminManager : MonoBehaviour
                 imageFile = ConvertSpriteToBytes(sprite);
             }
         });
-        Debug.Log("Permission result: " + permission);
     }
 
     public void DeletePreviewImage()
@@ -1306,10 +1316,8 @@ public class AdminManager : MonoBehaviour
 
     byte[] ConvertSpriteToBytes(Texture texture)
     {
-        Debug.Log("ConvertSpriteToBytes");
         if (texture == null)
         {
-            Debug.LogError("Sprite is null!");
             return null;
         }
 
@@ -1321,10 +1329,8 @@ public class AdminManager : MonoBehaviour
 
     byte[] ConvertSpriteToBytes(Sprite sprite)
     {
-        Debug.Log("ConvertSpriteToBytes");
         if (sprite == null)
         {
-            Debug.LogError("Sprite is null!");
             return null;
         }
 
@@ -1341,7 +1347,6 @@ public class AdminManager : MonoBehaviour
     {
         if (sprite == null)
         {
-            Debug.LogError("Sprite is null!");
             return null;
         }
 
@@ -1376,7 +1381,6 @@ public class AdminManager : MonoBehaviour
     {
         if (texture == null)
         {
-            Debug.LogError("Texture is null!");
             return null;
         }
 
@@ -1565,7 +1569,7 @@ public class AdminManager : MonoBehaviour
         reasonPanel.SetActive(false);
         imageDetailPanel.SetActive(false);
         isReasonPanel = false;
-        rejectReasonInput.text = "";
+        //rejectReasonInput.text = "";
     }
 
     public void EditPictureProfilePanelButtonClick()
@@ -1705,16 +1709,6 @@ public class AdminManager : MonoBehaviour
         }
         else
         {
-            //Debug.Log("photo " + photo);
-            Debug.Log("title " + title);
-            //Debug.Log("hint " + hint);
-            //Debug.Log("date " + date);
-            //Debug.Log("xPos " + xPos);
-            //Debug.Log("yPos " + yPos);
-            //Debug.Log("xScale " + xScale);
-            //Debug.Log("yScale " + yScale);
-
-            Debug.Log("URL: " + addscheduledImageUrl);
             using (UnityWebRequest request = UnityWebRequest.Post(addscheduledImageUrl, form))
             {
                 request.SetRequestHeader("Authorization", "Bearer " + token);
@@ -1792,7 +1786,7 @@ public class AdminManager : MonoBehaviour
                     Debug.Log("Total Records: " + response.data.totalRecords);
                     totalNewImage = int.Parse(response.data.totalRecords.ToString());
 
-                    foreach (Transform item in scheduledImageContent)
+                    foreach (Transform item in newImageContent)
                     {
                         Destroy(item.gameObject);
                     }
@@ -1835,8 +1829,6 @@ public class AdminManager : MonoBehaviour
 
         //Debug.Log("skip " + skip);
         //Debug.Log("limit " + limit);
-
-        Debug.Log("URL: " + imageListUrl);
         using (UnityWebRequest request = UnityWebRequest.Post(imageListUrl, form))
         {
             request.SetRequestHeader("Authorization", "Bearer " + token);
@@ -1916,7 +1908,6 @@ public class AdminManager : MonoBehaviour
 
     private void OpenNewImageDetailedPanel(ImageData image, string imageUrl, string title, string hint)
     {
-        Debug.Log(image.id);
         ImageData imageData = image;
 
         imageDetailPanel.SetActive(true);
@@ -1953,7 +1944,6 @@ public class AdminManager : MonoBehaviour
     public IEnumerator UpdateNewImageRoutine(string status, string imageId, TextMeshProUGUI date, string xPos, string yPos, string xScale, string yScale)
     {
         string formattedDate = date.text;
-        Debug.Log(imageId);
 
         WWWForm form = new WWWForm();
         form.AddField("status", status);
@@ -1964,40 +1954,42 @@ public class AdminManager : MonoBehaviour
         form.AddField("xScale", xScale);
         form.AddField("yScale", yScale);
 
-        //Debug.Log("status " + status);
-        Debug.Log("imageId " + imageId);
-        //Debug.Log("date " + formattedDate);
-        //Debug.Log("xPos " + xPos);
-        //Debug.Log("yPos " + yPos);
-        //Debug.Log("xScale " + xScale);
-        //Debug.Log("yScale " + yScale);
 
-        Debug.Log("URL: " + updateScheduledImageUrl);
-        using (UnityWebRequest request = UnityWebRequest.Post(updateScheduledImageUrl, form))
+
+        if(formattedDate == "Select Date")
         {
-            request.SetRequestHeader("Authorization", "Bearer " + token);
-            yield return request.SendWebRequest();
-
-            // Check response
-            if (request.result == UnityWebRequest.Result.Success)
+            DialogCanvas.Instance.ShowFailedDialog("Please select date");
+        }
+        else
+        {
+            using (UnityWebRequest request = UnityWebRequest.Post(updateScheduledImageUrl, form))
             {
-                Debug.Log("POST request successful: " + request.downloadHandler.text);
-                string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
-                int ResponseCode = data["ResponseCode"];
-                StartCoroutine(GetNewImagelistRoutine("pending"));
-                canvas.gameObject.SetActive(true);
-            }
-            else
-            {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                request.SetRequestHeader("Authorization", "Bearer " + token);
+                yield return request.SendWebRequest();
 
-                string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode statuss = SimpleJSON.JSON.Parse(Json);
-                DialogCanvas.Instance.ShowFailedDialog(statuss["message"]);
+                // Check response
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
+                    int ResponseCode = data["ResponseCode"];
+                    StartCoroutine(GetNewImagelistRoutine("pending"));
+                    canvas.gameObject.SetActive(true);
+                    updateImagePreview.texture = null;
+                    uploadPreviewImageButton.gameObject.SetActive(true) ;
+                    deletePreviewImageButton.gameObject.SetActive(false);
+                }
+                else
+                {
+                    Debug.LogError("POST request failed!");
+                    Debug.LogError("Error: " + request.error);
+                    Debug.LogError("Response Code: " + request.responseCode);
+                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode statuss = SimpleJSON.JSON.Parse(Json);
+                    DialogCanvas.Instance.ShowFailedDialog(statuss["message"]);
+                }
             }
         }
     }
@@ -2023,39 +2015,47 @@ public class AdminManager : MonoBehaviour
         form.AddField("yScale", yScale);
 
         //Debug.Log("status " + status);
-        //Debug.Log("rejectReason" + resonInputField.text);
-        Debug.Log("imageId " + imageId);
+        //Debug.Log("imageId " + imageId);
         //Debug.Log("date " + date);
         //Debug.Log("xPos " + xPos);
         //Debug.Log("yPos " + yPos);
         //Debug.Log("xScale " + xScale);
         //Debug.Log("yScale " + yScale);
 
-        Debug.Log("URL: " + updateScheduledImageUrl);
-        using (UnityWebRequest request = UnityWebRequest.Post(updateScheduledImageUrl, form))
+        //Debug.Log("URL: " + updateScheduledImageUrl);
+
+        if (resonInputField.text == "")
         {
-            request.SetRequestHeader("Authorization", "Bearer " + token);
-            yield return request.SendWebRequest();
-
-            // Check response
-            if (request.result == UnityWebRequest.Result.Success)
+            DialogCanvas.Instance.ShowFailedDialog("Rejection reason should not be empty");
+        }
+        else
+        {
+            using (UnityWebRequest request = UnityWebRequest.Post(updateScheduledImageUrl, form))
             {
-                Debug.Log("POST request successful: " + request.downloadHandler.text);
-                string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
-                int ResponseCode = data["ResponseCode"];
-                StartCoroutine(GetNewImagelistRoutine("pending"));
-            }
-            else
-            {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                request.SetRequestHeader("Authorization", "Bearer " + token);
+                yield return request.SendWebRequest();
 
-                string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode statuss = SimpleJSON.JSON.Parse(Json);
-                DialogCanvas.Instance.ShowFailedDialog(statuss["message"]);
+                // Check response
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    Debug.Log("POST request successful: " + request.downloadHandler.text);
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
+                    int ResponseCode =  data["ResponseCode"];
+                    rejectReasonInput.text = "";
+                    StartCoroutine(GetNewImagelistRoutine("pending"));
+                }
+                else
+                {
+                    Debug.LogError("POST request failed!");
+                    Debug.LogError("Error: " + request.error);
+                    Debug.LogError("Response Code: " + request.responseCode);
+                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+
+                    string Json = request.downloadHandler.text;
+                    SimpleJSON.JSONNode statuss = SimpleJSON.JSON.Parse(Json) ;
+                    DialogCanvas.Instance.ShowFailedDialog(statuss["message"]);
+                }
             }
         }
     }
@@ -2065,7 +2065,6 @@ public class AdminManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("imageId", imageId);
 
-        Debug.Log("imageId " + imageId);
         //Debug.Log("URL: " + deleteImageUrl);
 
         foreach (var item in response.data.imagesList)
@@ -2088,13 +2087,13 @@ public class AdminManager : MonoBehaviour
                     }
                     else
                     {
-                        Debug.LogError("POST request failed!");
+                        Debug.LogError("POST request failed!")   ;   
                         Debug.LogError("Error: " + request.error);
                         Debug.LogError("Response Code: " + request.responseCode);
                         Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                         string Json = request.downloadHandler.text;
-                        SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                        SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json) ;
                         DialogCanvas.Instance.ShowFailedDialog(status["message"]);
                     }
                 }
@@ -2109,11 +2108,11 @@ public class AdminManager : MonoBehaviour
         //Debug.Log("sdfsdf", editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0));
         StartCoroutine(LoadImage(editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<RawImage>(), imageData.photo));
         editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(2).GetComponent<TextMeshProUGUI>().text = imageData.title;
-        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text = imageData.hint;
-        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = imageData.date;
+        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text = imageData.hint ;
+        editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = imageData.date ;
 
         TextMeshProUGUI dateText = editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>();
-        RawImage rawImage = editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<RawImage>();
+        RawImage rawImage = editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<RawImage>()  ;
 
         editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(1).GetComponent<Button>().onClick.RemoveAllListeners();
         editImagedatePanel.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(1).GetComponent<Button>().onClick.AddListener(() => StartCoroutine(EditImageRoutine(rawImage, imageData.id, imageData.title, imageData.hint, dateText, imageData.xPos, imageData.yPos, imageData.xScale, imageData.yScale)));
@@ -2124,21 +2123,19 @@ public class AdminManager : MonoBehaviour
         byte[] fileImage = ConvertSpriteToBytes(rawImage.texture);
 
         string formattedDate = date.text;
-        Debug.Log(formattedDate);
 
         WWWForm form = new WWWForm();
 
         form.AddBinaryData("photo", fileImage, "photo.png", "image/png");
         form.AddField("imageId", imageId);
-        form.AddField("title", title);
-        form.AddField("hint", hint);
-        form.AddField("date", formattedDate);
-        form.AddField("xPos", xPos);
-        form.AddField("yPos", yPos);
-        form.AddField("xScale", xScale);
-        form.AddField("yScale", yScale);
+        form.AddField("title",   title);
+        form.AddField("hint",    hint);
+        form.AddField("date",    formattedDate);
+        form.AddField("xPos",    xPos);
+        form.AddField("yPos",    yPos);
+        form.AddField("xScale",  xScale);
+        form.AddField("yScale",  yScale);
 
-        Debug.Log("photo " + imageId);
         
         //Debug.Log("URL: " + editImageSchedule);
         using (UnityWebRequest request = UnityWebRequest.Post(editImageSchedule, form))
@@ -2152,13 +2149,13 @@ public class AdminManager : MonoBehaviour
                 Debug.Log("POST request successful: " + request.downloadHandler.text);
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode data = SimpleJSON.JSON.Parse(Json);
-                int ResponseCode = data["ResponseCode"];
+                int ResponseCode =  data["ResponseCode"];
 
-                scheduledImagesDateButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Select Date";
+                scheduledImagesDateButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>(). text = "Select Date";
                 scheduledImagesDateButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color32(184, 184, 184, 255);
                 ActivePanel(imageSelectPanel.name);
-                isEditImagedatePanel = false;
-                canvas.gameObject.SetActive(true);
+                isEditImagedatePanel =      false ;
+                canvas.gameObject.SetActive(true) ;
                 StartCoroutine(GetSchedulelistRoutine("accepted"));
             }
             else
@@ -2169,7 +2166,7 @@ public class AdminManager : MonoBehaviour
                 Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
-                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
+                SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json) ;
                 DialogCanvas.Instance.ShowFailedDialog(status["message"]);
             }
         }
