@@ -75,12 +75,12 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             }
             else
             {
-                Debug.LogError("Purchase failed: Product not available for purchase");
+                // Debug.LogError("Purchase failed: Product not available for purchase");
             }
         }
         else
         {
-            Debug.LogError("Purchase failed: IAP not initialized");
+            // Debug.LogError("Purchase failed: IAP not initialized");
         }
     }
 
@@ -130,7 +130,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     // Called when a purchase fails
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
     {
-        Debug.LogError($"Purchase failed: {product.definition.id}, Reason: {failureDescription.reason}");
+        // Debug.LogError($"Purchase failed: {product.definition.id}, Reason: {failureDescription.reason}");
     }
 
     // Called when initialization is successful
@@ -143,7 +143,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     // Called when initialization fails (Updated for IDetailedStoreListener)
     public void OnInitializeFailed(InitializationFailureReason error, string message)
     {
-        Debug.LogError($"IAP Initialization Failed: {error}, Message: {message}");
+        // Debug.LogError($"IAP Initialization Failed: {error}, Message: {message}");
     }
 
     public void OnInitializeFailed(InitializationFailureReason error)
@@ -166,7 +166,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         }
         catch (Exception e)
         {
-            Debug.LogError($"Failed to extract Google purchaseToken: {e.Message}");
+            // Debug.LogError($"Failed to extract Google purchaseToken: {e.Message}");
             return "";
         }
     }
@@ -185,7 +185,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         }
         catch (Exception e)
         {
-            Debug.LogError($"Failed to extract Apple Transaction IDs: {e.Message}");
+            // Debug.LogError($"Failed to extract Apple Transaction IDs: {e.Message}");
             return ("", "");
         }
     }
@@ -222,10 +222,10 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json) ;
@@ -264,10 +264,10 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);

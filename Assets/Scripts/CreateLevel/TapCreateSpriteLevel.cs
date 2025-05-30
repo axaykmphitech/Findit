@@ -112,7 +112,7 @@ public class TapCreateSpriteLevel : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Sprite Prefab is not assigned in the Inspector.");
+                // Debug.LogError("Sprite Prefab is not assigned in the Inspector.");
             }
         }
     }

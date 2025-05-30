@@ -58,7 +58,7 @@ public class CameraManager : MonoBehaviour
 
         callbacks.PermissionDeniedAndDontAskAgain += (permissionName) =>
         {
-            Debug.LogError("Permission Denied (Don't Ask Again): " + permissionName);
+            //Debug.LogError("Permission Denied (Don't Ask Again): " + permissionName);
         };
 
         // Debug before requesting permission
@@ -148,7 +148,7 @@ public class CameraManager : MonoBehaviour
         Debug.Log("ConvertSpriteToBytes");
         if (sprite == null)
         {
-            Debug.LogError("Sprite is null!");
+            //Debug.LogError("Sprite is null!");
             return null;
         }
 

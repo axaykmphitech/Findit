@@ -173,10 +173,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 //string Json = request.downloadHandler.text;
                 //SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
@@ -199,10 +199,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode statuss = SimpleJSON.JSON.Parse(Json);
@@ -401,10 +401,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
@@ -445,10 +445,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
@@ -567,10 +567,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json) ;
@@ -696,10 +696,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
@@ -814,10 +814,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
@@ -897,10 +897,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("POST request failed!")   ;
-                Debug.LogError("Error: " + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!")   ;
+                // Debug.LogError("Error: " + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
@@ -1059,10 +1059,10 @@ public class LevelManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("POST request failed!");
-                    Debug.LogError("Error: " + request.error);
-                    Debug.LogError("Response Code: " + request.responseCode);
-                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+                    // Debug.LogError("POST request failed!");
+                    // Debug.LogError("Error: " + request.error);
+                    // Debug.LogError("Response Code: " + request.responseCode);
+                    // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                     string Json = request.downloadHandler.text;
                     SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
@@ -1216,10 +1216,10 @@ public class LevelManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("POST request failed!");
-                    Debug.LogError("Error: " + request.error);
-                    Debug.LogError("Response Code: " + request.responseCode);
-                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+                    // Debug.LogError("POST request failed!");
+                    // Debug.LogError("Error: " + request.error);
+                    // Debug.LogError("Response Code: " + request.responseCode);
+                    // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                     string Json = request.downloadHandler.text;
                     SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);
@@ -1284,10 +1284,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("POST request failed!");
-                Debug.LogError("Error: "         + request.error);
-                Debug.LogError("Response Code: " + request.responseCode);
-                Debug.LogError("Response Text: " + request.downloadHandler.text);
+                // Debug.LogError("POST request failed!");
+                // Debug.LogError("Error: "         + request.error);
+                // Debug.LogError("Response Code: " + request.responseCode);
+                // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                 string Json = request.downloadHandler.text;
                 SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);

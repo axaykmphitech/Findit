@@ -178,6 +178,7 @@ public class GameManager : MonoBehaviour
         camera.orthographicSize = 13;
         level.gameObject.SetActive(false);
         ActivePanel(submitPanel.name);
+
         //level.GetComponent<SpriteRenderer>().sprite = null;
         //level.GetComponent<TapCreateSpriteLevel>().isAnsSpriteAvailable = false;
         //level.GetComponent<TapCreateSpriteLevel>().isCreated = false;
@@ -223,7 +224,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-
             using (UnityWebRequest request = UnityWebRequest.Post(uploadPhotoUrl, form))
             {
                 request.SetRequestHeader("Authorization", "Bearer " + ApiDataCall.Instance.token);
@@ -259,10 +259,10 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("POST request failed!");
-                    Debug.LogError("Error: " + request.error);
-                    Debug.LogError("Response Code: " + request.responseCode);
-                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+                    // Debug.LogError("POST request failed!");
+                    // Debug.LogError("Error: " + request.error);
+                    // Debug.LogError("Response Code: " + request.responseCode);
+                    // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                     string Json = request.downloadHandler.text;
                     SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);

@@ -229,6 +229,7 @@ public class SignInManager : MonoBehaviour
     public IEnumerator FindItPanelChange()
     {
         yield return new WaitForSeconds(3);
+        ActivePanel(signInPanel.name);
         if (PlayerPrefs.GetString("email", "") != "" && PlayerPrefs.GetString("password", "") != "")
         {
             string email = PlayerPrefs.GetString("email", "");
@@ -286,6 +287,7 @@ public class SignInManager : MonoBehaviour
         }
         else
         {
+            Debug.Log(loginUrl);
             using (UnityWebRequest request = UnityWebRequest.Post(loginUrl, form))
             {
                 yield return request.SendWebRequest();
@@ -313,10 +315,10 @@ public class SignInManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("POST request failed!");
-                    Debug.LogError("Error: " + request.error);
-                    Debug.LogError("Response Code: " + request.responseCode);
-                    Debug.LogError("Response Text: " + request.downloadHandler.text);
+                    // Debug.LogError("POST request failed!");
+                    // Debug.LogError("Error: " + request.error);
+                    // Debug.LogError("Response Code: " + request.responseCode);
+                    // Debug.LogError("Response Text: " + request.downloadHandler.text);
 
                     string Json = request.downloadHandler.text;
                     SimpleJSON.JSONNode status = SimpleJSON.JSON.Parse(Json);

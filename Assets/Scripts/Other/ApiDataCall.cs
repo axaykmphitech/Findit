@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class ApiDataCall : MonoBehaviour
 {
-    public string baseUrl = "http://hexanetwork.in:4006/api/";
+    //public string baseUrl = "http://hexanetwork.in:4006/api/";
     //public string baseUrl = "https://s9c0vkj4-4006.inc1.devtunnels.ms/api/";
-
+    public string baseUrl = "https://dev.api.finditrealphotos.net:4006/api/";
+    
     public string userName;
     public string email;
     public string profile;
